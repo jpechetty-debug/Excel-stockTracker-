@@ -1,0 +1,2866 @@
+{
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\run_ios.py": {
+    "mtime": 1783401520.0,
+    "hash": "3a0be1dc307fd4fd545ea9dcda938497"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\config\\config_loader.py": {
+    "mtime": 1783386500.0,
+    "hash": "3ffb8b395465479e14816fc6b77255de"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\exceptions.py": {
+    "mtime": 1783386500.0,
+    "hash": "1a4b45385a60fa41139b5d0c984e263f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\models.py": {
+    "mtime": 1783386500.0,
+    "hash": "4d9e9a573446a29d0f7d3134a03f6421"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\normalizer.py": {
+    "mtime": 1783386500.0,
+    "hash": "d7a8a3f1ee4d695d5f8e00cf56b79b11"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\validators.py": {
+    "mtime": 1783386500.0,
+    "hash": "13ae93c78fdc57968c4b5415745b7082"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\allocation.py": {
+    "mtime": 1783386500.0,
+    "hash": "c0e8fb12c7f06f4e4c2a9bec696d4f9a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\financial.py": {
+    "mtime": 1783401460.0,
+    "hash": "b1c90560df8ab74f1884e177bd5e4c5c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\investment.py": {
+    "mtime": 1783386500.0,
+    "hash": "bd5aa55936c1e082ba6e409373c17cf0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\risk.py": {
+    "mtime": 1783386500.0,
+    "hash": "b019f9ed044d364e4f15d15c647ef2d7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\rule_parser.py": {
+    "mtime": 1783386500.0,
+    "hash": "e3ec17be0b26e30aa53b6db1cc688bca"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\scoring.py": {
+    "mtime": 1783386500.0,
+    "hash": "e1d016c1bb08cd5b7eb95a655504b22d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\valuation.py": {
+    "mtime": 1783401478.0,
+    "hash": "7d7994d00d67eb7e6a916239983c8e21"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\cache\\manager.py": {
+    "mtime": 1783386500.0,
+    "hash": "0e2fbff91293dd734f33abbfb66700af"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\excel\\backup.py": {
+    "mtime": 1783386500.0,
+    "hash": "9b39b07e38389bcf6859acf9056ee06a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\excel\\planner.py": {
+    "mtime": 1783401504.0,
+    "hash": "f7047a2d1853538ec0db50bced3f9b34"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\excel\\reader.py": {
+    "mtime": 1783386500.0,
+    "hash": "5c0a7e093c30f12d010ee7f8b898d65a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\excel\\writer.py": {
+    "mtime": 1783386500.0,
+    "hash": "fad44132d8cf9af1546c497534a74379"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\logging\\logger.py": {
+    "mtime": 1783386500.0,
+    "hash": "34187c3774e2783dc77eb1e3e56a3287"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\network\\rate_limiter.py": {
+    "mtime": 1783386500.0,
+    "hash": "4eaca2ce95bb381903a66074fbf36b3a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\network\\retry.py": {
+    "mtime": 1783386500.0,
+    "hash": "377f20a65ce0db778bfe65de3c2af642"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\network\\session.py": {
+    "mtime": 1783386500.0,
+    "hash": "269f52cd37e4bde8cb02892f70a9b096"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\providers\\base.py": {
+    "mtime": 1783386500.0,
+    "hash": "1e55f7c1bcfd3471402908a3af78aa18"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\providers\\mock_provider.py": {
+    "mtime": 1783401592.0,
+    "hash": "8373785e9a08873d20a6b5d202657440"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\providers\\registry.py": {
+    "mtime": 1783386500.0,
+    "hash": "0831890bae8ad59063a28268057dc0d5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\providers\\yfinance_provider.py": {
+    "mtime": 1783401430.0,
+    "hash": "5989a7390cd8a0465c1599e5b393a903"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\context.py": {
+    "mtime": 1783401508.0,
+    "hash": "ef715afe36c573e38e92a4dcdb208e46"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\reporter.py": {
+    "mtime": 1783386500.0,
+    "hash": "02ad68260de671d3ba31a995bb607405"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\runner.py": {
+    "mtime": 1783386500.0,
+    "hash": "99c5002cb6ec01b5fba341f4a9a00c37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_allocation.py": {
+    "mtime": 1783386500.0,
+    "hash": "bf7ce8e80501a0c9c5b0dbdbdd63480a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_fetch_data.py": {
+    "mtime": 1783401574.0,
+    "hash": "fb491a23f5f87d50057d1a55987903f6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_financial.py": {
+    "mtime": 1783386500.0,
+    "hash": "8afdec1f2745c99349d032cf4236bf3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_investment.py": {
+    "mtime": 1783386500.0,
+    "hash": "65dbeb109556d9ca9a71c58c9fd45901"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_load_config.py": {
+    "mtime": 1783386500.0,
+    "hash": "5a0188ebbcf27001b46478d64f37f62d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_open_workbook.py": {
+    "mtime": 1783386500.0,
+    "hash": "964192268f1de15b1d2d1438589d084f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_reports.py": {
+    "mtime": 1783386500.0,
+    "hash": "cb947c30b786af2c3562204f27481354"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_risk.py": {
+    "mtime": 1783386500.0,
+    "hash": "36519300abe0c82b6d6ba947c58a6b62"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_scoring.py": {
+    "mtime": 1783386500.0,
+    "hash": "cdbf3013df5b53452aa156e5fee899bd"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_valuation.py": {
+    "mtime": 1783386500.0,
+    "hash": "a74e92ec13b3f10fe168ff816752d110"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\pipeline\\steps\\step_write_excel.py": {
+    "mtime": 1783386500.0,
+    "hash": "cb194d19504bc8a1352a25e87b9d1186"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\test_engines.py": {
+    "mtime": 1783386500.0,
+    "hash": "fd3cd7a74e383731706f38e66651cb04"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\integration\\test_engines.py": {
+    "mtime": 1783386500.0,
+    "hash": "8b36f8f1d14be310f5a8956b8bcd80ce"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\integration\\test_workbook_integrity.py": {
+    "mtime": 1783421998.0684,
+    "hash": "29a2d4885bd55dae108b106ab6b6c49c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_config.py": {
+    "mtime": 1783386500.0,
+    "hash": "41deaca37c065a28bd9dea38d51874ce"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_excel.py": {
+    "mtime": 1783386500.0,
+    "hash": "da4cf1f66a0064c7fde3657251b04be5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_financial_engine.py": {
+    "mtime": 1783401706.0,
+    "hash": "82b95045b23435917969a0bc0e9ab14f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_infrastructure.py": {
+    "mtime": 1783386500.0,
+    "hash": "d5c0160ed25de7d3718d7e6e3fa1dbd3"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_planner.py": {
+    "mtime": 1783401654.0,
+    "hash": "c9caf5fc59b42cc10a2c42a117d8efad"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_validators.py": {
+    "mtime": 1783386500.0,
+    "hash": "63184375984a5d398f869699f63a607d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_valuation_engine.py": {
+    "mtime": 1783421896.7887373,
+    "hash": "8fedf4b8c20c9f8e0f9f4966126523ea"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\scripts\\debug_zero.py": {
+    "mtime": 1783401616.0,
+    "hash": "192641942c8072fa531ab127dafc796f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\affected.py": {
+    "mtime": 1783424843.5306587,
+    "hash": "0eb27db94e82bb76e2f46c72518d9455"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\analyze.py": {
+    "mtime": 1783424843.5316586,
+    "hash": "a8cd8f23752dff31bf57d8361eefc0e9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\benchmark.py": {
+    "mtime": 1783424843.5326586,
+    "hash": "c655e2fbeb4ca48922b447877ebac2cb"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\build.py": {
+    "mtime": 1783424843.5326586,
+    "hash": "5d7ee9366cd89f0d74536566af0de67b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\cache.py": {
+    "mtime": 1783424843.5336585,
+    "hash": "54731da687559a3fe12528487c369667"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\callflow_html.py": {
+    "mtime": 1783424843.5336585,
+    "hash": "de85c26fe0642577cf78a18187c1025f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\cargo_introspect.py": {
+    "mtime": 1783424843.5336585,
+    "hash": "35daa1cf25b64f15c8cbd56a5bf6399b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\cluster.py": {
+    "mtime": 1783424843.5346577,
+    "hash": "a2b851ba754d94da50de92524aa90fd5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\dedup.py": {
+    "mtime": 1783424843.5346577,
+    "hash": "b09b8c877746e7de43da2f2438ffd084"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\detect.py": {
+    "mtime": 1783424843.535658,
+    "hash": "76489952a0443bfdd958da0c183637e4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\diagnostics.py": {
+    "mtime": 1783424843.535658,
+    "hash": "f2dfe30af4cdc8424ce1a8b3dba8af0e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\export.py": {
+    "mtime": 1783424843.5366585,
+    "hash": "d6cf761ef2aed0cd671494fe9154a532"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extract.py": {
+    "mtime": 1783424843.5406575,
+    "hash": "43144ac75f5604f9217d778d46fd19a7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\file_slice.py": {
+    "mtime": 1783424843.542659,
+    "hash": "4d8dc212f8b12265c5c28e5d9693f584"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\global_graph.py": {
+    "mtime": 1783424843.542659,
+    "hash": "b3cce7263a893737de084bc9373dfa6c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\google_workspace.py": {
+    "mtime": 1783424843.5436652,
+    "hash": "65f351d6eb1778feacaff4ea6fd2b2a1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\hooks.py": {
+    "mtime": 1783424843.5436652,
+    "hash": "94c9f56065df140f004d08e758e05a0e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\ids.py": {
+    "mtime": 1783424843.5436652,
+    "hash": "efdcc8a8f0daaad4656536dd25259ae8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\ingest.py": {
+    "mtime": 1783424843.5436652,
+    "hash": "412257371c238531fb73698a0416edea"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\llm.py": {
+    "mtime": 1783424843.5446637,
+    "hash": "941313957ee7eb6a7e441bc7367b8413"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\manifest.py": {
+    "mtime": 1783424843.5446637,
+    "hash": "b6fb195b7900f4ed7bec86a8b0d43a18"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\manifest_ingest.py": {
+    "mtime": 1783424843.5456636,
+    "hash": "6bf554822663b675fbae15192965d99b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\mcp_ingest.py": {
+    "mtime": 1783424843.5456636,
+    "hash": "254a0f3458553f9ac76839d5288b9bfb"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\multigraph_compat.py": {
+    "mtime": 1783424843.5456636,
+    "hash": "8cdcc4c145479df5b9108d8adeac986e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\paths.py": {
+    "mtime": 1783424843.5456636,
+    "hash": "3493e6a2da50f5f856d359eb8e433eac"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\pg_introspect.py": {
+    "mtime": 1783424843.5466635,
+    "hash": "873fd41aca2a63e97123242b820b136f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\prs.py": {
+    "mtime": 1783424843.5466635,
+    "hash": "64b0b1f25a75b6740d64b231a28ab104"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\querylog.py": {
+    "mtime": 1783424843.5476646,
+    "hash": "9fbafe98a6d71c70c3d514ac49d5ce17"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\reflect.py": {
+    "mtime": 1783424843.5476646,
+    "hash": "8bccf31ca42158a95279f35c5dd3a8b6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\report.py": {
+    "mtime": 1783424843.5476646,
+    "hash": "e6986499559199f9e02f2229e237f9af"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\resolver_registry.py": {
+    "mtime": 1783424843.5476646,
+    "hash": "2f076ed9aee5032e4427e13f7e07f348"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\ruby_resolution.py": {
+    "mtime": 1783424843.548666,
+    "hash": "ce1dae5b24cbf945f3106c89d771f561"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\scip_ingest.py": {
+    "mtime": 1783424843.548666,
+    "hash": "ce2c29d40d8e5e0af42401e6afe6487d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\security.py": {
+    "mtime": 1783424843.548666,
+    "hash": "1e72627b2f76145e82f39f3c7302c45b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\semantic_cleanup.py": {
+    "mtime": 1783424843.549664,
+    "hash": "ab20a73877b49ce1ecb0dd6b25019108"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\serve.py": {
+    "mtime": 1783424843.549664,
+    "hash": "b1338d8c4c474777ea11d4069ab5b8c0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\symbol_resolution.py": {
+    "mtime": 1783424843.578928,
+    "hash": "e0815e8509af57ae02bac22707030aed"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\transcribe.py": {
+    "mtime": 1783424843.578928,
+    "hash": "5a9f1d41d7e5e4caf5b586e14d1e43c2"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\tree_html.py": {
+    "mtime": 1783424843.578928,
+    "hash": "0d27598e7cf0caa4f3ff7c8ed495f976"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\validate.py": {
+    "mtime": 1783424843.578928,
+    "hash": "3d69e75e9f62a9d70ba42974fb2612a2"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\watch.py": {
+    "mtime": 1783424843.5799277,
+    "hash": "dfa378886393256c592e643e6281fbe5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\wiki.py": {
+    "mtime": 1783424843.5799277,
+    "hash": "4a1457f3b4cae572384bf4dae5d197ae"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\_minhash.py": {
+    "mtime": 1783424843.5306587,
+    "hash": "0c1e744cf06142d2c6477d0d7d6635f9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\__init__.py": {
+    "mtime": 1783424843.5286584,
+    "hash": "6ee18e0cab79c5c64767b523ade9bee7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\__main__.py": {
+    "mtime": 1783424843.5296586,
+    "hash": "a37469e2b67fa2b742cc68e091864e7c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\base.py": {
+    "mtime": 1783424843.5416584,
+    "hash": "d3b237c1bb77ede9e1c183e0b0ff2ba4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\blade.py": {
+    "mtime": 1783424843.5416584,
+    "hash": "8998e65c1e0df6a0f38f104a6ef21e0a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\csharp.py": {
+    "mtime": 1783424843.5416584,
+    "hash": "8c675bc5bceacc68b782dfe966e4c916"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\elixir.py": {
+    "mtime": 1783424843.5416584,
+    "hash": "ec6ecfccc93685ab40f747f11305e459"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\razor.py": {
+    "mtime": 1783424843.542659,
+    "hash": "753ba81943b3591ae258d04a24c2fd1d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\zig.py": {
+    "mtime": 1783424843.542659,
+    "hash": "9da6c2fef15190f9e5a2722469b30ce6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\__init__.py": {
+    "mtime": 1783424843.5406575,
+    "hash": "41535e553cf23effe840fb5d985fb9db"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\scripts\\gen_demo_path.py": {
+    "mtime": 1783424843.580929,
+    "hash": "18f98ba62e213002eddb7b39e7d1448a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\bench_extract.py": {
+    "mtime": 1783424843.5819285,
+    "hash": "1a7d90e1abc6d7a780849ca3d5b3223e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\conftest.py": {
+    "mtime": 1783424843.5819285,
+    "hash": "802d3bdf0c5f54b3765bb9384c03f10e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_affected_cli.py": {
+    "mtime": 1783424843.5989277,
+    "hash": "73fda5a704e5589449a700819d529855"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_affected_member_seed.py": {
+    "mtime": 1783424843.5989277,
+    "hash": "88729af33d30a2decd6ab6f235edaa41"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_agents_platform.py": {
+    "mtime": 1783424843.5989277,
+    "hash": "1b83e20eae2f51b39886e2d552134bd4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_analyze.py": {
+    "mtime": 1783424843.5999272,
+    "hash": "84b2ffb8ab1b778fa18eea560b142240"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_anthropic_custom_endpoint.py": {
+    "mtime": 1783424843.5999272,
+    "hash": "fb5d168820f26b8a2baaafe17501f062"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_antigravity_install.py": {
+    "mtime": 1783424843.5999272,
+    "hash": "cca95167c3d673c3c2defaf45d5dcaaf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_astro_extraction.py": {
+    "mtime": 1783424843.5999272,
+    "hash": "d02c22e47b8032d135860c1da4bc97a5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_backend_extras.py": {
+    "mtime": 1783424843.5999272,
+    "hash": "b933b2c6169cd33156f4b9d34a2aa920"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_benchmark.py": {
+    "mtime": 1783424843.6009266,
+    "hash": "ba858da65c6f5166eeb6b469a9693fb3"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_build.py": {
+    "mtime": 1783424843.6009266,
+    "hash": "686d97c311650bb077302d2f946e78e9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_build_merge_hyperedges_and_prune.py": {
+    "mtime": 1783424843.6009266,
+    "hash": "2fecb9ec0f611a4b5b1972d4bb23047b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_cache.py": {
+    "mtime": 1783424843.6019268,
+    "hash": "2b16d2e14250cb2097a9fd04091d6618"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_callflow_html.py": {
+    "mtime": 1783424843.6019268,
+    "hash": "dbc4e93925bcff9e6ede406b96bba27a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_cargo_introspect.py": {
+    "mtime": 1783424843.6019268,
+    "hash": "7d93759115b5b1640e8a64713fabe2ea"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_case_sensitive_resolution.py": {
+    "mtime": 1783424843.6019268,
+    "hash": "119d0dde45ceb608dc3c1350cd1099a3"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_charmap_encoding.py": {
+    "mtime": 1783424843.6019268,
+    "hash": "6f944ec6836e2de9540ca3beba1d79b1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_chunking.py": {
+    "mtime": 1783424843.6029265,
+    "hash": "b905eddc540dfd8b3fa64b40c4c1d6c5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_claude_cli_backend.py": {
+    "mtime": 1783424843.6029265,
+    "hash": "2fa9a0dfeb1eeb04ddb3f60c5c7c28a5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_claude_md.py": {
+    "mtime": 1783424843.6029265,
+    "hash": "b8fcdab59fac826310c473a1b2f861c1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_cli_export.py": {
+    "mtime": 1783424843.6029265,
+    "hash": "9dcdedf11ddccab876834b3a4ef00b2f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_cluster.py": {
+    "mtime": 1783424843.6039267,
+    "hash": "d809ac0e08a1a08344d4d479714afd9e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_codebuddy.py": {
+    "mtime": 1783424843.6039267,
+    "hash": "2189b7cb517f731560552098dde7adc7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_community_hub_labels.py": {
+    "mtime": 1783424843.6039267,
+    "hash": "beb3a5eba02f8ec8831ab9e0203e3540"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_confidence.py": {
+    "mtime": 1783424843.6039267,
+    "hash": "aeaab1837c65fb85507e96621d1fa9e7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_corrupt_graph_json.py": {
+    "mtime": 1783424843.6039267,
+    "hash": "f3030f44d0b28aa3172283b9a03e5f75"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_cpp_objc_cross_file_calls.py": {
+    "mtime": 1783424843.6049263,
+    "hash": "a7c23ae2381deb8af8aec82567d535bf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_cpp_preprocess.py": {
+    "mtime": 1783424843.6049263,
+    "hash": "99044d22e02adca7fb5a3a7207de9908"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_csharp_member_calls.py": {
+    "mtime": 1783424843.6049263,
+    "hash": "b4e179074e775b59748b5796a2b39c81"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_csharp_type_resolution.py": {
+    "mtime": 1783424843.6049263,
+    "hash": "26be7579b095570c704c53bce5881824"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_dart.py": {
+    "mtime": 1783424843.6059265,
+    "hash": "6f3b939cf8ffd929fa0e67edfc87907b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_dedup.py": {
+    "mtime": 1783424843.6059265,
+    "hash": "192d404dc11f582da624eab6c47dbe1a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_detect.py": {
+    "mtime": 1783424843.6059265,
+    "hash": "564bc4744cab8798bfdb06b6dd512e70"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_devin.py": {
+    "mtime": 1783424843.6069262,
+    "hash": "bd4b17981405dc29c037a8478ee9f411"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_dotnet.py": {
+    "mtime": 1783424843.6069262,
+    "hash": "df3db29ff39059209f5efd10711550c9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_explain_cli.py": {
+    "mtime": 1783424843.6069262,
+    "hash": "a9a317472ff740b0428a983ab60a640e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_export.py": {
+    "mtime": 1783424843.6069262,
+    "hash": "d211e24b6ccbd1b2dba836f339f30b0f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_extract.py": {
+    "mtime": 1783424843.6079288,
+    "hash": "41c33c74d44672e556e65f2448f09373"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_extraction_spec_ids.py": {
+    "mtime": 1783424843.6079288,
+    "hash": "117f80a2039b882958282e74af980459"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_extract_cli.py": {
+    "mtime": 1783424843.6079288,
+    "hash": "62772e51c2b98dcf824f071303c4787f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_falkordb_integration.py": {
+    "mtime": 1783424843.6079288,
+    "hash": "663eb5991b9ee0bd0542a0e3fe8f2081"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_file_node_id_spec.py": {
+    "mtime": 1783424843.6079288,
+    "hash": "8af3bc0ed221d3555054457352f8c3ba"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_file_slice.py": {
+    "mtime": 1783424843.6089294,
+    "hash": "be2ce907fd17a84dbc01d869ce3259f4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_gemini_hook.py": {
+    "mtime": 1783424843.6089294,
+    "hash": "7a3672842b573d31fa5fab291584957f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_global_graph.py": {
+    "mtime": 1783424843.6089294,
+    "hash": "0fab752a0d69d1a076fb671d1e0a81ee"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_google_workspace.py": {
+    "mtime": 1783424843.6089294,
+    "hash": "af8a234affff192d1d3f7af2c6bc4245"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_hooks.py": {
+    "mtime": 1783424843.6099286,
+    "hash": "44b8e17290610b9aaac00a59d625821d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_hook_guard.py": {
+    "mtime": 1783424843.6099286,
+    "hash": "2108240c3f7926715080a66bb95b04bc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_hypergraph.py": {
+    "mtime": 1783424843.6099286,
+    "hash": "4f2129e561efe19308e049013bd0ec5d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_id_normalization_contract.py": {
+    "mtime": 1783424843.6099286,
+    "hash": "4d28d91a05abf1558f11e8cb740bda30"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_image_vision.py": {
+    "mtime": 1783424843.6099286,
+    "hash": "8cb322848096733e172b1a382603ddae"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_import_extension_resolution.py": {
+    "mtime": 1783424843.6109288,
+    "hash": "d37c11d3cdfc282dcd96546cf6706f39"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_incremental.py": {
+    "mtime": 1783424843.6109288,
+    "hash": "252919856919fc20836beb7e71c112f5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_indirect_dispatch.py": {
+    "mtime": 1783424843.6109288,
+    "hash": "c13b67715792eac699eb977efcf90a3b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_indirect_dispatch_assign_return.py": {
+    "mtime": 1783424843.6109288,
+    "hash": "f5901a93ed6e1723da6862fe7d0e73ec"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_indirect_dispatch_getattr.py": {
+    "mtime": 1783424843.6119287,
+    "hash": "64248471713453bc23e3f54470c52928"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ingest.py": {
+    "mtime": 1783424843.6119287,
+    "hash": "59eec9be9dbd1572b5dba9d102e5a014"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_install.py": {
+    "mtime": 1783424843.6119287,
+    "hash": "ce39d87a6d0b301db89eaa0227b4b89b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_install_references.py": {
+    "mtime": 1783424843.6119287,
+    "hash": "27afe982b85b12da57972e1bf5c204dc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_install_roundtrip.py": {
+    "mtime": 1783424843.612929,
+    "hash": "e27de4454f90858f1102a39890ac7211"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_install_strings.py": {
+    "mtime": 1783424843.612929,
+    "hash": "551e2fb07bccefe846f0840c61330895"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_install_upgrade.py": {
+    "mtime": 1783424843.612929,
+    "hash": "63e4bdf548e675500bc330acfa10bb81"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_java_type_resolution.py": {
+    "mtime": 1783424843.6139336,
+    "hash": "b04896bd41258f9ab91d494aedcc1df1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_js_import_resolution.py": {
+    "mtime": 1783424843.6139336,
+    "hash": "0d334a9b6f7cef2915d38c781b977d4c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_labeling.py": {
+    "mtime": 1783424843.614931,
+    "hash": "d15ed73807d3d7670524b9ca866dd7f4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_label_retry.py": {
+    "mtime": 1783424843.6139336,
+    "hash": "37cdb44bcdcb5936ab9576e0c4fe0d60"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_languages.py": {
+    "mtime": 1783424843.6159306,
+    "hash": "5f51f30db6f9d19f5b362a2528c37ab4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_language_resolvers.py": {
+    "mtime": 1783424843.614931,
+    "hash": "9716766a0a6d3a7b4557e8154adf1f3e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_llm_backends.py": {
+    "mtime": 1783424843.6159306,
+    "hash": "8e338133e53c8d3ca8cce5d18107c764"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_llm_parser.py": {
+    "mtime": 1783424843.6159306,
+    "hash": "41830205ebdeba2ae38a83df14b08ee1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_long_path_hashing.py": {
+    "mtime": 1783424843.6159306,
+    "hash": "3abf4734843af90ee9dbfa4c54ff4930"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_manifest_ingest.py": {
+    "mtime": 1783424843.6169314,
+    "hash": "4265a19cc9eb022e6c259097942494f2"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_mcp_ingest.py": {
+    "mtime": 1783424843.6169314,
+    "hash": "063db4e850d3b7f8de00ccc8ac9c305f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_merge_graphs_cli.py": {
+    "mtime": 1783424843.6169314,
+    "hash": "27c6853055de160fc8346c1273348320"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_minhash.py": {
+    "mtime": 1783424843.6169314,
+    "hash": "fe59ad9510c9e4904b663df9529953e8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_multigraph_compat.py": {
+    "mtime": 1783424843.6169314,
+    "hash": "9523dddf51d3a02cac21ababb51674f5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_multigraph_diagnostics.py": {
+    "mtime": 1783424843.6179526,
+    "hash": "3f723e26b00a046d0282c69431115fea"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_multilang.py": {
+    "mtime": 1783424843.6179526,
+    "hash": "08b8b720ed3c3f6f0a0c5dab375b41f8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_obsidian_dangling_member.py": {
+    "mtime": 1783424843.6179526,
+    "hash": "316c7e32ac1f6628f63d0e02c4586553"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_obsidian_filename_cap.py": {
+    "mtime": 1783424843.6179526,
+    "hash": "2496463d20a0f0e654979bb379921f37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_office_incremental.py": {
+    "mtime": 1783424843.6179526,
+    "hash": "b8c018df51bb1853d11fc93e75082879"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_office_limits.py": {
+    "mtime": 1783424843.6189606,
+    "hash": "291d62952e8d3f677509634cb42314f4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ollama.py": {
+    "mtime": 1783424843.6189606,
+    "hash": "83709c03759f770d1bde3bd8124a1c11"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ollama_retry_cap.py": {
+    "mtime": 1783424843.6189606,
+    "hash": "797c4f0b2ca147d027f7bf47b5b73631"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_openai_custom_endpoint.py": {
+    "mtime": 1783424843.6189606,
+    "hash": "7205efc66713e1e3e9b44b453886e7ca"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_pascal.py": {
+    "mtime": 1783424843.6189606,
+    "hash": "10386495508870fd8705f9d7c502dd79"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_paths.py": {
+    "mtime": 1783424843.6199598,
+    "hash": "49fc0c4c8bf3d3f8ce0c3ac3aaa15f6d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_path_cli.py": {
+    "mtime": 1783424843.6189606,
+    "hash": "8de169afa6645a8afeb647764e663b07"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_pg_introspect.py": {
+    "mtime": 1783424843.6199598,
+    "hash": "c31276a4f0d1dda41231abd7acee59dc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_phantom_cross_package_call.py": {
+    "mtime": 1783424843.6205974,
+    "hash": "5946fc2a5636ec552cc39db7f9c45378"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_phantom_external_import.py": {
+    "mtime": 1783424843.6205974,
+    "hash": "72885a702154dd53e16a412c9a930786"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_pipeline.py": {
+    "mtime": 1783424843.6205974,
+    "hash": "7fd37b8566d77fd4127081245f605e7d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_provider_registry.py": {
+    "mtime": 1783424843.6205974,
+    "hash": "a2badc9724fafdf22808232556fdc346"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_prs.py": {
+    "mtime": 1783424843.6205974,
+    "hash": "38e16aa0e8ca28267daecda50259ed7e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_python_import_resolution.py": {
+    "mtime": 1783424843.6205974,
+    "hash": "c6edac6cd94226554809b7355eda707b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_querylog.py": {
+    "mtime": 1783424843.6221056,
+    "hash": "65afa59c0aeb7cffffe172acae787ca9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_query_cli.py": {
+    "mtime": 1783424843.6205974,
+    "hash": "3d8713ee35b363b5ffaf7eb996146fb6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_rationale.py": {
+    "mtime": 1783424843.6221056,
+    "hash": "b2907ed8e9dbb094250b61175ebf4149"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_read_hook.py": {
+    "mtime": 1783424843.6221056,
+    "hash": "bb0462191f13e22643a9e02b02d5907f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_reflect.py": {
+    "mtime": 1783424843.6221056,
+    "hash": "72b1233650d7df8d4b1f141688847cb8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_replace_or_append_section.py": {
+    "mtime": 1783424843.6221056,
+    "hash": "ba3a420318a7e7030577b097a8775d7c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_report.py": {
+    "mtime": 1783424843.6231103,
+    "hash": "14f4f10676a6c82ac703fb7b7d285c60"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ruby_resolution.py": {
+    "mtime": 1783424843.6231103,
+    "hash": "70ca6403202ae2763d0854223b772063"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_scip_ingest.py": {
+    "mtime": 1783424843.6231103,
+    "hash": "aecd586518fc9cf3b8ec33fb0274bf8f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_search_hook.py": {
+    "mtime": 1783424843.6231103,
+    "hash": "d0e893fa1952600657bfd522999b7ae7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_security.py": {
+    "mtime": 1783424843.62411,
+    "hash": "383c5d0b29e677198c33b4ca9c75b2b8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_semantic_cleanup.py": {
+    "mtime": 1783424843.62411,
+    "hash": "55cf2a2fb5a2021e0ed9258f2fdbc7a9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_semantic_fragment_sanitize.py": {
+    "mtime": 1783424843.62411,
+    "hash": "4c1018efd06e8e5b5baf079ee264758c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_semantic_id_remap_root.py": {
+    "mtime": 1783424843.62411,
+    "hash": "4f27547b22c3a3c7ed3aea271a832f47"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_semantic_similarity.py": {
+    "mtime": 1783424843.62411,
+    "hash": "8b6da033b8d5c2e759b10162e507acd3"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_serve.py": {
+    "mtime": 1783424843.62511,
+    "hash": "9934bc940c9f173e7c30fe2f02808640"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_serve_http.py": {
+    "mtime": 1783424843.62511,
+    "hash": "6cc81766126d9d153547955704e3a575"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_skillgen.py": {
+    "mtime": 1783424843.6261103,
+    "hash": "176ee5cedeac027255105e4562bf7027"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_skill_version_warning.py": {
+    "mtime": 1783424843.62511,
+    "hash": "434f9baf53ce91367d9acbbeb9de6220"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_swift_cross_file_calls.py": {
+    "mtime": 1783424843.6261103,
+    "hash": "c49ca5d14055bb4a11488e16c2f26cc6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_swift_import_resolution.py": {
+    "mtime": 1783424843.6261103,
+    "hash": "138f2134a61e546954a2255f6174192f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_symbol_resolution.py": {
+    "mtime": 1783424843.6261103,
+    "hash": "a92e87214d8f44953d9a3560c56a78b8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_terraform.py": {
+    "mtime": 1783424843.6261103,
+    "hash": "ef043b1bcc6086b46b2e9bd5800daca2"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_transcribe.py": {
+    "mtime": 1783424843.6261103,
+    "hash": "4f93c061f990991830203ce129291dd0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ts_decorators.py": {
+    "mtime": 1783424843.6271105,
+    "hash": "7e6c448bbb61be26a30314be6dfa0d91"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ts_generators.py": {
+    "mtime": 1783424843.6271105,
+    "hash": "eda1e93bd312aa32bedefdc588c6937f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ts_import_require.py": {
+    "mtime": 1783424843.6271105,
+    "hash": "3c8c6f98d3d4e57fbbda7656ec90177c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ts_inheritance.py": {
+    "mtime": 1783424843.6271105,
+    "hash": "d750af68f102340116a3d617103c43c4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ts_namespace.py": {
+    "mtime": 1783424843.6271105,
+    "hash": "33f9c7e52353fdd6c2005dc0660f4fef"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_ts_receiver_member_calls.py": {
+    "mtime": 1783424843.6271105,
+    "hash": "65440cdf2a974e164d81f994c4444954"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_typescript_module_extensions.py": {
+    "mtime": 1783424843.62811,
+    "hash": "793eef2ba771317b4f5b4ffb24575079"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_validate.py": {
+    "mtime": 1783424843.62811,
+    "hash": "83d0c94e05ad59510f871e0c351c89f1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_vue_extraction.py": {
+    "mtime": 1783424843.62811,
+    "hash": "41cd5be6db6bdc870f31a1f138e91021"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_watch.py": {
+    "mtime": 1783424843.6291099,
+    "hash": "70e3556461961a20b66f9c94f30354e2"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_wheel_packaging.py": {
+    "mtime": 1783424843.6291099,
+    "hash": "f744d7186c027fd47b57d1ec03b85144"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_wiki.py": {
+    "mtime": 1783424843.6291099,
+    "hash": "66aad6150aff2d563577e67d377cb703"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_word_count_cache.py": {
+    "mtime": 1783424843.63011,
+    "hash": "886f42e900c6b992f76c671cc1fa63a7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\test_zero_node_no_cache.py": {
+    "mtime": 1783424843.63011,
+    "hash": "3ad174369b02b3a1d39cfc5541f2344e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\__init__.py": {
+    "mtime": 1783424843.5819285,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\barrel_reexport.ts": {
+    "mtime": 1783424843.5819285,
+    "hash": "af11bd42788c3e2445b68e752fda283f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cjs_require.js": {
+    "mtime": 1783424843.582928,
+    "hash": "7e96267e28c319393a69533179675d75"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cookieHelpers.ts": {
+    "mtime": 1783424843.582928,
+    "hash": "b1c621bae8994f2bdd2556e3a6f4638f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\dynamic_import.ts": {
+    "mtime": 1783424843.5859277,
+    "hash": "3c8854b41bfd47798987f3a982fdb73e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.c": {
+    "mtime": 1783424843.5879288,
+    "hash": "d3250485b2b859b49aa5076a0d80b4ad"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.cpp": {
+    "mtime": 1783424843.5889287,
+    "hash": "9d3e849812979179e33317cfb77b95dd"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.cs": {
+    "mtime": 1783424843.5889287,
+    "hash": "32ed9a88f5d5ba075cf795101483dd85"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.dfm": {
+    "mtime": 1783424843.5889287,
+    "hash": "43678d74d251a625bdaf3adb71572a9b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.ex": {
+    "mtime": 1783424843.5899284,
+    "hash": "d09cc4d1a4d5cdee16f3221e45f5ee73"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.f90": {
+    "mtime": 1783424843.5899284,
+    "hash": "85ce3fce7f401aad73bb4f9a24d9fac6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.go": {
+    "mtime": 1783424843.5899284,
+    "hash": "b89aceb2ba2a70350d2b95f27c2ffd3f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.groovy": {
+    "mtime": 1783424843.5899284,
+    "hash": "adc99f746538aed667b17d37821324b8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.java": {
+    "mtime": 1783424843.5899284,
+    "hash": "a656851a85c317a33704f35d42b0620c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.jl": {
+    "mtime": 1783424843.5899284,
+    "hash": "66ee97e5760897a65db97a1bba904b5d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.kt": {
+    "mtime": 1783424843.5909276,
+    "hash": "8c887c3678e6e30af845cb3ba8c341f4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.lfm": {
+    "mtime": 1783424843.5909276,
+    "hash": "1ec315f44a5ab09c06df3a8e97333ec3"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.lpk": {
+    "mtime": 1783424843.5909276,
+    "hash": "bd451cd8938c8149ac85ca96df47a649"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.luau": {
+    "mtime": 1783424843.5909276,
+    "hash": "0371e4839c69f9e6e4bd6648c4658c30"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.m": {
+    "mtime": 1783424843.5909276,
+    "hash": "5b1967c0ff55ae9ebfbae9f308330913"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.pas": {
+    "mtime": 1783424843.5919278,
+    "hash": "d4192e62625d914c2fcddbdf47c0b720"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.php": {
+    "mtime": 1783424843.5919278,
+    "hash": "8cfa9a5a18b1c0d75b5fa663278c58dc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.ps1": {
+    "mtime": 1783424843.5919278,
+    "hash": "856866b343b71062b26151f01a216d68"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.py": {
+    "mtime": 1783424843.5919278,
+    "hash": "40d26857f9db668c666b9fd6e89cae0f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.rb": {
+    "mtime": 1783424843.592928,
+    "hash": "5058ed100a30e72ddf22356d94ae9541"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.rs": {
+    "mtime": 1783424843.592928,
+    "hash": "12cc87e9739078b16f7b43bb60be64ac"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.scala": {
+    "mtime": 1783424843.592928,
+    "hash": "8b8e0c63d7b540fc35ee10229d23bcd8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.sql": {
+    "mtime": 1783424843.592928,
+    "hash": "edcd04dd6a02eb350ac8f8c2bc42c3b1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.sv": {
+    "mtime": 1783424843.592928,
+    "hash": "1c036191f0e607817e4ee63f3235c221"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.swift": {
+    "mtime": 1783424843.593928,
+    "hash": "eea2831147e31569538c6a85cb9e3a3a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.ts": {
+    "mtime": 1783424843.593928,
+    "hash": "eca8672c41e03530fc355526545c425e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.tsx": {
+    "mtime": 1783424843.593928,
+    "hash": "cc4c55319bb09b4bcb9137d52ad8d16c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.xaml.cs": {
+    "mtime": 1783424843.593928,
+    "hash": "14e28ac624c44265cf4637a0f187fb2b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.zig": {
+    "mtime": 1783424843.593928,
+    "hash": "2b70ac0b9a1698a539c3a0413369a7ba"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_alter_fk.sql": {
+    "mtime": 1783424843.593928,
+    "hash": "3ef2846871ce9629d644790cfce469fa"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_calls.py": {
+    "mtime": 1783424843.5949278,
+    "hash": "5d61d0c3268393efdff61e775d0299dc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_import.ps1": {
+    "mtime": 1783424843.5949278,
+    "hash": "bd5ba825a41f756d8bac4a0d63940bf7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_php_config.php": {
+    "mtime": 1783424843.5949278,
+    "hash": "ec8acdd57e6c48be2208c8adb68ec9fb"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_php_container.php": {
+    "mtime": 1783424843.5949278,
+    "hash": "53f59426adc01aad42273a91b9c5d682"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_php_listen.php": {
+    "mtime": 1783424843.5949278,
+    "hash": "ee3ff06e804e168123f8426894527195"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_php_static_prop.php": {
+    "mtime": 1783424843.5949278,
+    "hash": "73b53ddaa4e0b43f9868a14f57e41ff7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_preprocessed.F90": {
+    "mtime": 1783424843.5949278,
+    "hash": "119a61bd69d8c4162b8f92634f78e3f1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_schema_qualified.sql": {
+    "mtime": 1783424843.5949278,
+    "hash": "790a536e9a3979fe42fb0ced05550da4"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample_spock.groovy": {
+    "mtime": 1783424843.5949278,
+    "hash": "1a8cc277ce07523862b09afecdd932e1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\storageHelpers.ts": {
+    "mtime": 1783424843.5959275,
+    "hash": "ed55602bc3d6911e4b38461e08c05753"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\typescript_advanced.ts": {
+    "mtime": 1783424843.5959275,
+    "hash": "0a571717d248267e4e63da73e49000ae"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\urlHelpers.ts": {
+    "mtime": 1783424843.5959275,
+    "hash": "479220da56fc6a649aee1342446dcf79"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_logger\\a\\Logger.cpp": {
+    "mtime": 1783424843.582928,
+    "hash": "5c088f4c55b23325d4fca059dbb7d35e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_logger\\a\\Logger.h": {
+    "mtime": 1783424843.5839283,
+    "hash": "88d2db8d1b1f54561eb26d59c3ac42e7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_logger\\b\\Logger.cpp": {
+    "mtime": 1783424843.5839283,
+    "hash": "5c088f4c55b23325d4fca059dbb7d35e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_logger\\b\\Logger.h": {
+    "mtime": 1783424843.5839283,
+    "hash": "88d2db8d1b1f54561eb26d59c3ac42e7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_paired\\Foo.cpp": {
+    "mtime": 1783424843.5839283,
+    "hash": "7d5cad1713e4505941612b4705a46216"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_paired\\Foo.h": {
+    "mtime": 1783424843.5839283,
+    "hash": "539b7b48eec36b42ee5cd23dfdb806d2"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_paired\\Main.cpp": {
+    "mtime": 1783424843.5849295,
+    "hash": "529f6ddd539e631c55b738daee551c49"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_samedir\\Alpha.h": {
+    "mtime": 1783424843.5849295,
+    "hash": "a208f2eb3d64f94449c6217acfb04673"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_samedir\\Beta.h": {
+    "mtime": 1783424843.5849295,
+    "hash": "8e466de1cd04b798992d1e4378029e24"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\cpp_samedir\\plain.h": {
+    "mtime": 1783424843.5849295,
+    "hash": "a0500461d33191032bbfcbcc5a42139e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\crate_a\\src\\lib.rs": {
+    "mtime": 1783424843.5859277,
+    "hash": "71e83aadad3ab78b3aa3d0258dce72cd"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\crate_b\\src\\lib.rs": {
+    "mtime": 1783424843.5859277,
+    "hash": "3fb1a6373bffeec6b3f46e1c5a3e8254"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\objc_mixed\\Bridging-Header.h": {
+    "mtime": 1783424843.5879288,
+    "hash": "4e56c8fd73deef5b9ae97b9bd7d91f05"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\objc_mixed\\Widget.h": {
+    "mtime": 1783424843.5879288,
+    "hash": "3793f6340c85178078f6d9de0180c257"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\objc_mixed\\Widget.m": {
+    "mtime": 1783424843.5879288,
+    "hash": "53743ef940835e9621570de74c6cec2d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\objc_mixed\\WidgetExtras.swift": {
+    "mtime": 1783424843.5879288,
+    "hash": "ef10f65eaf1bedb0e70203a01e737adb"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\swift_cross_file\\Foo+Ext.swift": {
+    "mtime": 1783424843.5959275,
+    "hash": "63951fcec2a174509859e3cb4306115f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\swift_cross_file\\Foo.swift": {
+    "mtime": 1783424843.5959275,
+    "hash": "ccfe251a8a6099ebeda9c67a098991a6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\xaml_viewmodel\\ViewModels\\DesignViewModel.cs": {
+    "mtime": 1783424843.5969303,
+    "hash": "3b46c9cacb6eaf38c4d0f838c0068279"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\xaml_viewmodel\\ViewModels\\MainViewModel.cs": {
+    "mtime": 1783424843.5969303,
+    "hash": "63639fbd80d231d0d20612a179af4ede"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\xaml_viewmodel\\ViewModels\\PrismOrderViewModel.cs": {
+    "mtime": 1783424843.5969303,
+    "hash": "008fa33c353917fa9d0c8e299d802fc8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\xaml_viewmodel\\ViewModels\\SettingsViewModel.cs": {
+    "mtime": 1783424843.5969303,
+    "hash": "2cd28d1deb2ec26c25b9048dbc57e6ee"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\xaml_viewmodel\\ViewModels\\ToolkitViewModel.cs": {
+    "mtime": 1783424843.5979295,
+    "hash": "a152ba2c41003f00d08d9e9f22138957"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\__init__.py": {
+    "mtime": 1783424843.63011,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\gen.py": {
+    "mtime": 1783424843.6611125,
+    "hash": "a2954b997a024723f6c5d4ae75393621"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\__init__.py": {
+    "mtime": 1783424843.63011,
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\__main__.py": {
+    "mtime": 1783424843.6311119,
+    "hash": "096cddc5f0e5ccc3dfae70d80823b7b5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\raw\\api.py": {
+    "mtime": 1783424843.6681142,
+    "hash": "94803866dac5d43ca93424600f92d087"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\raw\\parser.py": {
+    "mtime": 1783424843.6681142,
+    "hash": "7e851d6c9387d9dfe3d950da8134e907"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\raw\\processor.py": {
+    "mtime": 1783424843.6681142,
+    "hash": "039460bdd76c82646b92300559d85c8b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\raw\\storage.py": {
+    "mtime": 1783424843.6681142,
+    "hash": "51d7ae51c2822415aa561d6b5c2d21eb"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\raw\\validator.py": {
+    "mtime": 1783424843.669118,
+    "hash": "0a1d1764da88dd249b9234f2fed8a4c8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\raw\\auth.py": {
+    "mtime": 1783424843.670115,
+    "hash": "f5e54f028db29f5ade3137e89f11e2e9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\raw\\client.py": {
+    "mtime": 1783424843.670115,
+    "hash": "cb2d79a9a63444bd67eac05d9180eee6"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\raw\\exceptions.py": {
+    "mtime": 1783424843.671114,
+    "hash": "5cbe3454de1c02efd39d6ed626891664"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\raw\\models.py": {
+    "mtime": 1783424843.671114,
+    "hash": "8bd8f9e42930dfdd3f11236ea96dd30c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\raw\\transport.py": {
+    "mtime": 1783424843.671114,
+    "hash": "44ad90c1522cf5a4cdcc204a823d4b38"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\raw\\utils.py": {
+    "mtime": 1783424843.671114,
+    "hash": "396942df3d2ce6762c3d65014d0bbe19"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\mixed-corpus\\raw\\analyze.py": {
+    "mtime": 1783424843.674114,
+    "hash": "ab646c14d0bd6ade6453e830d366760c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\mixed-corpus\\raw\\build.py": {
+    "mtime": 1783424843.674114,
+    "hash": "5473722d759c4cde9072c2612c1c0a9e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\mixed-corpus\\raw\\cluster.py": {
+    "mtime": 1783424843.674114,
+    "hash": "cb21fb4b090dc4b6067a9235ee1278cb"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\graphify-out\\converted\\IOS_Master_Tracker_Filled_10 (1)_65394932.md": {
+    "mtime": 1783425257.0587146,
+    "hash": "15adc3f856d374cb0f1a5046d4dd5023"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\graphify-out\\converted\\IOS_Master_Tracker_Filled_10 (1)_v4.6_095c6d37.md": {
+    "mtime": 1783425257.0992177,
+    "hash": "3127c54d3d0bda148eb2aab5ba4a945e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\README.md": {
+    "mtime": 1783395578.9498246,
+    "hash": "da409e1ff90d53d5c3e00fe3b5b58eb7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\graphify-out\\converted\\IOS_Master_Tracker_Filled_10 (1)_DRYRUN_17cbac22.md": {
+    "mtime": 1783425257.137725,
+    "hash": "47f343af3a9cacff7ccc34e06408969f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\requirements.txt": {
+    "mtime": 1783425147.4392953,
+    "hash": "98091138ab12fb7a2327017c008789d5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\config\\column_map.yaml": {
+    "mtime": 1783386500.0,
+    "hash": "f0a84a9d6b601a40e2ba0ede004eb811"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\config\\settings.yaml": {
+    "mtime": 1783386500.0,
+    "hash": "2f64c1bef7c71d9db485e1dc001ef371"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\ARCHITECTURE.md": {
+    "mtime": 1783386500.0,
+    "hash": "6ad00f08298e1aba53110a84652f2625"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\CHANGELOG.md": {
+    "mtime": 1783401778.0,
+    "hash": "8905faa15e9449836bcf97bf30e2d474"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\DATA_DICTIONARY.md": {
+    "mtime": 1783386500.0,
+    "hash": "eff5a1453d592dcb4440a8b4850665f1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\DATA_FLOW.md": {
+    "mtime": 1783386500.0,
+    "hash": "014a7e55df8fddfc89d16e78bd2d272d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\MODULE_MAP.md": {
+    "mtime": 1783386500.0,
+    "hash": "4af9cd389a91d508861b0dc161f115c7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\OPERATIONAL_GUIDE.md": {
+    "mtime": 1783386500.0,
+    "hash": "73225c287d65379a42082522237744ef"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\PIPELINE.md": {
+    "mtime": 1783386500.0,
+    "hash": "823bfa8a7b43c0742024a106ff18ea6b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\POST_MORTEMS.md": {
+    "mtime": 1783386500.0,
+    "hash": "25de6baa6193eeb481d64667ef1e09a7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\RELEASE_NOTES_v4.0.md": {
+    "mtime": 1783386500.0,
+    "hash": "5631ebfa377881f383789f038c6fc59f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\ROADMAP.md": {
+    "mtime": 1783386500.0,
+    "hash": "f85f33c486fbe8a4c7d1ae36383e9966"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\RULEBOOK.md": {
+    "mtime": 1783386500.0,
+    "hash": "7ce08ff241d309d05ceebbdcae42a13c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\SYSTEM_DESIGN.md": {
+    "mtime": 1783386500.0,
+    "hash": "013779da7f8ea4fdbf5eb750fc71b0b7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\docs\\USER_GUIDE.md": {
+    "mtime": 1783386500.0,
+    "hash": "e41a4934fa66b86aaf127512739937bf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\rules\\scoring.yaml": {
+    "mtime": 1783386500.0,
+    "hash": "40ce7923f806139ee8f657d6c976e648"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\rules\\v4_0.yaml": {
+    "mtime": 1783386500.0,
+    "hash": "4e146158085093621d5eab75d3d83139"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\rules\\valuation.yaml": {
+    "mtime": 1783386500.0,
+    "hash": "0a65eca03d7b5e18d64dc7f6b86741d7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\AGENTS.md": {
+    "mtime": 1783424843.5112574,
+    "hash": "ab254d0a1c83f1f4813a79ddddbdf284"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\ARCHITECTURE.md": {
+    "mtime": 1783424843.5112574,
+    "hash": "ba157b42ddab031711caa6bba6eef72e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\BENCHMARKS.md": {
+    "mtime": 1783424843.5112574,
+    "hash": "74a4cbeee9b8133a67673e3e498798ab"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\CHANGELOG.md": {
+    "mtime": 1783424843.513257,
+    "hash": "fb922c3533bc021687813519c51f1f19"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\README.md": {
+    "mtime": 1783424843.5142598,
+    "hash": "eef5c44cfc365d5e91207b9026fef4cb"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\SECURITY.md": {
+    "mtime": 1783424843.5142598,
+    "hash": "17e226aeebacd120a8cc1a6780dee654"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\docker-mcp-sqlite.md": {
+    "mtime": 1783424843.5152576,
+    "hash": "f560062bc0fa9015e579083a3c6de462"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\how-it-works.md": {
+    "mtime": 1783424843.519256,
+    "hash": "9bc847221e8ed5298d750369c4c97cab"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\node-summaries-rfc.md": {
+    "mtime": 1783424843.5202572,
+    "hash": "f3c28c753310f400045272d2b590a211"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\superpowers\\plans\\2026-05-04-incremental-updates-dedup.md": {
+    "mtime": 1783424843.5217626,
+    "hash": "8f2e4bf83e61604829f985428bb51fe3"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\superpowers\\specs\\2026-05-04-incremental-updates-dedup-design.md": {
+    "mtime": 1783424843.5217626,
+    "hash": "1e5a0a2f249d793a88a2c729679be698"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.ar-SA.md": {
+    "mtime": 1783424843.5217626,
+    "hash": "f03101b753fcd550908150212f7c311f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.cs-CZ.md": {
+    "mtime": 1783424843.5217626,
+    "hash": "deedc1770222ea123c87e762cfd27039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.da-DK.md": {
+    "mtime": 1783424843.5227685,
+    "hash": "8c40f9404f0f9a743c789ed60166725c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.de-DE.md": {
+    "mtime": 1783424843.5227685,
+    "hash": "af0b3235e7263b60f462fe30698ebe36"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.el-GR.md": {
+    "mtime": 1783424843.5227685,
+    "hash": "2221b84b6d27bd8dc59c10552228575a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.es-ES.md": {
+    "mtime": 1783424843.5236535,
+    "hash": "b39fd88a4d9063ab7a053f7ccfb6a37f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.fa-IR.md": {
+    "mtime": 1783424843.5236535,
+    "hash": "934fccc9a1b681111699869d34b09d09"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.fi-FI.md": {
+    "mtime": 1783424843.5236535,
+    "hash": "b96d3f3dcc2fcfec74e5775121e05e9a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.fil-PH.md": {
+    "mtime": 1783424843.5236535,
+    "hash": "fc3f10b764b31ef2783e766a22e721cc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.fr-FR.md": {
+    "mtime": 1783424843.5236535,
+    "hash": "72b438897aa36bdc16aae06ad4c1bbe8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.he-IL.md": {
+    "mtime": 1783424843.5246587,
+    "hash": "3f906a6c99b196a58ea6c68186c58b28"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.hi-IN.md": {
+    "mtime": 1783424843.5246587,
+    "hash": "f1ae8b79bc324fcbc982e7dd0381f032"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.hu-HU.md": {
+    "mtime": 1783424843.5246587,
+    "hash": "8c79133602c728ae3edf2792a11d2a47"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.id-ID.md": {
+    "mtime": 1783424843.5256584,
+    "hash": "09649ebf9bf848fc050c451eb0d62aee"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.it-IT.md": {
+    "mtime": 1783424843.5256584,
+    "hash": "006a95989f743c9a2d6cca19aabf1b04"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.ja-JP.md": {
+    "mtime": 1783424843.5256584,
+    "hash": "8927d81593e123d8c2c1045f78e5e952"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.ko-KR.md": {
+    "mtime": 1783424843.5256584,
+    "hash": "e98471c702ee08a357bdd9967bdf5b7a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.nl-NL.md": {
+    "mtime": 1783424843.5256584,
+    "hash": "d073585598808731e7aea27376375c8b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.no-NO.md": {
+    "mtime": 1783424843.5266585,
+    "hash": "1269f43ad7bc9da4a8b533065505d3f3"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.pl-PL.md": {
+    "mtime": 1783424843.5266585,
+    "hash": "9b3d14a334a7255e5a051c672f905681"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.pt-BR.md": {
+    "mtime": 1783424843.5266585,
+    "hash": "2629386a8383133e2dc755ebfd3cd580"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.ro-RO.md": {
+    "mtime": 1783424843.5266585,
+    "hash": "91b7f1ca67846789beed2e6f9c010b23"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.ru-RU.md": {
+    "mtime": 1783424843.5266585,
+    "hash": "d132241e506e0eae4328b70f2abdeff7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.sv-SE.md": {
+    "mtime": 1783424843.5266585,
+    "hash": "344cf5d072cf2f89ce43db53d56db10d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.th-TH.md": {
+    "mtime": 1783424843.5276587,
+    "hash": "bf9eec4d103308020cd00f647abec98a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.tr-TR.md": {
+    "mtime": 1783424843.5276587,
+    "hash": "86737c3a7aacd8cacf43920689394c67"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.uk-UA.md": {
+    "mtime": 1783424843.5276587,
+    "hash": "1a9d26330185be8a8e52534c1bda2e6d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.uz-UZ.md": {
+    "mtime": 1783424843.5276587,
+    "hash": "f846c88e9f085166aa4d707317df4e68"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.vi-VN.md": {
+    "mtime": 1783424843.5276587,
+    "hash": "4bcdde863dbc0324c59a6b90bdea04f8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.zh-CN.md": {
+    "mtime": 1783424843.5286584,
+    "hash": "eb72de5a59943000551d75639ccb4869"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\translations\\README.zh-TW.md": {
+    "mtime": 1783424843.5286584,
+    "hash": "e00762ede65447a3535d9c2a960db89f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\command-kilo.md": {
+    "mtime": 1783424843.5346577,
+    "hash": "feed090058024b3b0c5c93a0a0f2bbd8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-agents.md": {
+    "mtime": 1783424843.550664,
+    "hash": "8b53d00299de33d3bbc7344b781f3aff"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-aider.md": {
+    "mtime": 1783424843.550664,
+    "hash": "d1c53e1fd02b06bebb01a8cfb992cda9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-amp.md": {
+    "mtime": 1783424843.551664,
+    "hash": "8b53d00299de33d3bbc7344b781f3aff"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-claw.md": {
+    "mtime": 1783424843.551664,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-codex.md": {
+    "mtime": 1783424843.551664,
+    "hash": "5930eed2d3154287930543b4a3af6f74"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-copilot.md": {
+    "mtime": 1783424843.551664,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-devin.md": {
+    "mtime": 1783424843.5526633,
+    "hash": "6f44a969147393376a8a73dd09b1ed11"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-droid.md": {
+    "mtime": 1783424843.5526633,
+    "hash": "42ba8733d857bcb709545bc02874fdc7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-kilo.md": {
+    "mtime": 1783424843.5536647,
+    "hash": "a54e262528a12d093746b21411b14621"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-kiro.md": {
+    "mtime": 1783424843.5536647,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-opencode.md": {
+    "mtime": 1783424843.5536647,
+    "hash": "f2804c0307e81b7acb942beec9fad994"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-pi.md": {
+    "mtime": 1783424843.5536647,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-trae.md": {
+    "mtime": 1783424843.5536647,
+    "hash": "1c2f4d68b77893e8dabe3f35206a9626"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-vscode.md": {
+    "mtime": 1783424843.5548935,
+    "hash": "801ca95fb1366449b6fde75cc564c31b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill-windows.md": {
+    "mtime": 1783424843.5548935,
+    "hash": "6889366ddd84b06266336f76b3c4bf02"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skill.md": {
+    "mtime": 1783424843.5548935,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\always_on\\agents-md.md": {
+    "mtime": 1783424843.5306587,
+    "hash": "21ceb6533048be51308e69e7b74a35cf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\always_on\\antigravity-rules.md": {
+    "mtime": 1783424843.5306587,
+    "hash": "a0e4d192b9e2e17256124dbfc8e24e6a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\always_on\\claude-md.md": {
+    "mtime": 1783424843.5316586,
+    "hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\always_on\\gemini-md.md": {
+    "mtime": 1783424843.5316586,
+    "hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\always_on\\kiro-steering.md": {
+    "mtime": 1783424843.5316586,
+    "hash": "81be1a4201e0893879433cddab9ffd20"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\always_on\\vscode-instructions.md": {
+    "mtime": 1783424843.5316586,
+    "hash": "2b23503628bf2ec71d067a85ca8948ab"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\extractors\\MIGRATION.md": {
+    "mtime": 1783424843.5406575,
+    "hash": "4096edc4e68be62619c283abef2f1908"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\add-watch.md": {
+    "mtime": 1783424843.5558984,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\exports.md": {
+    "mtime": 1783424843.5558984,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5558984,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5568972,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\hooks.md": {
+    "mtime": 1783424843.5568972,
+    "hash": "94a1d96efdc6c6d21b4287dc950a9c17"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\query.md": {
+    "mtime": 1783424843.5568972,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\transcribe.md": {
+    "mtime": 1783424843.5578969,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\agents\\references\\update.md": {
+    "mtime": 1783424843.5578969,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\add-watch.md": {
+    "mtime": 1783424843.5578969,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\exports.md": {
+    "mtime": 1783424843.5578969,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5578969,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5588973,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\hooks.md": {
+    "mtime": 1783424843.5588973,
+    "hash": "5da7125d6438cc8243ddae5176bbb153"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\query.md": {
+    "mtime": 1783424843.5588973,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\transcribe.md": {
+    "mtime": 1783424843.5588973,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\amp\\references\\update.md": {
+    "mtime": 1783424843.5588973,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\add-watch.md": {
+    "mtime": 1783424843.5598972,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\exports.md": {
+    "mtime": 1783424843.5598972,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5598972,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5598972,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\hooks.md": {
+    "mtime": 1783424843.5598972,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\query.md": {
+    "mtime": 1783424843.5598972,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\transcribe.md": {
+    "mtime": 1783424843.560897,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claude\\references\\update.md": {
+    "mtime": 1783424843.560897,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\add-watch.md": {
+    "mtime": 1783424843.560897,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\exports.md": {
+    "mtime": 1783424843.560897,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5618968,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5618968,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\hooks.md": {
+    "mtime": 1783424843.5618968,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\query.md": {
+    "mtime": 1783424843.5618968,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\transcribe.md": {
+    "mtime": 1783424843.5618968,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\claw\\references\\update.md": {
+    "mtime": 1783424843.5628967,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\add-watch.md": {
+    "mtime": 1783424843.5628967,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\exports.md": {
+    "mtime": 1783424843.5628967,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5628967,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5628967,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\hooks.md": {
+    "mtime": 1783424843.563902,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\query.md": {
+    "mtime": 1783424843.563902,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\transcribe.md": {
+    "mtime": 1783424843.563902,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\codex\\references\\update.md": {
+    "mtime": 1783424843.5649028,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\add-watch.md": {
+    "mtime": 1783424843.5649028,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\exports.md": {
+    "mtime": 1783424843.5649028,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5649028,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5659008,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\hooks.md": {
+    "mtime": 1783424843.5659008,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\query.md": {
+    "mtime": 1783424843.5659008,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\transcribe.md": {
+    "mtime": 1783424843.5659008,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\copilot\\references\\update.md": {
+    "mtime": 1783424843.5659008,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\add-watch.md": {
+    "mtime": 1783424843.5668995,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\exports.md": {
+    "mtime": 1783424843.5668995,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5668995,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5668995,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\hooks.md": {
+    "mtime": 1783424843.5668995,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\query.md": {
+    "mtime": 1783424843.5668995,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\transcribe.md": {
+    "mtime": 1783424843.5679016,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\droid\\references\\update.md": {
+    "mtime": 1783424843.5679016,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\add-watch.md": {
+    "mtime": 1783424843.5679016,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\exports.md": {
+    "mtime": 1783424843.5679016,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5689013,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5689013,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\hooks.md": {
+    "mtime": 1783424843.5689013,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\query.md": {
+    "mtime": 1783424843.5689013,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\transcribe.md": {
+    "mtime": 1783424843.5689013,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kilo\\references\\update.md": {
+    "mtime": 1783424843.5689013,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\add-watch.md": {
+    "mtime": 1783424843.5698998,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\exports.md": {
+    "mtime": 1783424843.5698998,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5698998,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5698998,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\hooks.md": {
+    "mtime": 1783424843.5698998,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\query.md": {
+    "mtime": 1783424843.5698998,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\transcribe.md": {
+    "mtime": 1783424843.5708997,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\kiro\\references\\update.md": {
+    "mtime": 1783424843.5708997,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\add-watch.md": {
+    "mtime": 1783424843.5708997,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\exports.md": {
+    "mtime": 1783424843.571901,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\extraction-spec.md": {
+    "mtime": 1783424843.571901,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\github-and-merge.md": {
+    "mtime": 1783424843.571901,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\hooks.md": {
+    "mtime": 1783424843.571901,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\query.md": {
+    "mtime": 1783424843.571901,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\transcribe.md": {
+    "mtime": 1783424843.571901,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\opencode\\references\\update.md": {
+    "mtime": 1783424843.5729012,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\add-watch.md": {
+    "mtime": 1783424843.5729012,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\exports.md": {
+    "mtime": 1783424843.5729012,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5729012,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5729012,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\hooks.md": {
+    "mtime": 1783424843.5739012,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\query.md": {
+    "mtime": 1783424843.5739012,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\transcribe.md": {
+    "mtime": 1783424843.5739012,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\pi\\references\\update.md": {
+    "mtime": 1783424843.5739012,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\add-watch.md": {
+    "mtime": 1783424843.5749006,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\exports.md": {
+    "mtime": 1783424843.5749006,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5749006,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5749006,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\hooks.md": {
+    "mtime": 1783424843.5749006,
+    "hash": "b7099eba34d64460003ed69fdb21ea14"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\query.md": {
+    "mtime": 1783424843.5749006,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\transcribe.md": {
+    "mtime": 1783424843.5759006,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\trae\\references\\update.md": {
+    "mtime": 1783424843.5759006,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\add-watch.md": {
+    "mtime": 1783424843.5759006,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\exports.md": {
+    "mtime": 1783424843.5759006,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5759006,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5768995,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\hooks.md": {
+    "mtime": 1783424843.5768995,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\query.md": {
+    "mtime": 1783424843.5768995,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\transcribe.md": {
+    "mtime": 1783424843.5768995,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\vscode\\references\\update.md": {
+    "mtime": 1783424843.5768995,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\add-watch.md": {
+    "mtime": 1783424843.5779002,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\exports.md": {
+    "mtime": 1783424843.5779002,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\extraction-spec.md": {
+    "mtime": 1783424843.5779002,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\github-and-merge.md": {
+    "mtime": 1783424843.5779002,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\hooks.md": {
+    "mtime": 1783424843.5779002,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\query.md": {
+    "mtime": 1783424843.5779002,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\transcribe.md": {
+    "mtime": 1783424843.5779002,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\graphify\\skills\\windows\\references\\update.md": {
+    "mtime": 1783424843.578928,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\deploy_guide.md": {
+    "mtime": 1783424843.5859277,
+    "hash": "4c9127679279842396174bef13f7937b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tests\\fixtures\\sample.md": {
+    "mtime": 1783424843.5919278,
+    "hash": "e23659acdd71c13913857fceb1fabb48"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__always_on__agents-md.md": {
+    "mtime": 1783424843.6311119,
+    "hash": "21ceb6533048be51308e69e7b74a35cf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__always_on__antigravity-rules.md": {
+    "mtime": 1783424843.6311119,
+    "hash": "a0e4d192b9e2e17256124dbfc8e24e6a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__always_on__claude-md.md": {
+    "mtime": 1783424843.6311119,
+    "hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__always_on__gemini-md.md": {
+    "mtime": 1783424843.6311119,
+    "hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__always_on__kiro-steering.md": {
+    "mtime": 1783424843.6321106,
+    "hash": "81be1a4201e0893879433cddab9ffd20"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__always_on__vscode-instructions.md": {
+    "mtime": 1783424843.6321106,
+    "hash": "2b23503628bf2ec71d067a85ca8948ab"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-agents.md": {
+    "mtime": 1783424843.6321106,
+    "hash": "8b53d00299de33d3bbc7344b781f3aff"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-aider.md": {
+    "mtime": 1783424843.6331098,
+    "hash": "d1c53e1fd02b06bebb01a8cfb992cda9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-amp.md": {
+    "mtime": 1783424843.6331098,
+    "hash": "8b53d00299de33d3bbc7344b781f3aff"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-claw.md": {
+    "mtime": 1783424843.6331098,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-codex.md": {
+    "mtime": 1783424843.6331098,
+    "hash": "5930eed2d3154287930543b4a3af6f74"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-copilot.md": {
+    "mtime": 1783424843.6331098,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-devin.md": {
+    "mtime": 1783424843.634111,
+    "hash": "6f44a969147393376a8a73dd09b1ed11"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-droid.md": {
+    "mtime": 1783424843.634111,
+    "hash": "42ba8733d857bcb709545bc02874fdc7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-kilo.md": {
+    "mtime": 1783424843.634111,
+    "hash": "a54e262528a12d093746b21411b14621"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-kiro.md": {
+    "mtime": 1783424843.634111,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-opencode.md": {
+    "mtime": 1783424843.634111,
+    "hash": "f2804c0307e81b7acb942beec9fad994"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-pi.md": {
+    "mtime": 1783424843.63511,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-trae.md": {
+    "mtime": 1783424843.63511,
+    "hash": "1c2f4d68b77893e8dabe3f35206a9626"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-vscode.md": {
+    "mtime": 1783424843.63511,
+    "hash": "801ca95fb1366449b6fde75cc564c31b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill-windows.md": {
+    "mtime": 1783424843.63511,
+    "hash": "6889366ddd84b06266336f76b3c4bf02"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skill.md": {
+    "mtime": 1783424843.63511,
+    "hash": "dd0e9bbeb780cea3f8709f1e19bd6b92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__add-watch.md": {
+    "mtime": 1783424843.63511,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__exports.md": {
+    "mtime": 1783424843.6361125,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__extraction-spec.md": {
+    "mtime": 1783424843.6361125,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__github-and-merge.md": {
+    "mtime": 1783424843.6361125,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__hooks.md": {
+    "mtime": 1783424843.6361125,
+    "hash": "94a1d96efdc6c6d21b4287dc950a9c17"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__query.md": {
+    "mtime": 1783424843.6361125,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__transcribe.md": {
+    "mtime": 1783424843.6361125,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__agents__references__update.md": {
+    "mtime": 1783424843.63711,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__add-watch.md": {
+    "mtime": 1783424843.63711,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__exports.md": {
+    "mtime": 1783424843.63711,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__extraction-spec.md": {
+    "mtime": 1783424843.63711,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__github-and-merge.md": {
+    "mtime": 1783424843.63711,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__hooks.md": {
+    "mtime": 1783424843.63711,
+    "hash": "5da7125d6438cc8243ddae5176bbb153"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__query.md": {
+    "mtime": 1783424843.63711,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__transcribe.md": {
+    "mtime": 1783424843.638112,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__amp__references__update.md": {
+    "mtime": 1783424843.638112,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__add-watch.md": {
+    "mtime": 1783424843.638112,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__exports.md": {
+    "mtime": 1783424843.638112,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__extraction-spec.md": {
+    "mtime": 1783424843.638112,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__github-and-merge.md": {
+    "mtime": 1783424843.639112,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__hooks.md": {
+    "mtime": 1783424843.639112,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__query.md": {
+    "mtime": 1783424843.639112,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__transcribe.md": {
+    "mtime": 1783424843.639112,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claude__references__update.md": {
+    "mtime": 1783424843.639112,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__add-watch.md": {
+    "mtime": 1783424843.639112,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__exports.md": {
+    "mtime": 1783424843.639112,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__extraction-spec.md": {
+    "mtime": 1783424843.6401114,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__github-and-merge.md": {
+    "mtime": 1783424843.6401114,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__hooks.md": {
+    "mtime": 1783424843.6401114,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__query.md": {
+    "mtime": 1783424843.6401114,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__transcribe.md": {
+    "mtime": 1783424843.6401114,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__claw__references__update.md": {
+    "mtime": 1783424843.6401114,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__add-watch.md": {
+    "mtime": 1783424843.6401114,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__exports.md": {
+    "mtime": 1783424843.6411119,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__extraction-spec.md": {
+    "mtime": 1783424843.6411119,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__github-and-merge.md": {
+    "mtime": 1783424843.6411119,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__hooks.md": {
+    "mtime": 1783424843.6411119,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__query.md": {
+    "mtime": 1783424843.6411119,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__transcribe.md": {
+    "mtime": 1783424843.6411119,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__codex__references__update.md": {
+    "mtime": 1783424843.6421113,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__add-watch.md": {
+    "mtime": 1783424843.6421113,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__exports.md": {
+    "mtime": 1783424843.6421113,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__extraction-spec.md": {
+    "mtime": 1783424843.6421113,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__github-and-merge.md": {
+    "mtime": 1783424843.6421113,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__hooks.md": {
+    "mtime": 1783424843.6421113,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__query.md": {
+    "mtime": 1783424843.643112,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__transcribe.md": {
+    "mtime": 1783424843.643112,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__copilot__references__update.md": {
+    "mtime": 1783424843.643112,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__add-watch.md": {
+    "mtime": 1783424843.643112,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__exports.md": {
+    "mtime": 1783424843.643112,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__extraction-spec.md": {
+    "mtime": 1783424843.643112,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__github-and-merge.md": {
+    "mtime": 1783424843.643112,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__hooks.md": {
+    "mtime": 1783424843.6441114,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__query.md": {
+    "mtime": 1783424843.6441114,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__transcribe.md": {
+    "mtime": 1783424843.6441114,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__droid__references__update.md": {
+    "mtime": 1783424843.6441114,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__add-watch.md": {
+    "mtime": 1783424843.6441114,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__exports.md": {
+    "mtime": 1783424843.6451104,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__extraction-spec.md": {
+    "mtime": 1783424843.6451104,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__github-and-merge.md": {
+    "mtime": 1783424843.6451104,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__hooks.md": {
+    "mtime": 1783424843.6451104,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__query.md": {
+    "mtime": 1783424843.6451104,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__transcribe.md": {
+    "mtime": 1783424843.6451104,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kilo__references__update.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__add-watch.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__exports.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__extraction-spec.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__github-and-merge.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__hooks.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__query.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__transcribe.md": {
+    "mtime": 1783424843.6461089,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__kiro__references__update.md": {
+    "mtime": 1783424843.6471093,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__add-watch.md": {
+    "mtime": 1783424843.6471093,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__exports.md": {
+    "mtime": 1783424843.6471093,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__extraction-spec.md": {
+    "mtime": 1783424843.6481128,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__github-and-merge.md": {
+    "mtime": 1783424843.6481128,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__hooks.md": {
+    "mtime": 1783424843.6481128,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__query.md": {
+    "mtime": 1783424843.6481128,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__transcribe.md": {
+    "mtime": 1783424843.64911,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__opencode__references__update.md": {
+    "mtime": 1783424843.64911,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__add-watch.md": {
+    "mtime": 1783424843.64911,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__exports.md": {
+    "mtime": 1783424843.64911,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__extraction-spec.md": {
+    "mtime": 1783424843.64911,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__github-and-merge.md": {
+    "mtime": 1783424843.64911,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__hooks.md": {
+    "mtime": 1783424843.6501112,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__query.md": {
+    "mtime": 1783424843.6501112,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__transcribe.md": {
+    "mtime": 1783424843.6501112,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__pi__references__update.md": {
+    "mtime": 1783424843.6501112,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__add-watch.md": {
+    "mtime": 1783424843.6501112,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__exports.md": {
+    "mtime": 1783424843.6501112,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__extraction-spec.md": {
+    "mtime": 1783424843.6501112,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__github-and-merge.md": {
+    "mtime": 1783424843.6511111,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__hooks.md": {
+    "mtime": 1783424843.6511111,
+    "hash": "b7099eba34d64460003ed69fdb21ea14"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__query.md": {
+    "mtime": 1783424843.6511111,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__transcribe.md": {
+    "mtime": 1783424843.6511111,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__trae__references__update.md": {
+    "mtime": 1783424843.6511111,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__add-watch.md": {
+    "mtime": 1783424843.6521103,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__exports.md": {
+    "mtime": 1783424843.6521103,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__extraction-spec.md": {
+    "mtime": 1783424843.6521103,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__github-and-merge.md": {
+    "mtime": 1783424843.6521103,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__hooks.md": {
+    "mtime": 1783424843.6521103,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__query.md": {
+    "mtime": 1783424843.6521103,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__transcribe.md": {
+    "mtime": 1783424843.653111,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__vscode__references__update.md": {
+    "mtime": 1783424843.653111,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__add-watch.md": {
+    "mtime": 1783424843.653111,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__exports.md": {
+    "mtime": 1783424843.653111,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__extraction-spec.md": {
+    "mtime": 1783424843.653111,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__github-and-merge.md": {
+    "mtime": 1783424843.653111,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__hooks.md": {
+    "mtime": 1783424843.653111,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__query.md": {
+    "mtime": 1783424843.654111,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__transcribe.md": {
+    "mtime": 1783424843.654111,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\expected\\graphify__skills__windows__references__update.md": {
+    "mtime": 1783424843.654111,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\always-on\\agents-md.md": {
+    "mtime": 1783424843.654111,
+    "hash": "21ceb6533048be51308e69e7b74a35cf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\always-on\\antigravity-rules.md": {
+    "mtime": 1783424843.654111,
+    "hash": "a0e4d192b9e2e17256124dbfc8e24e6a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\always-on\\claude-md.md": {
+    "mtime": 1783424843.654111,
+    "hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\always-on\\gemini-md.md": {
+    "mtime": 1783424843.654111,
+    "hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\always-on\\kiro-steering.md": {
+    "mtime": 1783424843.6551104,
+    "hash": "81be1a4201e0893879433cddab9ffd20"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\always-on\\vscode-instructions.md": {
+    "mtime": 1783424843.6551104,
+    "hash": "2b23503628bf2ec71d067a85ca8948ab"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\core\\aider.md": {
+    "mtime": 1783424843.6551104,
+    "hash": "d1c53e1fd02b06bebb01a8cfb992cda9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\core\\core.md": {
+    "mtime": 1783424843.6561105,
+    "hash": "0bbb2fa610c72fd4b3ed5a3f226f0941"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\core\\devin.md": {
+    "mtime": 1783424843.6561105,
+    "hash": "6f44a969147393376a8a73dd09b1ed11"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\dispatch\\agent-tool-disk-powershell.md": {
+    "mtime": 1783424843.6561105,
+    "hash": "c8e8a8508baf6559f9518b907e2539e5"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\dispatch\\agent-tool-disk.md": {
+    "mtime": 1783424843.6561105,
+    "hash": "924007a39935282aeb62b6706f243b9f"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\dispatch\\codex-agenttask.md": {
+    "mtime": 1783424843.6571102,
+    "hash": "ad059c4957746233846d803378cceef1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\dispatch\\manual-paste.md": {
+    "mtime": 1783424843.6571102,
+    "hash": "68a732961d8b2618bf42c7c9bf21cb1e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\dispatch\\opencode-mention.md": {
+    "mtime": 1783424843.6571102,
+    "hash": "17f351c783aecb5dfa107b0a450e424b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\dispatch\\task-tool-disk-trae.md": {
+    "mtime": 1783424843.6581101,
+    "hash": "8d772b81f82591dce912cee74134e0c9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\dispatch\\task-tool-disk.md": {
+    "mtime": 1783424843.6581101,
+    "hash": "3ae83605245648d4bc4c247ab23692dd"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\extra\\kilo-rules.md": {
+    "mtime": 1783424843.6581101,
+    "hash": "4633b07cbfa9ccd063fcb04215f311e2"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\extra\\powershell-troubleshooting.md": {
+    "mtime": 1783424843.6581101,
+    "hash": "fad387de672f5718a3d1ce6075c6d1ce"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\query-stub\\default.md": {
+    "mtime": 1783424843.6581101,
+    "hash": "6ddcd39fe8146bf7f64337fdb9d674cd"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\host\\hooks-agents-md.md": {
+    "mtime": 1783424843.6591108,
+    "hash": "98a05b4f7535920a70e1caaa3314bb7b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\query\\default.md": {
+    "mtime": 1783424843.6591108,
+    "hash": "852ef14334d60a75ae666ea103d4c4f0"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\add-watch.md": {
+    "mtime": 1783424843.6591108,
+    "hash": "58c888b5ec0689a886543dd765c1acc9"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\exports.md": {
+    "mtime": 1783424843.6591108,
+    "hash": "ecc0c36852fee4ba6280cdf2b9149039"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\extraction-spec-compact.md": {
+    "mtime": 1783424843.6591108,
+    "hash": "e36dd450e4a3a90f5fe9073f4198fabc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\extraction-spec.md": {
+    "mtime": 1783424843.6591108,
+    "hash": "024c6f2a3c146b03c72cc871dc56ed3c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\github-and-merge.md": {
+    "mtime": 1783424843.6591108,
+    "hash": "aa0e7ef186392cad062e60483ca7dbbf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\hooks.md": {
+    "mtime": 1783424843.6601107,
+    "hash": "0045c2f12c69bff3a641a8908a1ac057"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\transcribe.md": {
+    "mtime": 1783424843.6601107,
+    "hash": "5c6a9af05d12b5797b2fa8b9493dcc37"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\references\\shared\\update.md": {
+    "mtime": 1783424843.6601107,
+    "hash": "01c78ea9438925c605b58a2eecbbcf5b"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\shell\\posix.md": {
+    "mtime": 1783424843.6601107,
+    "hash": "6ae44545fd25924f633fbc9198c242bd"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\tools\\skillgen\\fragments\\shell\\powershell.md": {
+    "mtime": 1783424843.6611125,
+    "hash": "09b681e5180fdcaee3dbe352543dc35a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\README.md": {
+    "mtime": 1783424843.6681142,
+    "hash": "0ad0e818e81e67221ca59bba8f61dedc"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\raw\\architecture.md": {
+    "mtime": 1783424843.6681142,
+    "hash": "1201316b29aec5bf4ce130fd116ea910"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\example\\raw\\notes.md": {
+    "mtime": 1783424843.6681142,
+    "hash": "b34fb1280985d1a2a44baca60fa2debf"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\GRAPH_REPORT.md": {
+    "mtime": 1783424843.669118,
+    "hash": "a604a6da7f618b140193e923e5bc4f92"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\README.md": {
+    "mtime": 1783424843.669118,
+    "hash": "433f8494c1a0c308c5ef09f0a2c54f80"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\httpx\\review.md": {
+    "mtime": 1783424843.671114,
+    "hash": "02e23ebb29f068b23dcce29af3d368d8"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\karpathy-repos\\GRAPH_REPORT.md": {
+    "mtime": 1783424843.6721158,
+    "hash": "69d7498903d698e456f009958234917c"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\karpathy-repos\\README.md": {
+    "mtime": 1783424843.6721158,
+    "hash": "b1cbbadc195601e545d3258ddb690553"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\karpathy-repos\\review.md": {
+    "mtime": 1783424843.673115,
+    "hash": "9697fe2ebd4458a2d4957220e6ae5a10"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\mixed-corpus\\GRAPH_REPORT.md": {
+    "mtime": 1783424843.673115,
+    "hash": "f5f230efee89ed874926d520edc12c66"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\mixed-corpus\\README.md": {
+    "mtime": 1783424843.673115,
+    "hash": "34252f3bf7a5af70096da4ffa8d086ff"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\mixed-corpus\\review.md": {
+    "mtime": 1783424843.6751153,
+    "hash": "485aa5f2c880fde1b8f5342401f6038a"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\rsl-siege-manager\\graph.html": {
+    "mtime": 1783424843.67962,
+    "hash": "b6226c2e30e0ccfbc56b15297319fa65"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\rsl-siege-manager\\GRAPH_REPORT.md": {
+    "mtime": 1783424843.6751153,
+    "hash": "2c56ab55dda9d94cb5aab4e1a21a2cf1"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\rsl-siege-manager\\README.md": {
+    "mtime": 1783424843.6751153,
+    "hash": "146efca4b05edc2b2d9d8c7c5e5f0646"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\rsl-siege-manager\\review.md": {
+    "mtime": 1783424843.6866205,
+    "hash": "4c33f90ff920a38235861eb9fd75387e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\worked\\mixed-corpus\\raw\\attention_notes.md": {
+    "mtime": 1783424843.674114,
+    "hash": "1d9910017f78af70ed111d74b5e3558d"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\demo-path.svg": {
+    "mtime": 1783424843.5152576,
+    "hash": "b6d122b1617f436c101f211ca7346c38"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\graph-hero.png": {
+    "mtime": 1783424843.5182552,
+    "hash": "789bb7ab1407f7a8457a79c8a027f7c7"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\logo-icon.svg": {
+    "mtime": 1783424843.519256,
+    "hash": "7bfdde1f83bb3423470b408efabc2c52"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\logo-text.svg": {
+    "mtime": 1783424843.519256,
+    "hash": "3a5c53971d1c5eca33d038201999dd68"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\temp_graphify\\docs\\logo.png": {
+    "mtime": 1783424843.5202572,
+    "hash": "14d81dd51293d177685c9052049ba87e"
+  }
+}
