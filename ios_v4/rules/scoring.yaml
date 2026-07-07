@@ -16,16 +16,28 @@ business_score:
       excellent: 0.30
       good: 0.20
       poor: 0.10
+    roe:
+      excellent: 0.20
+      good: 0.15
+      poor: 0.10
+    growth:
+      excellent: 0.15
+      good: 0.10
+      poor: 0.05
+    margins:
+      excellent: 0.20
+      good: 0.10
+      poor: 0.05
     debt_to_equity:
       excellent: 0.1
       good: 0.5
       poor: 1.0
+    capital_allocation:
+      excellent: 1.0
+      good: 0.5
+      poor: 0.0
 
 risk_score:
   dimensions:
-    business: 0.30
-    financial: 0.30
-    valuation: 0.20
-    market: 0.10
-    liquidity: 0.05
-    governance: 0.05
+    financial: 0.60
+    valuation: 0.40

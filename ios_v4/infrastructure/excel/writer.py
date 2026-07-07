@@ -32,7 +32,7 @@ class ExcelWriter:
         wb = openpyxl.load_workbook(filepath)
         ws = wb[self.master_sheet_name]
 
-        headers = {cell.value: idx for idx, cell in enumerate(ws[1]) if cell.value}
+        headers = {cell.value: idx for idx, cell in enumerate(ws[1]) if cell.value is not None}
         ticker_col = headers.get(self.primary_key)
         
         if ticker_col is None:
@@ -44,6 +44,25 @@ class ExcelWriter:
         for item in system_zones:
             if "field" in item and "column" in item:
                 field_to_col[item["field"]] = item["column"]
+
+        # Automatically append missing system columns to the header row
+        missing_cols = []
+        for field, col_name in field_to_col.items():
+            if col_name not in headers:
+                missing_cols.append(col_name)
+
+        if missing_cols:
+            logger.info(f"Adding missing system columns to headers: {missing_cols}")
+            # Find the maximum column index currently in use
+            max_col = ws.max_column
+            next_col_idx = max_col + 1
+            for col_name in missing_cols:
+                # Double check to ensure we don't overwrite anything
+                while ws.cell(row=1, column=next_col_idx).value is not None:
+                    next_col_idx += 1
+                ws.cell(row=1, column=next_col_idx, value=col_name)
+                headers[col_name] = next_col_idx - 1
+                next_col_idx += 1
 
         # Map Ticker -> Row Index
         row_map = {}

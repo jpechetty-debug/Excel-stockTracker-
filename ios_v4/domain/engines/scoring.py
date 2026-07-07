@@ -54,7 +54,67 @@ class ScoringEngine:
         else:
             warnings.append("ROCE missing; could not score.")
 
-        # 2. Debt Scoring
+        # 2. ROE Scoring
+        roe = metrics.get("roe")
+        roe_weight = weights.get("roe", 0.0)
+        if roe is not None:
+            t = thresholds.get("roe", {})
+            if roe >= t.get("excellent", 0.20):
+                points = 100 * roe_weight
+                reasons.append("Positive: ROE is excellent (>=20%)")
+            elif roe >= t.get("good", 0.15):
+                points = 70 * roe_weight
+                reasons.append("Positive: ROE is good (>=15%)")
+            else:
+                points = 0
+                reasons.append("Negative: ROE is poor.")
+            score += points
+            total_weight_scored += roe_weight
+            breakdown["roe_score"] = points
+        else:
+            warnings.append("ROE missing; could not score.")
+
+        # 3. Growth Scoring
+        growth = metrics.get("revenue_cagr_3y")
+        growth_weight = weights.get("growth", 0.0)
+        if growth is not None:
+            t = thresholds.get("growth", {})
+            if growth >= t.get("excellent", 0.15):
+                points = 100 * growth_weight
+                reasons.append("Positive: Growth is excellent (>=15%)")
+            elif growth >= t.get("good", 0.10):
+                points = 70 * growth_weight
+                reasons.append("Positive: Growth is good (>=10%)")
+            else:
+                points = 0
+                reasons.append("Negative: Growth is poor.")
+            score += points
+            total_weight_scored += growth_weight
+            breakdown["growth_score"] = points
+        else:
+            warnings.append("Growth missing; could not score.")
+
+        # 4. Margins Scoring
+        margin = metrics.get("operating_margin")
+        margins_weight = weights.get("margins", 0.0)
+        if margin is not None:
+            t = thresholds.get("margins", {})
+            if margin >= t.get("excellent", 0.20):
+                points = 100 * margins_weight
+                reasons.append("Positive: Operating Margin is excellent (>=20%)")
+            elif margin >= t.get("good", 0.10):
+                points = 70 * margins_weight
+                reasons.append("Positive: Operating Margin is good (>=10%)")
+            else:
+                points = 0
+                reasons.append("Negative: Operating Margin is poor.")
+            score += points
+            total_weight_scored += margins_weight
+            breakdown["margins_score"] = points
+        else:
+            warnings.append("Operating Margin missing; could not score.")
+
+        # 5. Debt Scoring
         debt_to_equity = metrics.get("debt_to_equity")
         debt_weight = weights.get("debt", 0.0)
         if debt_to_equity is not None:
@@ -73,6 +133,26 @@ class ScoringEngine:
             breakdown["debt_score"] = points
         else:
             warnings.append("Debt to Equity missing; could not score.")
+            
+        # 6. Capital Allocation Scoring
+        fcf_conversion = metrics.get("fcf_conversion")
+        capital_allocation_weight = weights.get("capital_allocation", 0.0)
+        if fcf_conversion is not None:
+            t = thresholds.get("capital_allocation", {})
+            if fcf_conversion >= t.get("excellent", 1.0):
+                points = 100 * capital_allocation_weight
+                reasons.append("Positive: FCF Conversion is excellent (100%)")
+            elif fcf_conversion >= t.get("good", 0.5):
+                points = 70 * capital_allocation_weight
+                reasons.append("Positive: FCF Conversion is average (>=50%)")
+            else:
+                points = 0
+                reasons.append("Negative: FCF Conversion is poor.")
+            score += points
+            total_weight_scored += capital_allocation_weight
+            breakdown["capital_allocation_score"] = points
+        else:
+            warnings.append("FCF Conversion missing; could not score.")
 
         final_score = None
         confidence = financial_result.confidence

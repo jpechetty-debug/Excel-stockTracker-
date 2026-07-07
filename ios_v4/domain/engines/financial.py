@@ -109,6 +109,13 @@ class FinancialEngine:
             breakdown["fcf_margin"] = fcf_margin
             reasons.append(f"FCF Margin calculated at {fcf_margin:.1%}")
             
+        if fcf is not None and net_income and net_income > 0:
+            fcf_conversion = fcf / net_income
+            # Bound conversion between 0 and 1 as requested
+            fcf_conversion = max(0.0, min(fcf_conversion, 1.0))
+            breakdown["fcf_conversion"] = fcf_conversion
+            reasons.append(f"FCF Conversion calculated at {fcf_conversion:.1%} (bounded 0-1)")
+            
         eps = data.get("eps")
         current_price = data.get("price")
         if eps is not None and current_price and current_price > 0:

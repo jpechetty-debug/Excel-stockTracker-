@@ -36,6 +36,7 @@ class PipelineArtifacts:
     valuations: Dict[str, EngineResult] = field(default_factory=dict)
     business_scores: Dict[str, EngineResult] = field(default_factory=dict)
     risks: Dict[str, EngineResult] = field(default_factory=dict)
+    investment_scores: Dict[str, EngineResult] = field(default_factory=dict)
     allocations: Dict[str, EngineResult] = field(default_factory=dict)
     existing_data: Dict[str, Dict[str, Any]] = field(default_factory=dict)
 

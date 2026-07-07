@@ -112,26 +112,33 @@ class ValuationEngine:
         if available_models:
             blended_value = sum(available_models) / len(available_models)
             reasons.append(f"Blended intrinsic value computed as {blended_value:.2f} using {len(available_models)} models.")
-            breakdown["intrinsic_value"] = blended_value
             
-            # 4. Margin of Safety and Buy Price
-            mos_config = self.config.get("margin_of_safety", {})
-            target_mos = mos_config.get("default", 0.20)
-            
-            if current_price and current_price > 0:
-                mos = (blended_value - current_price) / blended_value
-                breakdown["margin_of_safety"] = mos
-                reasons.append(f"Margin of Safety computed at {mos:.1%}")
+            # Handle negative intrinsic values
+            if blended_value <= 0:
+                breakdown["intrinsic_value"] = None
+                breakdown["buy_price"] = None
+                reasons.append("Valuation not meaningful (intrinsic value <= 0).")
+            else:
+                breakdown["intrinsic_value"] = blended_value
                 
-            buy_price = blended_value * (1 - target_mos)
-            breakdown["buy_price"] = buy_price
-            reasons.append(f"Buy Price calculated at {buy_price:.2f} (Target MoS: {target_mos:.1%})")
-            
-            # 5. Implied / Justified P/E
-            if eps and eps > 0:
-                justified_pe = blended_value / eps
-                breakdown["justified_pe"] = justified_pe
-                reasons.append(f"Implied P/E from Intrinsic Value computed at {justified_pe:.2f}x")
+                # 4. Margin of Safety and Buy Price
+                mos_config = self.config.get("margin_of_safety", {})
+                target_mos = mos_config.get("default", 0.20)
+                
+                if current_price and current_price > 0:
+                    mos = (blended_value - current_price) / blended_value
+                    breakdown["margin_of_safety"] = mos
+                    reasons.append(f"Margin of Safety computed at {mos:.1%}")
+                    
+                buy_price = blended_value * (1 - target_mos)
+                breakdown["buy_price"] = buy_price
+                reasons.append(f"Buy Price calculated at {buy_price:.2f} (Target MoS: {target_mos:.1%})")
+                
+                # 5. Implied / Justified P/E
+                if eps and eps > 0:
+                    justified_pe = blended_value / eps
+                    breakdown["justified_pe"] = justified_pe
+                    reasons.append(f"Implied P/E from Intrinsic Value computed at {justified_pe:.2f}x")
                 
         else:
             blended_value = 0.0
@@ -139,11 +146,32 @@ class ValuationEngine:
             
         # Determine Valuation Status
         valuation_status = "OK"
-        if not shares or not eps or not bvps or fcf is None:
+        if available_models and blended_value <= 0:
+            valuation_status = "Negative FCF / DCF Invalid"
+        elif not shares or not eps or not bvps or fcf is None:
             valuation_status = "Missing Inputs"
         elif not available_models:
             valuation_status = "Invalid Inputs"
             
+        # Expose reasons for missing EV/EBIT
+        market_cap = data.get("market_cap")
+        total_debt = data.get("total_debt")
+        operating_income = data.get("operating_income")
+        
+        ev_issues = []
+        if market_cap is None:
+            ev_issues.append("No Market Cap")
+        if total_debt is None:
+            ev_issues.append("No Debt")
+        if not operating_income or operating_income <= 0:
+            ev_issues.append("EBIT <= 0")
+            
+        if ev_issues:
+            if valuation_status == "OK":
+                valuation_status = f"Missing EV/EBIT ({', '.join(ev_issues)})"
+            else:
+                valuation_status += f" | Missing EV/EBIT ({', '.join(ev_issues)})"
+                
         breakdown["valuation_status"] = valuation_status
             
         # 6. EPS Implied

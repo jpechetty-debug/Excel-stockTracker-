@@ -79,8 +79,21 @@ class UpdatePlanner:
                 
                 # Soft-Fail Policy Enforcement
                 if new_val is None:
-                    status = UpdateStatus.SKIPPED_NONE
-                    reason = "Field not provided by provider or calculation impossible"
+                    # Allow clearing cell if it's a valuation metric and valuation calculation is invalid/negative,
+                    # or if the old value is negative.
+                    is_valuation_field = field in ("intrinsic_value", "buy_price", "margin_of_safety")
+                    val_status_metric = company.metrics.get("valuation_status")
+                    val_status = val_status_metric.value if val_status_metric else None
+                    
+                    if old_val is not None and (
+                        (is_valuation_field and val_status in ("Negative FCF / DCF Invalid", "Invalid Inputs")) or
+                        (isinstance(old_val, (int, float)) and old_val < 0)
+                    ):
+                        status = UpdateStatus.UPDATED
+                        reason = "Clear negative/invalid valuation"
+                    else:
+                        status = UpdateStatus.SKIPPED_NONE
+                        reason = "Field not provided by provider or calculation impossible"
                 elif field not in self.allowed_columns:
                     status = UpdateStatus.SKIPPED_MANUAL
                     reason = "Field is not in System Zone"

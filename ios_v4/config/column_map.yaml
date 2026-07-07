@@ -30,12 +30,20 @@ zones:
       column: "ROE %"
     - field: roce
       column: "ROCE %"
-    - field: margin_of_safety
-      column: "Margin of Safety %"
+    - field: business_confidence
+      column: "Business Confidence (%)"
     - field: business_score
       column: "Business Score"
     - field: investment_score
       column: "Investment Score"
+    - field: investment_confidence
+      column: "Investment Confidence (%)"
+    - field: risk_score
+      column: "Risk Score"
+    - field: risk_confidence
+      column: "Risk Confidence (%)"
+    - field: margin_of_safety
+      column: "Margin of Safety %"
     - field: target_allocation
       column: "Target Allocation %"
     - field: portfolio_weight
@@ -58,6 +66,8 @@ zones:
       column: "EPS Implied (Rs, Price/PE)"
     - field: position_size
       column: "Position Size (₹)"
+    - field: recommendation
+      column: "Overall Recommendation"
 
   manual:
     - column: "Investment Thesis"

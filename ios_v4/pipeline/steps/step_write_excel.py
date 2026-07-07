@@ -30,6 +30,7 @@ class StepWriteExcel:
                 output_file = f"{path.stem}_DRYRUN{path.suffix}"
                 context.log(f"Dry-run enabled. Modifying copy: {output_file}", Severity.INFO)
                 
+
             companies = context.artifacts.raw_companies
             
             # Map all artifacts into company metrics
@@ -70,12 +71,23 @@ class StepWriteExcel:
                     res = context.artifacts.business_scores[ticker]
                     prov = prov_default
                     company.metrics["business_score"] = Metric(value=res.value, provenance=prov)
+                    company.metrics["business_confidence"] = Metric(value=res.confidence, provenance=prov)
 
                 # Risk Engine mapping
-                if ticker in context.artifacts.risks:
+                if ticker in getattr(context.artifacts, 'risks', {}):
                     res = context.artifacts.risks[ticker]
                     prov = prov_default
+                    company.metrics["risk_score"] = Metric(value=res.value, provenance=prov)
+                    company.metrics["risk_confidence"] = Metric(value=res.confidence, provenance=prov)
+
+                # Investment Engine mapping
+                if ticker in getattr(context.artifacts, 'investment_scores', {}):
+                    res = context.artifacts.investment_scores[ticker]
+                    prov = prov_default
                     company.metrics["investment_score"] = Metric(value=res.value, provenance=prov)
+                    company.metrics["investment_confidence"] = Metric(value=res.confidence, provenance=prov)
+                    for k, v in res.breakdown.items():
+                        company.metrics[k] = Metric(value=v, provenance=prov)
 
                 # Allocation Engine mapping
                 if ticker in context.artifacts.allocations:
