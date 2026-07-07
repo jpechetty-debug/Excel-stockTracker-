@@ -28,16 +28,19 @@ class RiskEngine:
         reasons = []
         warnings = []
         total_risk = 0.0
+        total_weight_scored = 0.0
         
         # Financial Risk
         f_metrics = financial_result.breakdown
         dte = f_metrics.get("debt_to_equity")
+        financial_weight = dimensions.get("financial", 0.30)
         if dte is not None:
             # Simple linear risk translation for demo
             f_risk = min(dte * 100, 100)
-            weighted_f_risk = f_risk * dimensions.get("financial", 0.30)
+            weighted_f_risk = f_risk * financial_weight
             breakdown["financial"] = weighted_f_risk
             total_risk += weighted_f_risk
+            total_weight_scored += financial_weight
             reasons.append(f"Financial risk driven by D/E of {dte:.2f}")
         else:
             warnings.append("Missing D/E for Financial Risk.")
@@ -45,6 +48,7 @@ class RiskEngine:
         # Valuation Risk
         v_metrics = valuation_result.breakdown
         mos = v_metrics.get("margin_of_safety")
+        valuation_weight = dimensions.get("valuation", 0.20)
         if mos is not None:
             # Negative margin of safety = high risk
             if mos < 0:
@@ -55,15 +59,29 @@ class RiskEngine:
                 v_risk = max(0, min(v_risk, 100))
                 reasons.append(f"Valuation risk evaluated from {mos:.1%} MoS.")
                 
-            weighted_v_risk = v_risk * dimensions.get("valuation", 0.20)
+            weighted_v_risk = v_risk * valuation_weight
             breakdown["valuation"] = weighted_v_risk
             total_risk += weighted_v_risk
+            total_weight_scored += valuation_weight
         else:
             warnings.append("Missing MoS for Valuation Risk.")
-            
+
+        confidence = min(financial_result.confidence, valuation_result.confidence)
+        final_risk = None
+        if total_weight_scored > 0:
+            # Prorate so partial dimension coverage doesn't silently cap the score low,
+            # e.g. missing MoS shouldn't make a high-D/E company look artificially safe.
+            final_risk = total_risk / total_weight_scored
+            if total_weight_scored < 1.0:
+                reasons.append(f"Risk score prorated. Only {total_weight_scored:.1%} of dimension weights were available.")
+                confidence *= total_weight_scored
+        else:
+            warnings.append("No risk dimensions were scorable. Risk score is None.")
+            confidence = 0.0
+
         return EngineResult(
-            value=total_risk,
-            confidence=min(financial_result.confidence, valuation_result.confidence),
+            value=final_risk,
+            confidence=confidence,
             breakdown=breakdown,
             reasons=reasons,
             method="Dimensional Risk Decomposition",

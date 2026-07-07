@@ -17,7 +17,9 @@ class InvestmentEngine:
         warnings = []
         
         # 1. Quality (Business Score)
-        quality = business_result.value if business_result else 0.0
+        quality = business_result.value if (business_result and business_result.value is not None) else 0.0
+        if business_result and business_result.value is None:
+            warnings.append("Business Score was None (no scorable metrics); treating Quality as 0.0 for this synthesis.")
         breakdown["quality"] = quality
         
         # 2. Value (Valuation Attractiveness)
@@ -35,7 +37,9 @@ class InvestmentEngine:
         # 3. Risk Adjustment (Risk Score)
         # Risk score is 0 to 100, where higher is more risk.
         # So risk_adjustment scales from 1.0 (no risk) to 0.0 (max risk).
-        risk = risk_result.value if risk_result else 0.0
+        risk = risk_result.value if (risk_result and risk_result.value is not None) else 0.0
+        if risk_result and risk_result.value is None:
+            warnings.append("Risk Score was None (no scorable dimensions); treating Risk as 0.0 (no adjustment) for this synthesis.")
         risk_adj = max(0.0, 1.0 - (risk / 100.0))
         breakdown["risk_adj"] = risk_adj
         

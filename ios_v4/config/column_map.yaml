@@ -39,7 +39,7 @@ zones:
     - field: investment_confidence
       column: "Investment Confidence (%)"
     - field: risk_score
-      column: "Risk Score"
+      column: "Risk Score (Engine)"
     - field: risk_confidence
       column: "Risk Confidence (%)"
     - field: margin_of_safety
@@ -78,3 +78,11 @@ zones:
     - column: "Sources Verified"
     - column: "Last Reviewed"
     - column: "Core / Bench / Research"
+    # Pre-existing hand-scored qualitative conviction fields (columns Z-AD in Master Universe).
+    # Explicitly protected so no future system field can be accidentally mapped onto them
+    # the way the engine's computed "risk_score" originally collided with "Risk Score".
+    - column: "Capital Allocation Score"
+    - column: "Management Score"
+    - column: "Moat Score"
+    - column: "Growth Score"
+    - column: "Risk Score"
