@@ -1,0 +1,28 @@
+# IOS Application Settings
+# Controls the runtime behavior, providers, and pipeline
+
+application:
+  threads: 8
+  debug: false
+  
+data_source:
+  provider: "yfinance" # can be switched to 'mock' or 'nse'
+  timeout_seconds: 30
+  retries: 3
+  
+cache:
+  enabled: true
+  dir: ".cache"
+  expiry_hours: 24
+  
+excel:
+  backup_dir: ".backups"
+  date_format: "%Y%m%d_%H%M%S"
+  
+logging:
+  level: "INFO"
+  file: "logs/ios.log"
+  structured: true
+  
+rules:
+  active_version: "v4_0"

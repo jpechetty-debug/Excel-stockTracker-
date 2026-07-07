@@ -1,0 +1,16 @@
+---
+version: "v4.0"
+description: "Valuation model weights and calculation policies."
+
+policies:
+  # Base weightings when all models successfully return a value
+  weights:
+    dcf: 0.40
+    relative_pe: 0.20
+    graham: 0.20
+    owner_earnings: 0.20
+
+  margin_of_safety:
+    threshold_excellent: 0.30
+    threshold_good: 0.15
+    threshold_fair: 0.05

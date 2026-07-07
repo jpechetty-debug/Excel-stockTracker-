@@ -1,0 +1,34 @@
+from pipeline.context import ExecutionContext, Severity
+from pipeline.runner import PipelineStep
+from domain.engines.allocation import AllocationEngine
+
+
+class StepAllocation:
+    
+    @property
+    def name(self) -> str:
+        return "Allocation Engine (Constraints)"
+        
+    def validate(self, context: ExecutionContext) -> bool:
+        if not context.artifacts.business_scores:
+            context.log("No business scores available for allocation.", Severity.FATAL)
+            return False
+        return True
+        
+    def execute(self, context: ExecutionContext) -> bool:
+        try:
+            engine = AllocationEngine(max_position_size=0.10, cash_floor=0.05)
+            scores = context.artifacts.business_scores
+            
+            allocations = engine.calculate_allocations(scores)
+            context.artifacts.allocations = allocations
+            
+            context.log(f"Allocated portfolio targets for {len(allocations)} companies.", Severity.INFO)
+            return True
+            
+        except Exception as e:
+            context.log(f"Fatal error in Allocation Engine: {str(e)}", Severity.FATAL)
+            return False
+            
+    def rollback(self, context: ExecutionContext) -> None:
+        context.artifacts.allocations = {}

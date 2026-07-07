@@ -1,0 +1,52 @@
+# Excel Column Mapping
+# Strictly defines what can be overwritten and where to find the data.
+
+sheets:
+  master: "Master Universe"
+  portfolio: "Portfolio Tracker"
+  dashboard: "Dashboard"
+
+keys:
+  primary: "Ticker"
+  company: "Company"
+
+zones:
+  system:
+    - field: current_price
+      column: "Current Price"
+    - field: previous_close
+      column: "Previous Close"
+    - field: market_cap
+      column: "Market Cap"
+    - field: dividend_yield
+      column: "Dividend Yield"
+    - field: beta
+      column: "Beta"
+    - field: pe
+      column: "P/E"
+    - field: pb
+      column: "P/B"
+    - field: roe
+      column: "ROE %"
+    - field: roce
+      column: "ROCE %"
+    - field: margin_of_safety
+      column: "Margin of Safety %"
+    - field: business_score
+      column: "Business Score"
+    - field: investment_score
+      column: "Investment Score"
+    - field: target_allocation
+      column: "Target Allocation"
+    - field: portfolio_weight
+      column: "Portfolio Weight"
+
+  manual:
+    - column: "Investment Thesis"
+    - column: "Remarks"
+    - column: "Key Risks"
+    - column: "Decision Journal"
+    - column: "Catalyst"
+    - column: "Sources Verified"
+    - column: "Last Reviewed"
+    - column: "Core / Bench / Research"

@@ -1,0 +1,31 @@
+---
+version: "v4.0"
+description: "Configuration for Scoring and Risk engines."
+
+business_score:
+  weights:
+    roce: 0.25
+    roe: 0.20
+    growth: 0.20
+    margins: 0.15
+    debt: 0.10
+    capital_allocation: 0.10
+  
+  thresholds:
+    roce:
+      excellent: 30.0
+      good: 20.0
+      poor: 10.0
+    debt_to_equity:
+      excellent: 0.1
+      good: 0.5
+      poor: 1.0
+
+risk_score:
+  dimensions:
+    business: 0.30
+    financial: 0.30
+    valuation: 0.20
+    market: 0.10
+    liquidity: 0.05
+    governance: 0.05

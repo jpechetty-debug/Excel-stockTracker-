@@ -1,0 +1,43 @@
+# Rules Version 4.0
+# Defines scoring models, bounds, and confidence metadata
+
+metadata:
+  version: "v4.0"
+  description: "Initial institutional release."
+
+business_score:
+  weights:
+    roce: 0.30
+    roe: 0.20
+    growth_3y: 0.20
+    margins: 0.20
+    debt: 0.10
+  thresholds:
+    roce:
+      excellent: 30.0
+      good: 20.0
+      poor: 10.0
+    roe:
+      excellent: 25.0
+      good: 15.0
+      poor: 8.0
+
+investment_score:
+  weights:
+    margin_of_safety: 0.40
+    peg: 0.30
+    pe: 0.30
+  thresholds:
+    margin_of_safety:
+      excellent: 50.0
+      good: 30.0
+      poor: 10.0
+    peg:
+      excellent: 1.0 # Less than 1 is excellent
+      good: 1.5
+      poor: 2.5
+
+allocation:
+  cash_target: 0.10
+  max_position_size: 0.25
+  core_minimum_score: 75.0
