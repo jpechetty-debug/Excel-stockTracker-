@@ -4,7 +4,7 @@ Produces objective facts regarding business quality (Growth, Margins, Return on 
 Strictly completely decoupled from Price and Scoring.
 """
 
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from datetime import datetime
 from domain.models import EngineResult
 
@@ -24,6 +24,36 @@ class FinancialEngine:
         if not start_val or not end_val or start_val <= 0 or end_val <= 0 or years <= 0:
             return None
         return (end_val / start_val) ** (1 / years) - 1
+
+    @staticmethod
+    def _revenue_cagr_from_history(revenue_history: Optional[List[Dict[str, Any]]]) -> "tuple[Optional[float], Optional[str]]":
+        """
+        Computes revenue CAGR from a list of {date, value} entries (oldest to newest).
+        Returns (cagr, warning_message). warning_message is None on success.
+        """
+        if not revenue_history or len(revenue_history) < 2:
+            return None, "Revenue history unavailable or too short; CAGR not calculated."
+
+        # Entries are pre-sorted oldest -> newest by the provider, but sort defensively.
+        ordered = sorted(revenue_history, key=lambda item: item["date"])
+        start_entry, end_entry = ordered[0], ordered[-1]
+
+        try:
+            start_date = datetime.fromisoformat(str(start_entry["date"]))
+            end_date = datetime.fromisoformat(str(end_entry["date"]))
+            years = (end_date - start_date).days / 365.25
+        except (ValueError, TypeError, KeyError):
+            # Fall back to assuming one reporting period per year if dates are unparsable.
+            years = len(ordered) - 1
+
+        if years <= 0:
+            return None, "Revenue history spans zero or negative years; CAGR not calculated."
+
+        cagr = FinancialEngine.calculate_cagr(start_entry["value"], end_entry["value"], years)
+        if cagr is None:
+            return None, "Revenue history present but CAGR inputs were invalid (non-positive revenue)."
+        return cagr, None
+
 
     def calculate_metrics(self, data: Dict[str, Any]) -> EngineResult:
         """
@@ -123,9 +153,15 @@ class FinancialEngine:
             breakdown["earnings_yield"] = earnings_yield
             reasons.append(f"Earnings Yield calculated at {earnings_yield:.1%}")
 
-        # Mocking CAGR for this iteration as time-series data isn't fully structured yet
-        breakdown["revenue_cagr_3y"] = 0.15
-        reasons.append("Revenue 3Y CAGR estimated at 15.0% (Time-series data pending)")
+        # Revenue CAGR (real calculation using multi-year revenue history when available)
+        revenue_history = data.get("revenue_history")
+        cagr, cagr_warning = self._revenue_cagr_from_history(revenue_history)
+        if cagr is not None:
+            breakdown["revenue_cagr_3y"] = cagr
+            years_covered = len(revenue_history) - 1 if revenue_history else 0
+            reasons.append(f"Revenue CAGR calculated at {cagr:.1%} across {years_covered} year(s) of reported history")
+        else:
+            warnings.append(cagr_warning or "Revenue CAGR could not be calculated.")
 
         confidence = 1.0 if len(breakdown) >= 5 else (len(breakdown) / 5)
         

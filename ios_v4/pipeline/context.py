@@ -54,6 +54,7 @@ class ExecutionContext:
     limit: Optional[int] = None
     tickers: Optional[List[str]] = None
     config_loader: Any = None
+    threads: Optional[int] = None
     
     # State & Reporting
     state: PipelineState = PipelineState.NOT_STARTED

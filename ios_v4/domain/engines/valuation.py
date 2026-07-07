@@ -94,7 +94,7 @@ class ValuationEngine:
         
         # 2. DCF
         dcf_val = self.calculate_dcf(fcf, growth_rate, discount_rate, terminal_growth, shares)
-        if dcf_val:
+        if dcf_val is not None:
             breakdown["dcf_value"] = dcf_val
             reasons.append(f"DCF Value computed at {dcf_val:.2f} (Assumptions: {discount_rate:.1%} discount, {terminal_growth:.1%} terminal)")
         else:
@@ -102,7 +102,7 @@ class ValuationEngine:
 
         # 2. Graham Value
         graham_val = self.calculate_graham(eps, bvps)
-        if graham_val:
+        if graham_val is not None:
             breakdown["graham_value"] = graham_val
             reasons.append(f"Graham Value computed at {graham_val:.2f}")
 
@@ -181,7 +181,7 @@ class ValuationEngine:
             breakdown["eps_implied"] = eps_implied
             reasons.append(f"EPS Implied computed at {eps_implied:.2f}")
 
-        confidence = len(available_models) / 3.0 # Assuming 3 models max
+        confidence = len(available_models) / 2.0 # DCF and Graham are the only 2 models currently implemented
         
         return EngineResult(
             value=blended_value,

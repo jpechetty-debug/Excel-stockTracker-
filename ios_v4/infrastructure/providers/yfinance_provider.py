@@ -3,6 +3,7 @@ YFinance Provider
 Integrates the yfinance library using network resilience wrappers (retries/rate limits).
 """
 
+import math
 from typing import Dict, Any
 from datetime import datetime
 import yfinance as yf
@@ -12,6 +13,7 @@ from infrastructure.network.session import SessionManager
 from infrastructure.network.rate_limiter import RateLimiter
 from infrastructure.network.retry import api_retry_policy
 from infrastructure.logging.logger import logger
+from domain.exceptions import ProviderUnavailableError
 
 
 @ProviderRegistry.register("yfinance")
@@ -48,13 +50,49 @@ class YFinanceProvider(MarketDataProvider):
         )
 
     def _get_ticker_obj(self, ticker: str) -> yf.Ticker:
-        """Helper to get a yf.Ticker."""
+        """Helper to get a yf.Ticker, routed through the shared session."""
         symbol = ticker
         if self.exchange_suffix:
             # Check if it already has a suffix like .NS or .BO
             if not (symbol.endswith(".NS") or symbol.endswith(".BO")):
                 symbol = f"{symbol}.{self.exchange_suffix}"
-        return yf.Ticker(symbol)
+        return yf.Ticker(symbol, session=self.session_manager.get_session())
+
+    def _wrap_error(self, ticker: str, operation: str, e: Exception) -> ProviderUnavailableError:
+        """
+        Normalizes any underlying yfinance/pandas/network failure into a single,
+        typed exception so the retry policy (which only matches specific exception
+        types) actually engages instead of silently failing fast.
+        """
+        self._last_error = str(e)
+        logger.error(f"YFinance error during {operation} for {ticker}: {type(e).__name__}: {e}")
+        return ProviderUnavailableError(f"yfinance {operation} failed for {ticker}: {e}")
+
+    @staticmethod
+    def _series_to_history(row) -> list:
+        """
+        Converts a pandas Series (one financial statement line item across periods)
+        into a JSON-serializable list of {date, value}, sorted oldest to newest.
+        Non-numeric or NaN entries are skipped.
+        """
+        history = []
+        for period, value in row.items():
+            if value is None:
+                continue
+            try:
+                if isinstance(value, float) and math.isnan(value):
+                    continue
+                numeric_value = float(value)
+            except (TypeError, ValueError):
+                continue
+
+            # yfinance columns are typically pandas Timestamps; normalize to ISO strings
+            # so this data can be safely round-tripped through the JSON cache.
+            date_str = period.isoformat() if hasattr(period, "isoformat") else str(period)
+            history.append({"date": date_str, "value": numeric_value})
+
+        history.sort(key=lambda item: item["date"])
+        return history
 
     @api_retry_policy
     def get_quote(self, ticker: str) -> Dict[str, Any]:
@@ -77,15 +115,19 @@ class YFinanceProvider(MarketDataProvider):
                 "roe": info.get("returnOnEquity"),
                 "shares_outstanding": info.get("sharesOutstanding"),
                 "trailing_eps": info.get("trailingEps"),
-                "payout_ratio": info.get("payoutRatio")
+                "payout_ratio": info.get("payoutRatio"),
+                "dividend_yield": info.get("dividendYield"),
             }
         except Exception as e:
-            self._last_error = str(e)
-            logger.error(f"YFinance error getting quote for {ticker}: {e}")
-            raise
+            raise self._wrap_error(ticker, "get_quote", e) from e
 
     @api_retry_policy
     def get_income_statement(self, ticker: str) -> Dict[str, Any]:
+        """
+        Fetches the latest income statement column, plus a JSON-serializable
+        multi-period history for "Total Revenue" so the FinancialEngine can
+        compute a real (non-mocked) revenue CAGR.
+        """
         self.rate_limiter.wait()
         try:
             t = self._get_ticker_obj(ticker)
@@ -95,11 +137,13 @@ class YFinanceProvider(MarketDataProvider):
                 return {}
             # Returning the most recent year's column roughly as a dict
             latest = inc.iloc[:, 0].to_dict()
+
+            if "Total Revenue" in inc.index:
+                latest["revenue_history"] = self._series_to_history(inc.loc["Total Revenue"])
+
             return latest
         except Exception as e:
-            self._last_error = str(e)
-            logger.error(f"YFinance error getting income stmt for {ticker}: {e}")
-            raise
+            raise self._wrap_error(ticker, "get_income_statement", e) from e
 
     @api_retry_policy
     def get_balance_sheet(self, ticker: str) -> Dict[str, Any]:
@@ -113,9 +157,7 @@ class YFinanceProvider(MarketDataProvider):
             latest = bs.iloc[:, 0].to_dict()
             return latest
         except Exception as e:
-            self._last_error = str(e)
-            logger.error(f"YFinance error getting balance sheet for {ticker}: {e}")
-            raise
+            raise self._wrap_error(ticker, "get_balance_sheet", e) from e
 
     @api_retry_policy
     def get_cash_flow(self, ticker: str) -> Dict[str, Any]:
@@ -129,9 +171,7 @@ class YFinanceProvider(MarketDataProvider):
             latest = cf.iloc[:, 0].to_dict()
             return latest
         except Exception as e:
-            self._last_error = str(e)
-            logger.error(f"YFinance error getting cashflow for {ticker}: {e}")
-            raise
+            raise self._wrap_error(ticker, "get_cash_flow", e) from e
 
     @api_retry_policy
     def get_corporate_actions(self, ticker: str) -> Dict[str, Any]:
@@ -145,6 +185,4 @@ class YFinanceProvider(MarketDataProvider):
             # Returning as standard json dicts
             return actions.reset_index().to_dict(orient="records")
         except Exception as e:
-            self._last_error = str(e)
-            logger.error(f"YFinance error getting corporate actions for {ticker}: {e}")
-            raise
+            raise self._wrap_error(ticker, "get_corporate_actions", e) from e

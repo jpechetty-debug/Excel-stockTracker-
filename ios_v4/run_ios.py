@@ -24,7 +24,7 @@ def main():
     parser.add_argument("--provider", type=str, default="yfinance", help="Market data provider")
     parser.add_argument("--dry-run", action="store_true", help="Execute without modifying the original workbook")
     parser.add_argument("--log-level", type=str, default="INFO", help="Logging level")
-    parser.add_argument("--threads", type=int, default=1, help="Number of concurrent threads")
+    parser.add_argument("--threads", type=int, default=None, help="Number of concurrent fetch threads (default: from config, or 1)")
     parser.add_argument("--limit", type=int, help="Limit to N companies for testing")
     parser.add_argument("--tickers", type=str, help="Comma-separated list of tickers to run")
     
@@ -37,7 +37,8 @@ def main():
         input_file=args.input,
         output_file=args.output,
         limit=args.limit,
-        tickers=tickers_list
+        tickers=tickers_list,
+        threads=args.threads
     )
     
     runner = PipelineRunner()

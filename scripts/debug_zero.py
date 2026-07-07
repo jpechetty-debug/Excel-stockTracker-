@@ -1,6 +1,18 @@
+"""
+Ad-hoc debug script used while investigating a zeroed-out metrics bug.
+Moved out of the ios_v4/ package (was in ios_v4/scratch/) so it no longer
+ships as part of the installable application. Run with:
+    python scripts/debug_zero.py
+from the repository root.
+"""
 import sys
-import yaml
 from pathlib import Path
+
+# Allow running this script directly from the repo root without installing
+# ios_v4 as a package.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "ios_v4"))
+
+import yaml
 from infrastructure.providers.yfinance_provider import YFinanceProvider
 from domain.engines.financial import FinancialEngine
 from domain.engines.scoring import ScoringEngine
@@ -75,7 +87,7 @@ def main():
         print(w)
         
     # Scoring engine
-    rules_path = Path("rules/scoring.yaml")
+    rules_path = Path(__file__).resolve().parent.parent / "ios_v4" / "rules" / "scoring.yaml"
     with open(rules_path, "r", encoding="utf-8") as f:
         scoring_config = yaml.safe_load(f)
         

@@ -50,7 +50,7 @@ def complex_workbook(tmp_path):
 
 def test_workbook_integrity_preservation(mock_config, complex_workbook, tmp_path):
     reader = ExcelReader(config=mock_config)
-    companies = reader.read_companies(complex_workbook)
+    companies, raw_data = reader.read_companies(complex_workbook)
     
     assert len(companies) == 1
     c = companies[0]
@@ -59,10 +59,13 @@ def test_workbook_integrity_preservation(mock_config, complex_workbook, tmp_path
     prov = Provenance("mock", "mock", datetime.now(), 100, "1", "1")
     c.metrics["Current Price"] = Metric(150.0, prov)
     c.metrics["Sector"] = Metric("Finance", prov)
+    from infrastructure.excel.planner import UpdatePlanner
+    planner = UpdatePlanner(config=mock_config)
+    plan = planner.create_plan(companies, raw_data)
     
     writer = ExcelWriter(config=mock_config)
     out_path = tmp_path / "Master_Tracker_Out.xlsx"
-    writer.update_workbook(complex_workbook, companies, out_path)
+    writer.update_workbook(complex_workbook, plan, out_path, tmp_path)
     
     from openpyxl import load_workbook
     wb = load_workbook(out_path)

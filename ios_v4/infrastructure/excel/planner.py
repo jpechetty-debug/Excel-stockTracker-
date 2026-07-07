@@ -8,6 +8,7 @@ from typing import List, Dict, Any, Set
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum, auto
+import math
 from config.config_loader import ConfigLoader
 from domain.models import CompanyData
 
@@ -55,6 +56,30 @@ class UpdatePlanner:
             if "column" in item and "field" in item:
                 self.allowed_columns.add(item["field"])
 
+    @staticmethod
+    def _values_equivalent(old_val: Any, new_val: Any) -> bool:
+        """
+        Type-aware equality check used to decide whether a field actually changed.
+        Falls back to string comparison only for non-numeric types, avoiding false
+        "UPDATED" statuses caused by float formatting/precision noise (e.g. 10.0 vs
+        10.0000000001, or "10" vs "10.0").
+        """
+        if old_val is None or new_val is None:
+            return old_val == new_val
+
+        if isinstance(old_val, (int, float)) and isinstance(new_val, (int, float)):
+            return math.isclose(float(old_val), float(new_val), rel_tol=1e-6, abs_tol=1e-9)
+
+        # One side numeric, the other a string representation of a number (common
+        # when reading raw cell values back out of Excel).
+        if isinstance(old_val, (int, float)) or isinstance(new_val, (int, float)):
+            try:
+                return math.isclose(float(old_val), float(new_val), rel_tol=1e-6, abs_tol=1e-9)
+            except (TypeError, ValueError):
+                pass
+
+        return str(old_val) == str(new_val)
+
     def create_plan(self, companies: List[CompanyData], existing_data: Dict[str, Dict[str, Any]]) -> WorkbookUpdatePlan:
         """
         existing_data: A mapping of Ticker -> { field_name -> old_value }
@@ -97,7 +122,7 @@ class UpdatePlanner:
                 elif field not in self.allowed_columns:
                     status = UpdateStatus.SKIPPED_MANUAL
                     reason = "Field is not in System Zone"
-                elif str(old_val) == str(new_val):
+                elif self._values_equivalent(old_val, new_val):
                     status = UpdateStatus.UNCHANGED
                     reason = "Values are identical"
                 else:
