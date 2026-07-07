@@ -56,7 +56,7 @@ class YFinanceProvider(MarketDataProvider):
             # Check if it already has a suffix like .NS or .BO
             if not (symbol.endswith(".NS") or symbol.endswith(".BO")):
                 symbol = f"{symbol}.{self.exchange_suffix}"
-        return yf.Ticker(symbol, session=self.session_manager.get_session())
+        return yf.Ticker(symbol)
 
     def _wrap_error(self, ticker: str, operation: str, e: Exception) -> ProviderUnavailableError:
         """
