@@ -1,0 +1,58 @@
+{
+  "Tax Effect Of Unusual Items": 25234476.369287,
+  "Tax Rate For Calcs": 0.350966,
+  "Total Unusual Items": 71900000.0,
+  "Total Unusual Items Excluding Goodwill": 71900000.0,
+  "Net Income From Continuing Operation Net Minority Interest": 183926900000.0,
+  "Reconciled Depreciation": 12812000000.0,
+  "Net Interest Income": 427026900000.0,
+  "Interest Expense": 880694000000.0,
+  "Interest Income": 1307720900000.0,
+  "Normalized Income": 183880234476.3693,
+  "Net Income From Continuing And Discontinued Operation": 183926900000.0,
+  "Diluted Average Shares": NaN,
+  "Basic Average Shares": NaN,
+  "Diluted EPS": NaN,
+  "Basic EPS": NaN,
+  "Diluted NI Availto Com Stockholders": 183926900000.0,
+  "Net Income Common Stockholders": 183926900000.0,
+  "Net Income": 183926900000.0,
+  "Minority Interests": -740100000.0,
+  "Net Income Including Noncontrolling Interests": 184667000000.0,
+  "Net Income Extraordinary": 0.0,
+  "Net Income Continuous Operations": 184667000000.0,
+  "Tax Provision": 99859000000.0,
+  "Pretax Income": 284525900000.0,
+  "Special Income Charges": 71900000.0,
+  "Other Special Charges": -71900000.0,
+  "Gain On Sale Of Security": 44414300000.0,
+  "Operating Expense": 335238400000.0,
+  "Other Operating Expenses": 92760900000.0,
+  "Depreciation And Amortization In Income Statement": 12812000000.0,
+  "Depreciation Income Statement": 12812000000.0,
+  "Selling General And Administration": 3308700000.0,
+  "Selling And Marketing Expense": 1471600000.0,
+  "General And Administrative Expense": 1837100000.0,
+  "Insurance And Claims": 21789900000.0,
+  "Rent And Landing Fees": 14610800000.0,
+  "Total Revenue": 626199700000.0,
+  "Operating Revenue": 626199700000.0,
+  "revenue_history": [
+    {
+      "date": "2023-03-31T00:00:00",
+      "value": 470921000000.0
+    },
+    {
+      "date": "2024-03-31T00:00:00",
+      "value": 552605200000.0
+    },
+    {
+      "date": "2025-03-31T00:00:00",
+      "value": 597605500000.0
+    },
+    {
+      "date": "2026-03-31T00:00:00",
+      "value": 626199700000.0
+    }
+  ]
+}

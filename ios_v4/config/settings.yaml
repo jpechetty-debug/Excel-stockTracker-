@@ -42,3 +42,6 @@ logging:
   
 rules:
   active_version: "v4_0"
+
+llm:
+  anthropic_api_key: "" # Set your API key here or via ANTHROPIC_API_KEY environment variable

@@ -1,0 +1,73 @@
+{
+  "Tax Effect Of Unusual Items": -22763640.426643,
+  "Tax Rate For Calcs": 0.20399,
+  "Normalized EBITDA": 11929321000.0,
+  "Total Unusual Items": -111592000.0,
+  "Total Unusual Items Excluding Goodwill": -111592000.0,
+  "Net Income From Continuing Operation Net Minority Interest": 6808610000.0,
+  "Reconciled Depreciation": 3245099000.0,
+  "Reconciled Cost Of Revenue": 33772035000.0,
+  "EBITDA": 11817729000.0,
+  "EBIT": 8572630000.0,
+  "Net Interest Income": -17569000.0,
+  "Interest Expense": 17569000.0,
+  "Interest Income": NaN,
+  "Normalized Income": 6897438359.573357,
+  "Net Income From Continuing And Discontinued Operation": 6808610000.0,
+  "Total Expenses": 45525612000.0,
+  "Rent Expense Supplemental": NaN,
+  "Diluted Average Shares": 90216112.0,
+  "Basic Average Shares": 90216112.0,
+  "Diluted EPS": 75.47,
+  "Basic EPS": 75.47,
+  "Diluted NI Availto Com Stockholders": 6808610000.0,
+  "Net Income Common Stockholders": 6808610000.0,
+  "Otherunder Preferred Stock Dividend": 0.0,
+  "Net Income": 6808610000.0,
+  "Minority Interests": -1305000.0,
+  "Net Income Including Noncontrolling Interests": 6809915000.0,
+  "Net Income Continuous Operations": 6809915000.0,
+  "Tax Provision": 1745146000.0,
+  "Pretax Income": 8555061000.0,
+  "Other Non Operating Income Expenses": 1167066000.0,
+  "Special Income Charges": NaN,
+  "Other Special Charges": NaN,
+  "Write Off": NaN,
+  "Impairment Of Capital Assets": NaN,
+  "Net Non Operating Interest Income Expense": -17569000.0,
+  "Total Other Finance Cost": NaN,
+  "Interest Expense Non Operating": 17569000.0,
+  "Interest Income Non Operating": NaN,
+  "Operating Income": 7150240000.0,
+  "Operating Expense": 11753577000.0,
+  "Other Operating Expenses": 7841540000.0,
+  "Depreciation And Amortization In Income Statement": 3245099000.0,
+  "Amortization": NaN,
+  "Depreciation Income Statement": 3245099000.0,
+  "Selling General And Administration": NaN,
+  "Selling And Marketing Expense": NaN,
+  "General And Administrative Expense": NaN,
+  "Rent And Landing Fees": NaN,
+  "Gross Profit": 18903817000.0,
+  "Cost Of Revenue": 33772035000.0,
+  "Total Revenue": 52675852000.0,
+  "Operating Revenue": 52675852000.0,
+  "revenue_history": [
+    {
+      "date": "2023-03-31T00:00:00",
+      "value": 40397987000.0
+    },
+    {
+      "date": "2024-03-31T00:00:00",
+      "value": 31603686000.0
+    },
+    {
+      "date": "2025-03-31T00:00:00",
+      "value": 43198530000.0
+    },
+    {
+      "date": "2026-03-31T00:00:00",
+      "value": 52675852000.0
+    }
+  ]
+}

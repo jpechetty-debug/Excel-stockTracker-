@@ -13,6 +13,7 @@ from pipeline.steps.step_investment import StepInvestment
 from pipeline.steps.step_allocation import StepAllocation
 from pipeline.steps.step_write_excel import StepWriteExcel
 from pipeline.steps.step_reports import StepReports
+from pipeline.steps.step_summary_llm import StepSummaryLLM
 import infrastructure.providers.yfinance_provider
 import infrastructure.providers.mock_provider
 
@@ -55,6 +56,7 @@ def main():
     runner.add_step(StepAllocation())
     runner.add_step(StepWriteExcel())
     runner.add_step(StepReports())
+    runner.add_step(StepSummaryLLM())
     
     final_context = runner.run(context)
     

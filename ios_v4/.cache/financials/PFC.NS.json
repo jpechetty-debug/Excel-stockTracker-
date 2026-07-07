@@ -1,0 +1,58 @@
+{
+  "Tax Effect Of Unusual Items": -39351737.329194,
+  "Tax Rate For Calcs": 0.215272,
+  "Total Unusual Items": -182800000.0,
+  "Total Unusual Items Excluding Goodwill": -182800000.0,
+  "Net Income From Continuing Operation Net Minority Interest": 259009500000.0,
+  "Reconciled Depreciation": 629900000.0,
+  "Net Interest Income": 435461200000.0,
+  "Interest Expense": 694153200000.0,
+  "Interest Income": 1129614400000.0,
+  "Normalized Income": 259152948262.6708,
+  "Net Income From Continuing And Discontinued Operation": 259009500000.0,
+  "Diluted Average Shares": 3299904446.0,
+  "Basic Average Shares": 3299904446.0,
+  "Diluted EPS": 78.49,
+  "Basic EPS": 78.49,
+  "Diluted NI Availto Com Stockholders": 259009500000.0,
+  "Net Income Common Stockholders": 259009500000.0,
+  "Net Income": 259009500000.0,
+  "Minority Interests": -77243900000.0,
+  "Net Income Including Noncontrolling Interests": 336253400000.0,
+  "Net Income Discontinuous Operations": 0.0,
+  "Net Income Continuous Operations": 336253400000.0,
+  "Tax Provision": 92243400000.0,
+  "Pretax Income": 428496800000.0,
+  "Special Income Charges": -182800000.0,
+  "Other Special Charges": NaN,
+  "Gain On Sale Of Security": -9818900000.0,
+  "Operating Expense": 19535400000.0,
+  "Other Operating Expenses": 13203100000.0,
+  "Depreciation And Amortization In Income Statement": 629600000.0,
+  "Depreciation Income Statement": 629600000.0,
+  "Selling General And Administration": NaN,
+  "Selling And Marketing Expense": NaN,
+  "General And Administrative Expense": NaN,
+  "Insurance And Claims": NaN,
+  "Rent And Landing Fees": NaN,
+  "Total Revenue": 432365900000.0,
+  "Operating Revenue": 432365900000.0,
+  "revenue_history": [
+    {
+      "date": "2023-03-31T00:00:00",
+      "value": 275173700000.0
+    },
+    {
+      "date": "2024-03-31T00:00:00",
+      "value": 335664000000.0
+    },
+    {
+      "date": "2025-03-31T00:00:00",
+      "value": 418243400000.0
+    },
+    {
+      "date": "2026-03-31T00:00:00",
+      "value": 432365900000.0
+    }
+  ]
+}
