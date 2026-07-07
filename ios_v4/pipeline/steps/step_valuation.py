@@ -19,7 +19,8 @@ class StepValuation:
         
     def execute(self, context: ExecutionContext) -> bool:
         try:
-            engine = ValuationEngine()
+            config = context.config.get("valuation", {})
+            engine = ValuationEngine(config)
             market_data = context.artifacts.market_data
             
             for ticker, data in market_data.items():

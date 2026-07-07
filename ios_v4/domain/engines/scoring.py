@@ -29,6 +29,7 @@ class ScoringEngine:
         metrics = financial_result.breakdown
         
         score = 0.0
+        total_weight_scored = 0.0
         breakdown = {}
         reasons = []
         warnings = []
@@ -48,6 +49,7 @@ class ScoringEngine:
                 points = 0
                 reasons.append("Negative: ROCE is poor.")
             score += points
+            total_weight_scored += roce_weight
             breakdown["roce_score"] = points
         else:
             warnings.append("ROCE missing; could not score.")
@@ -67,13 +69,25 @@ class ScoringEngine:
                 points = 0
                 reasons.append("Negative: Debt to Equity exceeds configured limit.")
             score += points
+            total_weight_scored += debt_weight
             breakdown["debt_score"] = points
         else:
             warnings.append("Debt to Equity missing; could not score.")
 
+        final_score = None
+        confidence = financial_result.confidence
+        if total_weight_scored > 0:
+            final_score = score / total_weight_scored
+            if total_weight_scored < 1.0:
+                reasons.append(f"Score prorated. Only {total_weight_scored:.1%} of metric weights were available.")
+                confidence *= total_weight_scored # Reduce confidence if data is missing
+        else:
+            warnings.append("No business metrics were scorable. Score is None.")
+            confidence = 0.0
+
         return EngineResult(
-            value=score,
-            confidence=financial_result.confidence,
+            value=final_score,
+            confidence=confidence,
             breakdown=breakdown,
             reasons=reasons,
             method="Configurable YAML Scoring",

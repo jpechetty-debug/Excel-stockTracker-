@@ -1,3 +1,4 @@
+import math
 from pipeline.context import ExecutionContext, Severity
 from pipeline.runner import PipelineStep
 from infrastructure.providers.registry import ProviderRegistry
@@ -18,6 +19,11 @@ class StepFetchData:
     def execute(self, context: ExecutionContext) -> bool:
         try:
             provider = ProviderRegistry.get_provider(context.provider_name)
+            
+            # Inject exchange suffix if available in config
+            exchange = context.config.get("market", {}).get("exchange")
+            if exchange and hasattr(provider, "exchange_suffix"):
+                provider.exchange_suffix = exchange
             
             companies = context.artifacts.raw_companies
             total = len(companies)
@@ -40,24 +46,49 @@ class StepFetchData:
                     current_price = quote.get("current_price")
                     market_cap = quote.get("market_cap")
                     
+                    # Helper to check nan
+                    def is_valid(val):
+                        if val is None:
+                            return False
+                        if isinstance(val, float) and math.isnan(val):
+                            return False
+                        return True
+
                     # EPS
-                    eps = None
-                    if "Basic EPS" in inc:
-                        eps = inc["Basic EPS"]
-                    elif "Diluted EPS" in inc:
-                        eps = inc["Diluted EPS"]
-                        
+                    eps = quote.get("trailing_eps")
+                    if not is_valid(eps):
+                        if is_valid(inc.get("Basic EPS")):
+                            eps = inc["Basic EPS"]
+                        elif is_valid(inc.get("Diluted EPS")):
+                            eps = inc["Diluted EPS"]
+                        else:
+                            eps = None
+                            
                     # Shares Outstanding
-                    shares_outstanding = None
-                    if "Basic Average Shares" in inc:
-                        shares_outstanding = inc["Basic Average Shares"]
-                    elif market_cap and current_price:
-                        shares_outstanding = market_cap / current_price
-                        
+                    shares_outstanding = quote.get("shares_outstanding")
+                    shares_source = None
+                    if not is_valid(shares_outstanding):
+                        if is_valid(inc.get("Basic Average Shares")):
+                            shares_outstanding = inc["Basic Average Shares"]
+                            shares_source = "reported (income statement)"
+                        elif is_valid(market_cap) and is_valid(current_price) and current_price > 0:
+                            shares_outstanding = market_cap / current_price
+                            shares_source = "estimated (market_cap / price)"
+                        else:
+                            shares_outstanding = None
+                            shares_source = "missing"
+                    else:
+                        shares_source = "reported (quote)"
+                            
+                    # Payout Ratio
+                    payout_ratio = quote.get("payout_ratio")
+                    if not is_valid(payout_ratio):
+                        payout_ratio = None
+
                     # BVPS
                     total_equity = bs.get("Total Equity Gross Minority Interest", bs.get("Stockholders Equity"))
                     bvps = None
-                    if total_equity and shares_outstanding:
+                    if is_valid(total_equity) and is_valid(shares_outstanding) and shares_outstanding > 0:
                         bvps = total_equity / shares_outstanding
                         
                     # FCF
@@ -71,6 +102,10 @@ class StepFetchData:
                     current_liabilities = bs.get("Current Liabilities")
                     total_debt = bs.get("Total Debt")
                     
+                    minority_interest = bs.get("Minority Interest", 0.0)
+                    preferred_equity = bs.get("Preferred Stock", bs.get("Preferred Stock Equity", 0.0))
+                    cash_and_equivalents = bs.get("Cash And Cash Equivalents", bs.get("Cash", 0.0))
+                    
                     merged = {
                         "price": current_price,
                         "market_cap": market_cap,
@@ -78,6 +113,8 @@ class StepFetchData:
                         "bvps": bvps,
                         "fcf": fcf,
                         "shares_outstanding": shares_outstanding,
+                        "shares_source": shares_source,
+                        "payout_ratio": payout_ratio,
                         "dividend_yield": quote.get("dividendYield"),
                         "pe": quote.get("trailing_pe") or quote.get("forward_pe"),
                         "roe": quote.get("roe"),
@@ -88,7 +125,10 @@ class StepFetchData:
                         "total_equity": total_equity,
                         "total_assets": total_assets,
                         "current_liabilities": current_liabilities,
-                        "total_debt": total_debt
+                        "total_debt": total_debt,
+                        "minority_interest": minority_interest,
+                        "preferred_equity": preferred_equity,
+                        "cash_and_equivalents": cash_and_equivalents
                     }
                     
                     context.api_calls += 4

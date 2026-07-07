@@ -11,7 +11,7 @@ from typing import Optional, Dict, Any, List
 @dataclass(slots=True, frozen=True)
 class EngineResult:
     """Explainable AI (XAI) output from calculation and decision engines."""
-    value: float
+    value: float | None
     confidence: float
     breakdown: Dict[str, float]
     reasons: List[str]

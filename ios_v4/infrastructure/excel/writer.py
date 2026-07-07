@@ -75,7 +75,12 @@ class ExcelWriter:
                     if row_idx:
                         col_idx = headers[col_name] + 1
                         cell = ws.cell(row=row_idx, column=col_idx)
-                        cell.value = action.new_value
+                        
+                        val_to_write = action.new_value
+                        if isinstance(val_to_write, (int, float)) and "%" in col_name:
+                            val_to_write = val_to_write * 100
+                            
+                        cell.value = val_to_write
                         
                         log_audit_trail(
                             ticker=action.ticker,

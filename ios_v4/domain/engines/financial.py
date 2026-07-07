@@ -73,6 +73,49 @@ class FinancialEngine:
             breakdown["debt_to_equity"] = debt_to_equity
             reasons.append(f"Debt to Equity calculated at {debt_to_equity:.2f}x")
 
+        # 4. Enterprise Value & Yields
+        market_cap = data.get("market_cap")
+        minority_interest = data.get("minority_interest", 0.0)
+        preferred_equity = data.get("preferred_equity", 0.0)
+        cash = data.get("cash_and_equivalents", 0.0)
+        fcf = data.get("fcf")
+        
+        enterprise_value = None
+        if market_cap is not None:
+            total_debt_val = total_debt or 0.0
+            minority_interest = minority_interest or 0.0
+            preferred_equity = preferred_equity or 0.0
+            cash = cash or 0.0
+            enterprise_value = market_cap + total_debt_val + minority_interest + preferred_equity - cash
+
+        if enterprise_value is not None:
+            if operating_income and operating_income > 0:
+                ev_ebit = enterprise_value / operating_income
+                breakdown["ev_ebit"] = ev_ebit
+                reasons.append(f"EV/EBIT calculated at {ev_ebit:.2f}x (using full Enterprise Value)")
+            else:
+                warnings.append("Operating income (EBIT) is non-positive or missing; skipping EV/EBIT.")
+                
+            if fcf is not None:
+                fcf_yield = fcf / enterprise_value
+                breakdown["fcf_yield"] = fcf_yield
+                reasons.append(f"FCF Yield (Enterprise) calculated at {fcf_yield:.1%}")
+        else:
+            warnings.append("Insufficient data to calculate Enterprise Value.")
+            
+        # 5. Additional Metrics
+        if fcf is not None and revenue and revenue > 0:
+            fcf_margin = fcf / revenue
+            breakdown["fcf_margin"] = fcf_margin
+            reasons.append(f"FCF Margin calculated at {fcf_margin:.1%}")
+            
+        eps = data.get("eps")
+        current_price = data.get("price")
+        if eps is not None and current_price and current_price > 0:
+            earnings_yield = eps / current_price
+            breakdown["earnings_yield"] = earnings_yield
+            reasons.append(f"Earnings Yield calculated at {earnings_yield:.1%}")
+
         # Mocking CAGR for this iteration as time-series data isn't fully structured yet
         breakdown["revenue_cagr_3y"] = 0.15
         reasons.append("Revenue 3Y CAGR estimated at 15.0% (Time-series data pending)")

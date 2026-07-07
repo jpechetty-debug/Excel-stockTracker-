@@ -29,6 +29,7 @@ class YFinanceProvider(MarketDataProvider):
         self._cache_hits = 0
         self._total_requests = 0
         self._last_error = None
+        self.exchange_suffix = None
         
     @property
     def name(self) -> str:
@@ -48,7 +49,12 @@ class YFinanceProvider(MarketDataProvider):
 
     def _get_ticker_obj(self, ticker: str) -> yf.Ticker:
         """Helper to get a yf.Ticker."""
-        return yf.Ticker(ticker)
+        symbol = ticker
+        if self.exchange_suffix:
+            # Check if it already has a suffix like .NS or .BO
+            if not (symbol.endswith(".NS") or symbol.endswith(".BO")):
+                symbol = f"{symbol}.{self.exchange_suffix}"
+        return yf.Ticker(symbol)
 
     @api_retry_policy
     def get_quote(self, ticker: str) -> Dict[str, Any]:
@@ -68,7 +74,10 @@ class YFinanceProvider(MarketDataProvider):
                 "volume": info.get("volume"),
                 "forward_pe": info.get("forwardPE"),
                 "trailing_pe": info.get("trailingPE"),
-                "roe": info.get("returnOnEquity")
+                "roe": info.get("returnOnEquity"),
+                "shares_outstanding": info.get("sharesOutstanding"),
+                "trailing_eps": info.get("trailingEps"),
+                "payout_ratio": info.get("payoutRatio")
             }
         except Exception as e:
             self._last_error = str(e)

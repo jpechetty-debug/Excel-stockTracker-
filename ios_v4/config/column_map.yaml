@@ -37,9 +37,27 @@ zones:
     - field: investment_score
       column: "Investment Score"
     - field: target_allocation
-      column: "Target Allocation"
+      column: "Target Allocation %"
     - field: portfolio_weight
       column: "Portfolio Weight"
+    - field: ev_ebit
+      column: "EV/EBIT"
+    - field: fcf_yield
+      column: "FCF Yield %"
+    - field: valuation_status
+      column: "Valuation Status"
+    - field: intrinsic_value
+      column: "Intrinsic Value"
+    - field: growth_rate_used
+      column: "Growth Rate Used %"
+    - field: justified_pe
+      column: "Justified P/E"
+    - field: buy_price
+      column: "Buy Price"
+    - field: eps_implied
+      column: "EPS Implied (Rs, Price/PE)"
+    - field: position_size
+      column: "Position Size (₹)"
 
   manual:
     - column: "Investment Thesis"

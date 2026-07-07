@@ -81,8 +81,8 @@ class StepWriteExcel:
                 if ticker in context.artifacts.allocations:
                     res = context.artifacts.allocations[ticker]
                     prov = prov_default
-                    company.metrics["target_allocation"] = Metric(value=res.breakdown.get("target_allocation"), provenance=prov)
-                    company.metrics["portfolio_weight"] = Metric(value=res.breakdown.get("portfolio_weight"), provenance=prov)
+                    for k, v in res.breakdown.items():
+                        company.metrics[k] = Metric(value=v, provenance=prov)
             
             # Run Update Planner
             planner = UpdatePlanner(context.config_loader)

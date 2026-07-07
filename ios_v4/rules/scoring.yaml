@@ -13,9 +13,9 @@ business_score:
   
   thresholds:
     roce:
-      excellent: 30.0
-      good: 20.0
-      poor: 10.0
+      excellent: 0.30
+      good: 0.20
+      poor: 0.10
     debt_to_equity:
       excellent: 0.1
       good: 0.5

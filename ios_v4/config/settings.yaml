@@ -5,6 +5,9 @@ application:
   threads: 8
   debug: false
   
+market:
+  exchange: NS
+
 data_source:
   provider: "yfinance" # can be switched to 'mock' or 'nse'
   timeout_seconds: 30
@@ -14,6 +17,19 @@ cache:
   enabled: true
   dir: ".cache"
   expiry_hours: 24
+  
+portfolio:
+  size: 1000000
+
+valuation:
+  margin_of_safety:
+    default: 0.20
+  dcf:
+    terminal_growth: 0.045
+    discount_rate: 0.11
+    max_growth: 0.25
+    min_growth: 0.05
+
   
 excel:
   backup_dir: ".backups"

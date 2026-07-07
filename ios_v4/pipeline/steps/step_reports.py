@@ -38,8 +38,32 @@ class StepReports:
                     "workbook_diff.csv",
                     "run_summary.json"
                 ],
-                "timing_ms": context.step_timings
+                "timing_ms": context.step_timings,
+                "company_details": {}
             }
+            
+            for company in context.artifacts.raw_companies:
+                ticker = company.ticker
+                mdata = context.artifacts.market_data.get(ticker, {})
+                vdata = context.artifacts.valuations.get(ticker)
+                bdata = context.artifacts.business_scores.get(ticker)
+                
+                details = {}
+                details["shares_source"] = mdata.get("shares_source", "unknown")
+                if vdata:
+                    details["valuation_status"] = vdata.breakdown.get("valuation_status", "Unknown")
+                    details["growth_rate_used"] = vdata.breakdown.get("growth_rate_used")
+                    details["discount_rate"] = context.config.get("dcf", {}).get("discount_rate", 0.11)
+                    details["terminal_growth"] = context.config.get("dcf", {}).get("terminal_growth", 0.045)
+                    details["valuation_confidence"] = vdata.confidence
+                else:
+                    details["valuation_status"] = "Not Calculated"
+                    
+                if bdata:
+                    details["business_score"] = bdata.value
+                    details["business_confidence"] = bdata.confidence
+                    
+                summary["company_details"][ticker] = details
             
             with open(run_file, "w", encoding="utf-8") as f:
                 json.dump(summary, f, indent=4)

@@ -17,10 +17,13 @@ class StepAllocation:
         
     def execute(self, context: ExecutionContext) -> bool:
         try:
-            engine = AllocationEngine(max_position_size=0.10, cash_floor=0.05)
+            portfolio_config = context.config.get("portfolio", {})
+            portfolio_size = portfolio_config.get("size", 1000000)
+            engine = AllocationEngine(max_position_size=0.10, cash_floor=0.05, portfolio_size=portfolio_size)
             scores = context.artifacts.business_scores
+            valuations = context.artifacts.valuations if hasattr(context.artifacts, "valuations") else {}
             
-            allocations = engine.calculate_allocations(scores)
+            allocations = engine.calculate_allocations(scores, valuations)
             context.artifacts.allocations = allocations
             
             context.log(f"Allocated portfolio targets for {len(allocations)} companies.", Severity.INFO)
