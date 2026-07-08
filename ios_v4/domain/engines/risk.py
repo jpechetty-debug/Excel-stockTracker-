@@ -46,26 +46,26 @@ class RiskEngine:
             warnings.append("Missing D/E for Financial Risk.")
 
         # Valuation Risk
+        # REMOVED as a Risk Score dimension (was previously weighted 40% per
+        # scoring.yaml). InvestmentEngine already applies a valuation_mult derived
+        # from this exact margin_of_safety figure. Keeping it here too meant every
+        # stock's valuation was penalized twice in the same final Investment Score
+        # - once directly, once via an inflated Risk Score - which is what drove
+        # almost the entire universe into "Avoid" regardless of quality.
+        #
+        # A softer/continuous curve here does NOT fix this: real DCF-based MoS
+        # values for expensive quality names (e.g. CAMS at -166%, Cummins at
+        # -487%) still saturate any reasonable risk curve at its max, so the
+        # double-count persists no matter the curve shape. Risk Score should
+        # measure risk orthogonal to "is it expensive right now" - financial
+        # risk here, and ideally business/liquidity/market risk dimensions if
+        # you add them later. If you want valuation reflected in Risk Score too,
+        # dial back valuation_mult in investment.py instead of double-applying
+        # the same signal here.
         v_metrics = valuation_result.breakdown
         mos = v_metrics.get("margin_of_safety")
-        valuation_weight = dimensions.get("valuation", 0.20)
-        if mos is not None:
-            # Continuous scale instead of a cliff at MoS=0.
-            # +50% MoS (cheap) -> 0 risk. 0% MoS (fair value) -> 50 risk.
-            # -50% MoS or worse (expensive) -> 100 risk, capped.
-            # This avoids treating "-0.1% MoS" identically to "-500% MoS",
-            # which previously made almost every stock in the universe max
-            # out valuation risk (see scoring.yaml: valuation is 40% of Risk Score).
-            v_risk = 50 - (mos * 100)
-            v_risk = max(0, min(v_risk, 100))
-            reasons.append(f"Valuation risk evaluated from {mos:.1%} MoS (continuous scale).")
-                
-            weighted_v_risk = v_risk * valuation_weight
-            breakdown["valuation"] = weighted_v_risk
-            total_risk += weighted_v_risk
-            total_weight_scored += valuation_weight
-        else:
-            warnings.append("Missing MoS for Valuation Risk.")
+        if mos is None:
+            warnings.append("Missing MoS (valuation dimension intentionally excluded from Risk Score - see investment.py valuation_mult).")
 
         confidence = min(financial_result.confidence, valuation_result.confidence)
         final_risk = None

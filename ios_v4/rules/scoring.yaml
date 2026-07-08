@@ -39,5 +39,10 @@ business_score:
 
 risk_score:
   dimensions:
-    financial: 0.60
-    valuation: 0.40
+    # valuation removed: InvestmentEngine already applies valuation_mult from
+    # the same margin_of_safety figure (see investment.py). Keeping it here
+    # too double-counted the same signal and drove most of the universe to
+    # "Avoid" regardless of business quality. financial carries full weight
+    # until additional orthogonal risk dimensions (business/liquidity/market)
+    # are added - see risk.py for the long comment.
+    financial: 1.00
