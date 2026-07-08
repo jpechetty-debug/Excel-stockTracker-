@@ -104,18 +104,25 @@ class UpdatePlanner:
                 
                 # Soft-Fail Policy Enforcement
                 if new_val is None:
-                    # Allow clearing cell if it's a valuation metric and valuation calculation is invalid/negative,
-                    # or if the old value is negative.
+                    # If the engine currently can't compute a valid value for a
+                    # valuation field, any old value sitting in that cell is
+                    # potentially stale (e.g. left over from a version of the code
+                    # that didn't guard against negative DCF/Graham blends) and
+                    # should not be presented as current. Previously this only
+                    # cleared the cell when old_val was itself negative or the
+                    # status string matched one of two specific strings, which let
+                    # stale positive AND negative numbers survive re-runs whenever
+                    # valuation_status was anything else (e.g. "Missing Inputs" or
+                    # a "Missing EV/EBIT (...)" composite string). Any None from the
+                    # engine for one of these fields now clears the old value.
                     is_valuation_field = field in ("intrinsic_value", "buy_price", "margin_of_safety")
-                    val_status_metric = company.metrics.get("valuation_status")
-                    val_status = val_status_metric.value if val_status_metric else None
-                    
+
                     if old_val is not None and (
-                        (is_valuation_field and val_status in ("Negative FCF / DCF Invalid", "Invalid Inputs")) or
+                        is_valuation_field or
                         (isinstance(old_val, (int, float)) and old_val < 0)
                     ):
                         status = UpdateStatus.UPDATED
-                        reason = "Clear negative/invalid valuation"
+                        reason = "Clear stale/negative/invalid valuation (engine returned None)"
                     else:
                         status = UpdateStatus.SKIPPED_NONE
                         reason = "Field not provided by provider or calculation impossible"

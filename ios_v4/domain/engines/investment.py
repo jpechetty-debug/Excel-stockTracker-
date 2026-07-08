@@ -37,6 +37,14 @@ class InvestmentEngine:
         # 3. Risk Adjustment (Risk Score)
         # Risk score is 0 to 100, where higher is more risk.
         # So risk_adjustment scales from 1.0 (no risk) to 0.0 (max risk).
+        # NOTE: risk_score (via RiskEngine) already includes a valuation dimension
+        # (see scoring.yaml risk_score.dimensions.valuation, 40% weight) derived from
+        # the same margin_of_safety used in valuation_mult above. That dimension was
+        # previously a cliff-edge (any negative MoS -> max risk), which combined with
+        # the valuation_mult floor here to double-penalize the same signal and pushed
+        # most of the universe into "Avoid". RiskEngine.compute_risk now uses a
+        # continuous scale for that dimension - keep it that way, or this
+        # double-counting will silently return.
         risk = risk_result.value if (risk_result and risk_result.value is not None) else 0.0
         if risk_result and risk_result.value is None:
             warnings.append("Risk Score was None (no scorable dimensions); treating Risk as 0.0 (no adjustment) for this synthesis.")

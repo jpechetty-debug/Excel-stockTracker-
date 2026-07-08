@@ -50,14 +50,15 @@ class RiskEngine:
         mos = v_metrics.get("margin_of_safety")
         valuation_weight = dimensions.get("valuation", 0.20)
         if mos is not None:
-            # Negative margin of safety = high risk
-            if mos < 0:
-                v_risk = 100
-                reasons.append("High Valuation Risk: Margin of Safety is negative.")
-            else:
-                v_risk = 100 - (mos * 100 * 2) # e.g. 50% MoS = 0 risk
-                v_risk = max(0, min(v_risk, 100))
-                reasons.append(f"Valuation risk evaluated from {mos:.1%} MoS.")
+            # Continuous scale instead of a cliff at MoS=0.
+            # +50% MoS (cheap) -> 0 risk. 0% MoS (fair value) -> 50 risk.
+            # -50% MoS or worse (expensive) -> 100 risk, capped.
+            # This avoids treating "-0.1% MoS" identically to "-500% MoS",
+            # which previously made almost every stock in the universe max
+            # out valuation risk (see scoring.yaml: valuation is 40% of Risk Score).
+            v_risk = 50 - (mos * 100)
+            v_risk = max(0, min(v_risk, 100))
+            reasons.append(f"Valuation risk evaluated from {mos:.1%} MoS (continuous scale).")
                 
             weighted_v_risk = v_risk * valuation_weight
             breakdown["valuation"] = weighted_v_risk

@@ -129,6 +129,20 @@ class ValuationEngine:
                     mos = (blended_value - current_price) / blended_value
                     breakdown["margin_of_safety"] = mos
                     reasons.append(f"Margin of Safety computed at {mos:.1%}")
+                    # Keep the precise mos value for scoring (don't clamp the number
+                    # that feeds RiskEngine/InvestmentEngine), but add a readable
+                    # bucket for anyone consuming the report directly, since a
+                    # four-digit percentage (e.g. -2109%) carries no extra decision
+                    # value over "Extremely Overvalued" for a human reader.
+                    if mos >= 0.20:
+                        mos_bucket = "Undervalued"
+                    elif mos >= 0:
+                        mos_bucket = "Fair Value"
+                    elif mos >= -0.50:
+                        mos_bucket = "Overvalued"
+                    else:
+                        mos_bucket = "Extremely Overvalued"
+                    breakdown["margin_of_safety_bucket"] = mos_bucket
                     
                 buy_price = blended_value * (1 - target_mos)
                 breakdown["buy_price"] = buy_price
