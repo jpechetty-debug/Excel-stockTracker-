@@ -79,12 +79,21 @@ class InvestmentEngine:
         reasons.append(f"Risk Adjustment: {risk_adj:.2f}x")
         
         # Generate Overall Recommendation
+        # Note: quality*valuation_mult*risk_adj is multiplicative, and valuation_mult
+        # floors at 0.5 (not 0) even for extreme overvaluation - so a genuinely
+        # excellent business (quality>=75) trading expensively will still land in
+        # low investment_score territory. Left unhandled, that's indistinguishable
+        # from a genuinely poor business, which collapses "great company, bad price"
+        # and "bad company" into the same "Avoid" bucket. Give the former its own label.
         if investment_score >= 80 and confidence >= 0.8:
             recommendation = "Strong Buy"
         elif investment_score >= 65:
             recommendation = "Buy"
         elif investment_score >= 50:
             recommendation = "Watch"
+        elif quality >= 75:
+            recommendation = "Watch (Quality, Pricey)"
+            reasons.append("High Business Score but low Investment Score -> flagged as a quality name awaiting a better price, not a poor business.")
         elif investment_score >= 35:
             recommendation = "Hold"
         else:

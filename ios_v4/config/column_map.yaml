@@ -54,6 +54,8 @@ zones:
       column: "FCF Yield %"
     - field: valuation_status
       column: "Valuation Status"
+    - field: margin_of_safety_bucket
+      column: "Valuation Label"
     - field: intrinsic_value
       column: "Intrinsic Value"
     - field: growth_rate_used
