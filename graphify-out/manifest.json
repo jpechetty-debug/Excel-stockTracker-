@@ -32,12 +32,12 @@
     "hash": "b1c90560df8ab74f1884e177bd5e4c5c"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\investment.py": {
-    "mtime": 1783405832.0,
-    "hash": "09b005659ff0de7f4e25dbfa1e084eb5"
+    "mtime": 1783497132.1664348,
+    "hash": "fb92b8c3f3d8404bf8aad98af9581d2a"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\risk.py": {
-    "mtime": 1783405824.0,
-    "hash": "4e6dcb52921197efb54c76b4e6420677"
+    "mtime": 1783497116.068791,
+    "hash": "268eb576ca5011c336ce501b3193277e"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\rule_parser.py": {
     "mtime": 1783405354.0,
@@ -48,8 +48,8 @@
     "hash": "e1d016c1bb08cd5b7eb95a655504b22d"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\domain\\engines\\valuation.py": {
-    "mtime": 1783405354.0,
-    "hash": "7d7994d00d67eb7e6a916239983c8e21"
+    "mtime": 1783497136.2073865,
+    "hash": "2d5c010f4ae4a00dc79a22d4eceefd55"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\cache\\manager.py": {
     "mtime": 1783405354.0,
@@ -60,8 +60,8 @@
     "hash": "9b39b07e38389bcf6859acf9056ee06a"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\excel\\planner.py": {
-    "mtime": 1783405354.0,
-    "hash": "f7047a2d1853538ec0db50bced3f9b34"
+    "mtime": 1783510365.2998445,
+    "hash": "0b6159848df2e993beabb00361712eab"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\infrastructure\\excel\\reader.py": {
     "mtime": 1783405354.0,
@@ -192,8 +192,8 @@
     "hash": "d5c0160ed25de7d3718d7e6e3fa1dbd3"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_planner.py": {
-    "mtime": 1783405354.0,
-    "hash": "c9caf5fc59b42cc10a2c42a117d8efad"
+    "mtime": 1783510367.311835,
+    "hash": "f6753dd6c9cec8fa6df585daf59f5e54"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\tests\\unit\\test_validators.py": {
     "mtime": 1783405354.0,
@@ -1340,19 +1340,23 @@
     "hash": "72ef6ee081099810036b620ba442641d"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\graphify-out\\converted\\IOS_Master_Tracker_Filled_10 (1)_65394932.md": {
-    "mtime": 1783428192.774884,
+    "mtime": 1783511093.7290404,
     "hash": "fc1c4871ebbcf3d1684f6df1a6a67b74"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\graphify-out\\converted\\IOS_Master_Tracker_Filled_10 (1)_v4.6_095c6d37.md": {
-    "mtime": 1783428192.8136408,
+    "mtime": 1783511093.7655673,
     "hash": "3127c54d3d0bda148eb2aab5ba4a945e"
+  },
+  "D:\\Tradeidesa\\Excel-tracker_of stocks\\graphify-out\\converted\\IOS_Master_Tracker_Filled_12_2e25319b.md": {
+    "mtime": 1783511093.8031032,
+    "hash": "4e7b2a2791abd3880f2c64871cb26334"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\README.md": {
     "mtime": 1783405354.0,
     "hash": "260017e596aff5c5c5c117e04764dd08"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\graphify-out\\converted\\IOS_Master_Tracker_Filled_10 (1)_DRYRUN_17cbac22.md": {
-    "mtime": 1783428192.8528006,
+    "mtime": 1783511093.8519204,
     "hash": "65febc1dde16b4024bad03b3ee91b6c8"
   },
   "D:\\Tradeidesa\\Excel-tracker_of stocks\\ios_v4\\requirements.txt": {

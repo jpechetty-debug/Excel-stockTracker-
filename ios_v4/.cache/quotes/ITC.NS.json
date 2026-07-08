@@ -1,13 +1,13 @@
 {
-  "current_price": 288.75,
-  "previous_close": 288.25,
-  "market_cap": 3617883947008,
-  "volume": 18489823,
-  "forward_pe": 16.362507,
-  "trailing_pe": 17.606709,
+  "current_price": 280.65,
+  "previous_close": 288.75,
+  "market_cap": 3516395159552,
+  "volume": 21590787,
+  "forward_pe": 15.903507,
+  "trailing_pe": 16.957705,
   "roe": 0.2934,
   "shares_outstanding": 12529468231,
-  "trailing_eps": 16.4,
+  "trailing_eps": 16.55,
   "payout_ratio": 0.8692,
-  "dividend_yield": 5.55
+  "dividend_yield": 5.54
 }
