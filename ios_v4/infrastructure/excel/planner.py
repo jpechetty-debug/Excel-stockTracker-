@@ -51,10 +51,12 @@ class UpdatePlanner:
     def __init__(self, config: ConfigLoader):
         self.config = config
         self.allowed_columns: Set[str] = set()
+        self.field_to_col: Dict[str, str] = {}
         system_zones = config.column_map.get("zones", {}).get("system", [])
         for item in system_zones:
             if "column" in item and "field" in item:
                 self.allowed_columns.add(item["field"])
+                self.field_to_col[item["field"]] = item["column"]
 
     @staticmethod
     def _values_equivalent(old_val: Any, new_val: Any) -> bool:
@@ -79,6 +81,29 @@ class UpdatePlanner:
                 pass
 
         return str(old_val) == str(new_val)
+
+    def _as_written(self, field: str, new_val: Any) -> Any:
+        """
+        Mirrors ExcelWriter's write-time transform: numeric values destined for a
+        column whose name contains "%" are multiplied by 100 (engines store these
+        as raw fractions, e.g. 0.36, but the sheet displays 36.03).
+
+        This MUST be applied before comparing old_val (read back from the sheet,
+        already in written/scaled form) against new_val (a fresh raw fraction from
+        this run's engines). Comparing them in mismatched units previously let a
+        field get permanently "stuck": if a cell was ever written un-scaled (e.g.
+        before this transform existed, or via any path that skipped it), every
+        future run would recompute essentially the same raw fraction, find it
+        numerically close to that stale unscaled cell value, mark the field
+        UNCHANGED, and skip writing it — never applying the *100 correction and
+        leaving that one field permanently wrong (e.g. one ticker's ROE reading in
+        raw fraction form -0.31 while every other ticker's reads correctly as a
+        percentage like 36.03).
+        """
+        col_name = self.field_to_col.get(field, "")
+        if isinstance(new_val, (int, float)) and "%" in col_name:
+            return new_val * 100
+        return new_val
 
     def create_plan(self, companies: List[CompanyData], existing_data: Dict[str, Dict[str, Any]]) -> WorkbookUpdatePlan:
         """
@@ -129,7 +154,7 @@ class UpdatePlanner:
                 elif field not in self.allowed_columns:
                     status = UpdateStatus.SKIPPED_MANUAL
                     reason = "Field is not in System Zone"
-                elif self._values_equivalent(old_val, new_val):
+                elif self._values_equivalent(old_val, self._as_written(field, new_val)):
                     status = UpdateStatus.UNCHANGED
                     reason = "Values are identical"
                 else:
