@@ -72,6 +72,14 @@ class StepWriteExcel:
                     prov = prov_default
                     company.metrics["business_score"] = Metric(value=res.value, provenance=prov)
                     company.metrics["business_confidence"] = Metric(value=res.confidence, provenance=prov)
+                    # NOTE: every other engine block below loops over res.breakdown.items()
+                    # to surface its sub-fields (e.g. margin_of_safety_bucket from
+                    # Valuation). This block was missing that loop, so anything added
+                    # to ScoringEngine's breakdown (e.g. score_status) was silently
+                    # computed but never written to Excel, no matter what column_map.yaml
+                    # said. Keep this loop if you add more breakdown fields here later.
+                    for k, v in res.breakdown.items():
+                        company.metrics[k] = Metric(value=v, provenance=prov)
 
                 # Risk Engine mapping
                 if ticker in getattr(context.artifacts, 'risks', {}):

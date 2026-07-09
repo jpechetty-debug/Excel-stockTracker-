@@ -165,6 +165,28 @@ class ScoringEngine:
             warnings.append("No business metrics were scorable. Score is None.")
             confidence = 0.0
 
+        # Score Status: a low/zero Business Score is ambiguous on its own - it can
+        # mean "we checked everything and it's genuinely bad" or "we couldn't
+        # check most things". Confidence disambiguates that, but readers (and
+        # audit tooling) kept flagging low-score-high-confidence cases as
+        # apparent bugs, since the two failure modes look identical without this.
+        # Three cases, matching how a human analyst would describe each:
+        if final_score is None:
+            score_status = "Calculation Failure"
+            reasons.insert(0, "Score Status: Calculation Failure - no metrics were scorable at all.")
+        elif final_score <= 20 and confidence >= 0.70:
+            score_status = "Confirmed Weak Fundamentals"
+            reasons.insert(0, f"Score Status: Confirmed Weak Fundamentals - low score ({final_score:.1f}) reached with high confidence ({confidence:.0%}); this is a genuine finding, not missing data.")
+        elif final_score <= 20 and confidence < 0.50:
+            score_status = "Likely Missing Data"
+            reasons.insert(0, f"Score Status: Likely Missing Data - low score ({final_score:.1f}) but low confidence ({confidence:.0%}); treat as inconclusive, not a confirmed poor rating.")
+        elif final_score <= 20:
+            score_status = "Uncertain - Partial Data"
+            reasons.insert(0, f"Score Status: Uncertain - low score ({final_score:.1f}) with moderate confidence ({confidence:.0%}); more data would sharpen this.")
+        else:
+            score_status = "Scored"
+        breakdown["score_status"] = score_status
+
         return EngineResult(
             value=final_score,
             confidence=confidence,

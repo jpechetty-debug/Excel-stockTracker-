@@ -34,6 +34,8 @@ zones:
       column: "Business Confidence (%)"
     - field: business_score
       column: "Business Score"
+    - field: score_status
+      column: "Score Status"
     - field: investment_score
       column: "Investment Score"
     - field: investment_confidence
