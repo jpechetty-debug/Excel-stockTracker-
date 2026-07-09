@@ -87,6 +87,8 @@ class StepWriteExcel:
                     prov = prov_default
                     company.metrics["risk_score"] = Metric(value=res.value, provenance=prov)
                     company.metrics["risk_confidence"] = Metric(value=res.confidence, provenance=prov)
+                    for k, v in res.breakdown.items():
+                        company.metrics[k] = Metric(value=v, provenance=prov)
 
                 # Investment Engine mapping
                 if ticker in getattr(context.artifacts, 'investment_scores', {}):

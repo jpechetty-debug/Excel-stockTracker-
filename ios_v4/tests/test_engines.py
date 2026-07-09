@@ -101,6 +101,54 @@ def test_investment_score():
     result = engine.compute_investment_score(b_res, v_res, r_res)
     assert abs(result.value - 76.8) < 0.01
     
+def test_investment_score_evidence_gate_fail_forces_avoid():
+    # Regression test: SANDUMA (Fail gate) was recommended "Strong Buy" because
+    # the engine had no visibility into Evidence Gate at all. A great-looking
+    # quality/valuation/risk combination must not survive a Fail gate.
+    engine = InvestmentEngine()
+    b_res = make_result(value=95.0, breakdown={})
+    v_res = make_result(value=0, breakdown={"margin_of_safety": 0.40})
+    r_res = make_result(value=5.0, breakdown={})
+
+    result = engine.compute_investment_score(b_res, v_res, r_res, evidence_gate="Fail")
+
+    assert result.value == 0.0
+    assert result.breakdown["recommendation"] == "Avoid"
+
+
+def test_investment_score_evidence_gate_conflict_caps_at_watch():
+    # Regression test: BLS International / eClerx (Conflict gate) were
+    # recommended "Strong Buy" despite an explicitly unresolved data conflict.
+    # Conflict must never be outvoted by good quality/valuation/risk math into
+    # Buy or Strong Buy - it can still show as Watch/Hold/Avoid based on score.
+    engine = InvestmentEngine()
+    b_res = make_result(value=90.0, breakdown={})
+    v_res = make_result(value=0, breakdown={"margin_of_safety": 0.30})
+    r_res = make_result(value=5.0, breakdown={})
+
+    result = engine.compute_investment_score(b_res, v_res, r_res, evidence_gate="Conflict")
+
+    assert result.breakdown["recommendation"] not in ("Strong Buy", "Buy")
+    # Unlike Fail, Conflict should NOT zero out the underlying score - it's an
+    # unresolved data question, not a proven-bad business.
+    assert result.value > 0
+
+
+def test_investment_score_evidence_gate_pass_is_unaffected():
+    # A Pass gate (or no gate info at all, e.g. legacy callers) must behave
+    # exactly as before this patch.
+    engine = InvestmentEngine()
+    b_res = make_result(value=80.0, breakdown={})
+    v_res = make_result(value=0, breakdown={"margin_of_safety": 0.20})
+    r_res = make_result(value=20.0, breakdown={})
+
+    result_no_gate = engine.compute_investment_score(b_res, v_res, r_res)
+    result_pass = engine.compute_investment_score(b_res, v_res, r_res, evidence_gate="Pass")
+
+    assert abs(result_no_gate.value - 76.8) < 0.01
+    assert abs(result_pass.value - 76.8) < 0.01
+
+
 def test_allocation():
     engine = AllocationEngine(max_position_size=0.10, cash_floor=0.05)
     
@@ -124,3 +172,62 @@ def test_allocation():
     # Sum of scores = 150
     # A's raw = 100/150 = 66.6% -> capped at 10%
     assert abs(allocs["A"].value - 0.10) < 0.01
+
+def test_risk_score_banking_model_good_metrics():
+    engine = RiskEngine(rule_parser=DummyParser())
+    # GNPA = 0.7% (<1% -> 0), CAR = 18.5% (>18% -> 0)
+    result = engine.compute_risk(
+        financial_result=make_result(),
+        valuation_result=make_result(),
+        industry="Banks",
+        gross_npa=0.7,
+        car=18.5
+    )
+    assert result.value == 0.0
+    assert result.breakdown.get("financial_risk") == 0.0
+
+def test_risk_score_banking_model_weak_metrics():
+    engine = RiskEngine(rule_parser=DummyParser())
+    # GNPA = 5.5% (>5% -> 100), CAR = 12.0% (12->80)
+    # Financial Risk = 100 * 0.6 + 80 * 0.4 = 92.0
+    result = engine.compute_risk(
+        financial_result=make_result(),
+        valuation_result=make_result(),
+        industry="Public Bank",
+        gross_npa=5.5,
+        car=12.0
+    )
+    assert result.value == 92.0
+    assert result.breakdown.get("financial_risk") == 92.0
+
+def test_risk_score_banking_model_missing_metrics():
+    engine = RiskEngine(rule_parser=DummyParser())
+    # Missing metrics -> Default to 40
+    result = engine.compute_risk(
+        financial_result=make_result(),
+        valuation_result=make_result(),
+        industry="NBFC"
+    )
+    assert result.value == 40.0
+
+def test_risk_score_standard_model():
+    engine = RiskEngine(rule_parser=DummyParser())
+    # Standard company uses D/E
+    financial_result = make_result(value=0, breakdown={"debt_to_equity": 0.5})
+    result = engine.compute_risk(
+        financial_result=financial_result,
+        valuation_result=make_result(),
+        industry="Technology"
+    )
+    assert result.value == 50.0  # 0.5 * 100
+
+def test_risk_score_standard_model_missing_data():
+    engine = RiskEngine(rule_parser=DummyParser())
+    # Missing D/E -> Default to 40
+    financial_result = make_result(value=0, breakdown={})
+    result = engine.compute_risk(
+        financial_result=financial_result,
+        valuation_result=make_result(),
+        industry="Technology"
+    )
+    assert result.value == 40.0

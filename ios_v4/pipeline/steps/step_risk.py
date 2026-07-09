@@ -26,9 +26,29 @@ class StepRisk:
             # Intersection of tickers that have both
             common_tickers = set(financials.keys()).intersection(set(valuations.keys()))
             
+            existing_data = getattr(context.artifacts, 'existing_data', {}) or {}
+            market_data = context.artifacts.market_data
+            
             for ticker in common_tickers:
                 try:
-                    result = engine.compute_risk(financials[ticker], valuations[ticker])
+                    ed = existing_data.get(ticker, {})
+                    md = market_data.get(ticker, {})
+                    
+                    industry = md.get("industry") or md.get("sector")
+                    gross_npa = ed.get("gross_npa")
+                    net_npa = ed.get("net_npa")
+                    car = ed.get("car")
+                    pcr = ed.get("pcr")
+                    
+                    result = engine.compute_risk(
+                        financials[ticker], 
+                        valuations[ticker],
+                        industry=industry,
+                        gross_npa=gross_npa,
+                        net_npa=net_npa,
+                        car=car,
+                        pcr=pcr
+                    )
                     context.artifacts.risks[ticker] = result
                     
                     if result.warnings:

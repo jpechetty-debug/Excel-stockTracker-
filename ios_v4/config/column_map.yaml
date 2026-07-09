@@ -76,6 +76,33 @@ zones:
       column: "Position Size (₹)"
     - field: recommendation
       column: "Overall Recommendation"
+    - field: evidence_gate
+      column: "Evidence Gate"
+      read_only: true  # Human-curated judgment call (Pass/Fail/Conflict). The
+                        # pipeline reads this to gate recommendations but must
+                        # never compute or overwrite it - see UpdatePlanner.
+    - field: gross_npa
+      column: "Gross NPA %"
+      read_only: true
+    - field: net_npa
+      column: "Net NPA %"
+      read_only: true
+    - field: car
+      column: "CAR %"
+      read_only: true
+    - field: pcr
+      column: "PCR %"
+      read_only: true
+    - field: business_risk
+      column: "Business Risk"
+    - field: financial_risk
+      column: "Financial Risk"
+    - field: valuation_risk
+      column: "Valuation Risk"
+    - field: governance_risk
+      column: "Governance Risk"
+    - field: total_risk
+      column: "Total Risk"
 
   manual:
     - column: "Investment Thesis"

@@ -22,12 +22,15 @@ class StepInvestment:
             valuations = context.artifacts.valuations
             risks = context.artifacts.risks
             
+            existing_data = getattr(context.artifacts, 'existing_data', {}) or {}
+
             for ticker, b_res in business_scores.items():
                 try:
                     v_res = valuations.get(ticker)
                     r_res = risks.get(ticker)
-                    
-                    result = engine.compute_investment_score(b_res, v_res, r_res)
+                    evidence_gate = existing_data.get(ticker, {}).get('evidence_gate')
+
+                    result = engine.compute_investment_score(b_res, v_res, r_res, evidence_gate=evidence_gate)
                     
                     if not hasattr(context.artifacts, 'investment_scores'):
                         context.artifacts.investment_scores = {}

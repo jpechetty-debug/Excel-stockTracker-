@@ -3,10 +3,36 @@ Risk Engine
 Decomposes risk into distinct testable dimensions.
 """
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from datetime import datetime
 from domain.models import EngineResult
 from domain.engines.rule_parser import RuleParser
+
+BANKING_INDUSTRIES = {
+    "Banks",
+    "Private Bank",
+    "Public Bank",
+    "Financial Services",
+    "NBFC",
+    "Housing Finance",
+    "Insurance"
+}
+
+def _interpolate_gnpa(gnpa: float) -> float:
+    if gnpa < 1.0: return 0.0
+    if gnpa <= 2.0: return 0.0 + (gnpa - 1.0) * 20.0
+    if gnpa <= 3.0: return 20.0 + (gnpa - 2.0) * 20.0
+    if gnpa <= 4.0: return 40.0 + (gnpa - 3.0) * 30.0
+    if gnpa <= 5.0: return 70.0 + (gnpa - 4.0) * 30.0
+    return 100.0
+
+def _interpolate_car(car: float) -> float:
+    if car >= 18.0: return 0.0
+    if car >= 16.0: return 0.0 + (18.0 - car) * 10.0
+    if car >= 14.0: return 20.0 + (16.0 - car) * 15.0
+    if car >= 12.0: return 50.0 + (14.0 - car) * 15.0
+    if car >= 11.5: return 80.0 + (12.0 - car) * 40.0
+    return 100.0
 
 
 class RiskEngine:
@@ -15,70 +41,84 @@ class RiskEngine:
     def __init__(self, rule_parser: RuleParser):
         self.rule_parser = rule_parser
 
-    def compute_risk(self, financial_result: EngineResult, valuation_result: EngineResult) -> EngineResult:
+    def compute_risk(self, financial_result: EngineResult, valuation_result: EngineResult,
+                     industry: Optional[str] = None, gross_npa: Optional[float] = None,
+                     net_npa: Optional[float] = None, car: Optional[float] = None,
+                     pcr: Optional[float] = None) -> EngineResult:
         """
         Calculates a dimensional risk score. Higher score = Higher Risk.
         """
         rules = self.rule_parser.get_rules("scoring")
         version = self.rule_parser.get_rule_version("scoring")
         
-        dimensions = rules.get("risk_score", {}).get("dimensions", {})
-        
         breakdown = {}
         reasons = []
         warnings = []
-        total_risk = 0.0
-        total_weight_scored = 0.0
+        
+        # Initialize components (for transparency/debugging as requested)
+        business_risk = None
+        financial_risk = None
+        valuation_risk = None
+        governance_risk = None
         
         # Financial Risk
         f_metrics = financial_result.breakdown
         dte = f_metrics.get("debt_to_equity")
-        financial_weight = dimensions.get("financial", 0.30)
-        if dte is not None:
-            # Simple linear risk translation for demo
-            f_risk = min(dte * 100, 100)
-            weighted_f_risk = f_risk * financial_weight
-            breakdown["financial"] = weighted_f_risk
-            total_risk += weighted_f_risk
-            total_weight_scored += financial_weight
-            reasons.append(f"Financial risk driven by D/E of {dte:.2f}")
+        
+        is_bank = industry in BANKING_INDUSTRIES
+        
+        if is_bank:
+            reasons.append(f"Sector '{industry}' matched banking/financials. Using GNPA/CAR risk model.")
+            
+            npa_risk = None
+            car_risk = None
+            
+            if gross_npa is not None:
+                npa_risk = _interpolate_gnpa(gross_npa)
+                reasons.append(f"Gross NPA {gross_npa:.2f}% -> {npa_risk:.1f} risk")
+            else:
+                warnings.append("Missing Gross NPA % for banking model.")
+                
+            if car is not None:
+                car_risk = _interpolate_car(car)
+                reasons.append(f"CAR {car:.2f}% -> {car_risk:.1f} risk")
+            else:
+                warnings.append("Missing CAR % for banking model.")
+                
+            if npa_risk is not None and car_risk is not None:
+                financial_risk = (npa_risk * 0.60) + (car_risk * 0.40)
+            elif npa_risk is not None:
+                financial_risk = npa_risk
+            elif car_risk is not None:
+                financial_risk = car_risk
+            else:
+                financial_risk = 40.0
+                warnings.append("No banking metrics available. Defaulting Financial Risk to 40.")
+                
         else:
-            warnings.append("Missing D/E for Financial Risk.")
+            if dte is not None:
+                financial_risk = min(dte * 100, 100)
+                reasons.append(f"Financial risk driven by D/E of {dte:.2f}x")
+            else:
+                financial_risk = 40.0
+                warnings.append("Missing D/E for standard model. Defaulting Financial Risk to 40.")
 
-        # Valuation Risk
-        # REMOVED as a Risk Score dimension (was previously weighted 40% per
-        # scoring.yaml). InvestmentEngine already applies a valuation_mult derived
-        # from this exact margin_of_safety figure. Keeping it here too meant every
-        # stock's valuation was penalized twice in the same final Investment Score
-        # - once directly, once via an inflated Risk Score - which is what drove
-        # almost the entire universe into "Avoid" regardless of quality.
-        #
-        # A softer/continuous curve here does NOT fix this: real DCF-based MoS
-        # values for expensive quality names (e.g. CAMS at -166%, Cummins at
-        # -487%) still saturate any reasonable risk curve at its max, so the
-        # double-count persists no matter the curve shape. Risk Score should
-        # measure risk orthogonal to "is it expensive right now" - financial
-        # risk here, and ideally business/liquidity/market risk dimensions if
-        # you add them later. If you want valuation reflected in Risk Score too,
-        # dial back valuation_mult in investment.py instead of double-applying
-        # the same signal here.
-        v_metrics = valuation_result.breakdown
-        mos = v_metrics.get("margin_of_safety")
-        if mos is None:
-            warnings.append("Missing MoS (valuation dimension intentionally excluded from Risk Score - see investment.py valuation_mult).")
+        breakdown["financial_risk"] = financial_risk
 
+        # Other risk components are currently placeholders for future models.
+        # Valuation Risk is excluded intentionally to avoid double-counting.
+        # Business Risk and Governance Risk will be implemented in future iterations.
+        
+        # Total Risk (For now, only driven by Financial Risk)
+        total_risk = financial_risk
+        breakdown["total_risk"] = total_risk
+        breakdown["business_risk"] = business_risk
+        breakdown["valuation_risk"] = valuation_risk
+        breakdown["governance_risk"] = governance_risk
+        
+        # Prorating is no longer necessary as Financial Risk handles its own defaults and is the only active dimension.
+        final_risk = total_risk
         confidence = min(financial_result.confidence, valuation_result.confidence)
-        final_risk = None
-        if total_weight_scored > 0:
-            # Prorate so partial dimension coverage doesn't silently cap the score low,
-            # e.g. missing MoS shouldn't make a high-D/E company look artificially safe.
-            final_risk = total_risk / total_weight_scored
-            if total_weight_scored < 1.0:
-                reasons.append(f"Risk score prorated. Only {total_weight_scored:.1%} of dimension weights were available.")
-                confidence *= total_weight_scored
-        else:
-            warnings.append("No risk dimensions were scorable. Risk score is None.")
-            confidence = 0.0
 
         return EngineResult(
             value=final_risk,

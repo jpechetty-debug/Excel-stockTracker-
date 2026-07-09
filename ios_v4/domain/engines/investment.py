@@ -11,7 +11,7 @@ from domain.models import EngineResult
 class InvestmentEngine:
     """Calculates Investment Score from Business, Valuation, and Risk results."""
     
-    def compute_investment_score(self, business_result: EngineResult, valuation_result: EngineResult, risk_result: EngineResult) -> EngineResult:
+    def compute_investment_score(self, business_result: EngineResult, valuation_result: EngineResult, risk_result: EngineResult, evidence_gate: str = None) -> EngineResult:
         breakdown = {}
         reasons = []
         warnings = []
@@ -103,7 +103,23 @@ class InvestmentEngine:
         if confidence < 0.5 and recommendation in ["Strong Buy", "Buy"]:
             recommendation = "Watch"
             reasons.append("Recommendation downgraded to Watch due to low confidence.")
-            
+
+        # Evidence Gate override - this is a hard business-process constraint, not
+        # a statistical adjustment, so it applies AFTER all score-based logic above
+        # and cannot be outvoted by a good quality/valuation/risk combination.
+        # A "Fail" or "Conflict" gate reflects a human research conclusion (bad
+        # fundamentals, or an unresolved data conflict) that the quantitative
+        # engines have no visibility into - see ExcelReader / column_map.yaml.
+        if evidence_gate == "Fail":
+            investment_score = 0.0
+            recommendation = "Avoid"
+            reasons.append("Evidence Gate = Fail: Investment Score forced to 0 and recommendation forced to Avoid, overriding quality/valuation math.")
+        elif evidence_gate == "Conflict":
+            if recommendation in ("Strong Buy", "Buy"):
+                original_recommendation = recommendation
+                recommendation = "Watch"
+                reasons.append(f"Evidence Gate = Conflict: recommendation capped at Watch (was {original_recommendation}) until the conflict is resolved.")
+
         breakdown["recommendation"] = recommendation
         reasons.append(f"Overall Recommendation: {recommendation}")
         
