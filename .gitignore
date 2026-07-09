@@ -3,3 +3,6 @@ __pycache__/
 .pytest_cache/
 reports/
 *_DRYRUN.xlsx
+
+.cache/
+*_out.xlsx
