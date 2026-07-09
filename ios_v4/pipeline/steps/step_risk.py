@@ -34,8 +34,8 @@ class StepRisk:
                     ed = existing_data.get(ticker, {})
                     md = market_data.get(ticker, {})
                     
-                    industry = md.get("industry")
-                    sector = md.get("sector")
+                    industry = md.get("industry") or ed.get("industry")
+                    sector = md.get("sector") or ed.get("sector")
                     gross_npa = ed.get("gross_npa")
                     net_npa = ed.get("net_npa")
                     car = ed.get("car")

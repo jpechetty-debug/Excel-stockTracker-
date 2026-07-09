@@ -219,7 +219,7 @@ def test_risk_score_standard_model():
         valuation_result=make_result(),
         industry="Technology"
     )
-    assert result.value == 50.0  # 0.5 * 100
+    assert result.value == pytest.approx(16.666, 0.01)  # (0.5 / 3.0) * 100
 
 def test_risk_score_standard_model_missing_data():
     engine = RiskEngine(rule_parser=DummyParser())

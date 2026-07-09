@@ -104,8 +104,12 @@ class RiskEngine:
                 
         else:
             if dte is not None:
-                financial_risk = min(dte * 100, 100)
-                reasons.append(f"Financial risk driven by D/E of {dte:.2f}x")
+                if dte < 0:
+                    financial_risk = 100.0
+                    reasons.append(f"Financial risk is maximum due to negative equity (D/E {dte:.2f}x)")
+                else:
+                    financial_risk = min((dte / 3.0) * 100, 100)
+                    reasons.append(f"Financial risk driven by D/E of {dte:.2f}x")
             else:
                 financial_risk = 40.0
                 warnings.append("Missing D/E for standard model. Defaulting Financial Risk to 40.")
