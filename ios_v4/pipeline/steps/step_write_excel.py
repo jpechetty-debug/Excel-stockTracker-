@@ -121,6 +121,7 @@ class StepWriteExcel:
             )
             
             context.log(f"Workbook successfully saved to {output_file}", Severity.INFO)
+            context.artifacts.final_output_path = output_file
             return True
             
         except Exception as e:

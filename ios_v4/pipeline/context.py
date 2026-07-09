@@ -39,6 +39,7 @@ class PipelineArtifacts:
     investment_scores: Dict[str, EngineResult] = field(default_factory=dict)
     allocations: Dict[str, EngineResult] = field(default_factory=dict)
     existing_data: Dict[str, Dict[str, Any]] = field(default_factory=dict)
+    final_output_path: Optional[str] = None
 
 
 @dataclass
