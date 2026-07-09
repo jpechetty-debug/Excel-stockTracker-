@@ -14,6 +14,10 @@ zones:
   system:
     - field: current_price
       column: "Current Price"
+    - field: sector
+      column: "Sector"
+    - field: industry
+      column: "Industry"
     - field: previous_close
       column: "Previous Close"
     - field: market_cap

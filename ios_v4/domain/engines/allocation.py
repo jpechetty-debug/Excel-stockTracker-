@@ -11,10 +11,11 @@ from domain.models import EngineResult
 class AllocationEngine:
     """Calculates target portfolio allocations strictly respecting constraints."""
     
-    def __init__(self, max_position_size: float = 0.10, cash_floor: float = 0.05, portfolio_size: float = 1000000.0):
+    def __init__(self, max_position_size: float = 0.10, cash_floor: float = 0.05, portfolio_size: float = 1000000.0, min_position_size: float = 0.0):
         self.max_position_size = max_position_size
         self.cash_floor = cash_floor
         self.portfolio_size = portfolio_size
+        self.min_position_size = min_position_size
         
     def calculate_allocations(self, investment_scores: Dict[str, EngineResult]) -> Dict[str, EngineResult]:
         """
@@ -70,6 +71,12 @@ class AllocationEngine:
                     capped_allocs[t] = min(capped_allocs[t] + added, self.max_position_size)
         
         for t, final_alloc in capped_allocs.items():
+            if final_alloc < self.min_position_size:
+                # Dust position - not worth a real allocation. Left as cash rather
+                # than redistributed, so it doesn't silently inflate other names'
+                # weights beyond what their own score/confidence earned.
+                continue
+
             reasons = [
                 f"Weighted by Investment Score * Confidence.",
                 f"Constrained by Max Size {self.max_position_size:.1%}" if final_alloc >= self.max_position_size else "Below max constraint limits."

@@ -117,6 +117,10 @@ class YFinanceProvider(MarketDataProvider):
                 "trailing_eps": info.get("trailingEps"),
                 "payout_ratio": info.get("payoutRatio"),
                 "dividend_yield": info.get("dividendYield"),
+                "sector": info.get("sector"),
+                "industry": info.get("industry"),
+                "beta": info.get("beta"),
+                "pb": info.get("priceToBook"),
             }
         except Exception as e:
             raise self._wrap_error(ticker, "get_quote", e) from e

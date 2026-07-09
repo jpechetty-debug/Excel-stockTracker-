@@ -56,6 +56,16 @@ class ValuationEngine:
         """Simplified 5-year DCF using explicit growth and terminal rates."""
         if None in (fcf, growth_rate, discount_rate, terminal_growth, shares) or shares == 0:
             return None
+        if fcf <= 0:
+            # A negative/zero starting FCF, compounded forward at growth_rate
+            # and discounted, produces a runaway negative terminal value that
+            # can dominate the blended intrinsic value even at a modest weight
+            # (e.g. -15.8/share on a -50 FCF input). calculate_owner_earnings_value
+            # and calculate_graham both already guard against non-positive
+            # inputs for the same reason - DCF was the one model missing this,
+            # and was the root cause of the Vikram Solar ~Rs 0.57 intrinsic
+            # value / -33,772% Margin of Safety outlier.
+            return None
 
         if discount_rate <= terminal_growth:
             # Invalid parameters for Gordon Growth Model
@@ -158,7 +168,14 @@ class ValuationEngine:
 
         growth_rate = None
         sgr = None
-        if roe is not None and payout_ratio is not None:
+        # Guard the same way calculate_relative_pe does: a payout ratio outside
+        # [0, 1] is garbage (data-quality issue, not a real payout policy) and
+        # produces an SGR that can exceed ROE itself, which isn't meaningful -
+        # a company can't sustainably grow faster than its own ROE while
+        # retaining <=100% of earnings. This was silently inflating
+        # growth_rate_used for names with dirty payout data (e.g. Vikram Solar).
+        valid_payout = payout_ratio is not None and 0 <= payout_ratio <= 1
+        if roe is not None and valid_payout:
             sgr = roe * (1 - payout_ratio)
 
         if sgr is not None:
@@ -270,8 +287,15 @@ class ValuationEngine:
                         mos_bucket = "Fair Value"
                     elif mos >= -0.50:
                         mos_bucket = "Overvalued"
+                    elif mos >= -3.00:
+                        mos_bucket = "Significantly Overvalued"
                     else:
-                        mos_bucket = "Extremely Overvalued"
+                        # Market price several multiples above intrinsic value.
+                        # Usually a narrative/growth premium rather than a
+                        # valuation-model error - e.g. a 100x+ P/E stock will
+                        # legitimately land here under any fundamentals-based
+                        # model. Worth a second look, not necessarily a bug.
+                        mos_bucket = "Extreme Premium"
                     breakdown["margin_of_safety_bucket"] = mos_bucket
 
                 buy_price = blended_value * (1 - target_mos)

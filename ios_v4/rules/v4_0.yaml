@@ -41,3 +41,7 @@ allocation:
   cash_target: 0.10
   max_position_size: 0.25
   core_minimum_score: 75.0
+  # Below this weight, a suggested position is dust - not worth the transaction
+  # cost/tracking overhead of a real allocation. Excluded (not redistributed)
+  # rather than rounded up, so it doesn't silently inflate other constraints.
+  min_position_size: 0.005

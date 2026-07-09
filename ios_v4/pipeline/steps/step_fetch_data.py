@@ -158,7 +158,11 @@ class StepFetchData:
                 "total_debt": total_debt,
                 "minority_interest": minority_interest,
                 "preferred_equity": preferred_equity,
-                "cash_and_equivalents": cash_and_equivalents
+                "cash_and_equivalents": cash_and_equivalents,
+                "sector": quote.get("sector"),
+                "industry": quote.get("industry"),
+                "beta": quote.get("beta"),
+                "pb": quote.get("pb")
             }
             return ticker, merged, None
 
