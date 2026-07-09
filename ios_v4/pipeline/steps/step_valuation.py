@@ -1,6 +1,7 @@
 from pipeline.context import ExecutionContext, Severity
 from pipeline.runner import PipelineStep
 from domain.engines.valuation import ValuationEngine
+from domain.engines.rule_parser import RuleParser
 
 
 class StepValuation:
@@ -19,7 +20,24 @@ class StepValuation:
         
     def execute(self, context: ExecutionContext) -> bool:
         try:
-            config = context.config.get("valuation", {})
+            config = dict(context.config.get("valuation", {}))
+
+            # Model weights (dcf/relative_pe/graham/owner_earnings) live in
+            # rules/valuation.yaml rather than settings.yaml, alongside the
+            # other rule-versioned config (scoring.yaml, v4_0.yaml). Load them
+            # the same way StepScoring loads rules/scoring.yaml, and fall back
+            # to the engine's built-in defaults if the rule file is missing or
+            # malformed so a config issue degrades gracefully instead of
+            # failing the whole valuation step.
+            try:
+                parser = RuleParser()
+                valuation_rules = parser.get_rules("valuation")
+                weights = valuation_rules.get("policies", {}).get("weights")
+                if weights:
+                    config["weights"] = weights
+            except (FileNotFoundError, ValueError) as e:
+                context.log(f"Could not load rules/valuation.yaml weights, using engine defaults: {e}", Severity.WARNING)
+
             engine = ValuationEngine(config)
             market_data = context.artifacts.market_data
             
