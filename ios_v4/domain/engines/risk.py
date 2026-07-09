@@ -42,9 +42,9 @@ class RiskEngine:
         self.rule_parser = rule_parser
 
     def compute_risk(self, financial_result: EngineResult, valuation_result: EngineResult,
-                     industry: Optional[str] = None, gross_npa: Optional[float] = None,
-                     net_npa: Optional[float] = None, car: Optional[float] = None,
-                     pcr: Optional[float] = None) -> EngineResult:
+                     industry: Optional[str] = None, sector: Optional[str] = None,
+                     gross_npa: Optional[float] = None, net_npa: Optional[float] = None, 
+                     car: Optional[float] = None, pcr: Optional[float] = None) -> EngineResult:
         """
         Calculates a dimensional risk score. Higher score = Higher Risk.
         """
@@ -65,10 +65,17 @@ class RiskEngine:
         f_metrics = financial_result.breakdown
         dte = f_metrics.get("debt_to_equity")
         
-        is_bank = industry in BANKING_INDUSTRIES
+        is_bank = False
+        # Broad string match across industry and sector
+        for val in (industry, sector):
+            if val:
+                val_lower = val.lower()
+                if any(k in val_lower for k in ["bank", "financial", "nbfc", "housing finance", "insurance", "credit", "loan"]):
+                    is_bank = True
+                    break
         
         if is_bank:
-            reasons.append(f"Sector '{industry}' matched banking/financials. Using GNPA/CAR risk model.")
+            reasons.append(f"Matched banking/financials (industry='{industry}', sector='{sector}'). Using GNPA/CAR risk model.")
             
             npa_risk = None
             car_risk = None
