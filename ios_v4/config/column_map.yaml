@@ -62,6 +62,10 @@ zones:
       column: "Valuation Status"
     - field: margin_of_safety_bucket
       column: "Valuation Label"
+    - field: roe_reconciliation_status
+      column: "ROE Reconciliation Status"
+    - field: roe_reconciliation_note
+      column: "ROE Reconciliation Note"
     - field: intrinsic_value
       column: "Intrinsic Value"
     - field: growth_rate_used

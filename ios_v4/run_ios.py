@@ -11,6 +11,7 @@ from pipeline.steps.step_scoring import StepScoring
 from pipeline.steps.step_risk import StepRisk
 from pipeline.steps.step_investment import StepInvestment
 from pipeline.steps.step_allocation import StepAllocation
+from pipeline.steps.step_reconcile import StepReconcile
 from pipeline.steps.step_write_excel import StepWriteExcel
 from pipeline.steps.step_validate_workbook import StepValidateWorkbook
 from pipeline.steps.step_reports import StepReports
@@ -55,6 +56,7 @@ def main():
     runner.add_step(StepRisk())
     runner.add_step(StepInvestment())
     runner.add_step(StepAllocation())
+    runner.add_step(StepReconcile())
     runner.add_step(StepWriteExcel())
     runner.add_step(StepValidateWorkbook())
     runner.add_step(StepReports())

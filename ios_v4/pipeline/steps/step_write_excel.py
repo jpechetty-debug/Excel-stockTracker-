@@ -105,6 +105,20 @@ class StepWriteExcel:
                     prov = prov_default
                     for k, v in res.breakdown.items():
                         company.metrics[k] = Metric(value=v, provenance=prov)
+
+                # Reconciliation Engine mapping (Financial Data sheet cross-check)
+                if ticker in getattr(context.artifacts, 'reconciliation', {}):
+                    res = context.artifacts.reconciliation[ticker]
+                    prov = prov_default
+                    variance = res.breakdown.get("variance_pct")
+                    if variance is not None:
+                        is_conflict = variance > 15.0  # matches ReconciliationEngine's default threshold
+                        company.metrics["roe_reconciliation_status"] = Metric(
+                            value=("Conflict" if is_conflict else "OK"), provenance=prov
+                        )
+                        company.metrics["roe_reconciliation_note"] = Metric(
+                            value=(res.reasons[0] if res.reasons else ""), provenance=prov
+                        )
             
             # Run Update Planner
             planner = UpdatePlanner(context.config_loader)
