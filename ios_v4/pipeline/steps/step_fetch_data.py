@@ -137,6 +137,22 @@ class StepFetchData:
 
             merged = {
                 "price": price_validated,
+                # "current_price" and "previous_close" are the exact field names
+                # column_map.yaml maps to the "Current Price" / "Previous Close"
+                # columns. Before this fix, only "price" (used internally by the
+                # valuation engine) was ever set here -- "current_price" was never
+                # a key in this dict at all, so company.metrics["current_price"]
+                # was never populated for ANY company, on ANY run. The valuation
+                # math itself was unaffected (it reads "price" directly via
+                # StepValuation), but the "Current Price" column shown to a human
+                # auditing the sheet was frozen at whatever value happened to be
+                # in that cell before this bug was introduced -- silently stale
+                # for existing rows, and blank for any newly-added company (which
+                # is what made this visible: newly added tickers showed "Current
+                # Price: None" while still having a real, live-computed Intrinsic
+                # Value/Margin of Safety sitting right next to that blank cell).
+                "current_price": price_validated,
+                "previous_close": previous_close_validated,
                 "market_cap": market_cap,
                 "eps": eps,
                 "bvps": bvps,

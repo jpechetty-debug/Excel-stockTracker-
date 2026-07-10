@@ -3,6 +3,12 @@
 All notable changes to the IOS project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
+### Fixed
+- **StepFetchData**: `column_map.yaml` maps the "Current Price" and "Previous Close" Excel columns to field names `current_price` and `previous_close`. The merged dict built in `_fetch_one` only ever set a key called `price` (the name used internally by `StepValuation`/`ValuationEngine`) and never set `current_price` at all, and never set `previous_close` either. Since `UpdatePlanner.create_plan` only considers fields present in `company.metrics`, this meant `company.metrics["current_price"]` was never populated for **any** company on **any** pipeline run — the "Current Price" column was permanently frozen at whatever value happened to be sitting in that cell before this bug was introduced (silently stale for existing rows, and visibly blank for any newly-added company, since those had no prior value to freeze on). The underlying valuation math was unaffected (DCF/Graham/Relative P/E/Owner Earnings all correctly read `data["price"]` directly), but a human auditing "is this cheap relative to its Current Price" was comparing a live Intrinsic Value against a stale, unrefreshed price. Fixed by also populating `current_price` (mirroring the same validated `price` value) and `previous_close` (validated the same way as `price`) in the merged dict. Added `tests/unit/test_step_fetch_data.py` to guard against regression.
+- Found via systematic audit: cross-checked every field name in `column_map.yaml`'s system zone against every place a matching dict key is actually produced across `step_fetch_data.py` and all domain engines. Confirmed the 5 other fields with no producer (`evidence_gate`, `gross_npa`, `net_npa`, `car`, `pcr`) are intentionally `read_only: true` (human-curated inputs the pipeline must not overwrite) and `portfolio_weight` is a genuinely unimplemented feature (presumably meant to derive from actual holdings on the Portfolio Tracker sheet) rather than a naming bug — only `current_price`/`previous_close` were silent regressions.
+
 ## [v4.3.0] - Unreleased
 
 ### Fixed
