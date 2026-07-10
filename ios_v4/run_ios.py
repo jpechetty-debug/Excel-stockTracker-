@@ -13,6 +13,7 @@ from pipeline.steps.step_investment import StepInvestment
 from pipeline.steps.step_allocation import StepAllocation
 from pipeline.steps.step_reconcile import StepReconcile
 from pipeline.steps.step_write_excel import StepWriteExcel
+from pipeline.steps.step_recalculate_workbook import StepRecalculateWorkbook
 from pipeline.steps.step_validate_workbook import StepValidateWorkbook
 from pipeline.steps.step_reports import StepReports
 from pipeline.steps.step_summary_llm import StepSummaryLLM
@@ -58,6 +59,7 @@ def main():
     runner.add_step(StepAllocation())
     runner.add_step(StepReconcile())
     runner.add_step(StepWriteExcel())
+    runner.add_step(StepRecalculateWorkbook())
     runner.add_step(StepValidateWorkbook())
     runner.add_step(StepReports())
     runner.add_step(StepSummaryLLM())
