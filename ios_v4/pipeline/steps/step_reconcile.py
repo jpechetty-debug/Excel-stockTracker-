@@ -84,7 +84,7 @@ class StepReconcile:
                 engine_roe_frac = financials[ticker].breakdown.get("roe")
                 if engine_roe_frac is None:
                     continue
-                engine_roe_pct = engine_roe_frac * 100
+                engine_roe_pct = float(engine_roe_frac) * 100
                 reference_roe_pct = reference_roe[key]
 
                 result = engine.check_metric("ROE", engine_roe_pct, reference_roe_pct)

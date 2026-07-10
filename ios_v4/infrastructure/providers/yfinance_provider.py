@@ -70,6 +70,16 @@ class YFinanceProvider(MarketDataProvider):
         return ProviderUnavailableError(f"yfinance {operation} failed for {ticker}: {e}")
 
     @staticmethod
+    def _to_decimal(v):
+        if v is None: return None
+        try:
+            val = float(v)
+            if math.isnan(val): return None
+            return Decimal(str(val))
+        except (TypeError, ValueError):
+            return v
+
+    @staticmethod
     def _series_to_history(row) -> list:
         """
         Converts a pandas Series (one financial statement line item across periods)
@@ -123,7 +133,7 @@ class YFinanceProvider(MarketDataProvider):
                 "beta": info.get("beta"),
                 "pb": info.get("priceToBook"),
             }
-            return {k: Decimal(str(v)) if isinstance(v, (int, float)) else v for k, v in raw.items()}
+            return {k: self._to_decimal(v) for k, v in raw.items()}
         except Exception as e:
             raise self._wrap_error(ticker, "get_quote", e) from e
 
@@ -142,7 +152,7 @@ class YFinanceProvider(MarketDataProvider):
             if inc is None or inc.empty:
                 raw = {}
             # Returning the most recent year's column roughly as a dict
-            latest = {str(k): Decimal(str(v)) if isinstance(v, (int, float)) and not math.isnan(v) else None for k, v in inc.iloc[:, 0].to_dict().items()}
+            latest = {str(k): self._to_decimal(v) for k, v in inc.iloc[:, 0].to_dict().items()}
 
             if "Total Revenue" in inc.index:
                 latest["revenue_history"] = self._series_to_history(inc.loc["Total Revenue"])
@@ -160,7 +170,7 @@ class YFinanceProvider(MarketDataProvider):
             self._total_requests += 1
             if bs is None or bs.empty:
                 raw = {}
-            latest = {str(k): Decimal(str(v)) if isinstance(v, (int, float)) and not math.isnan(v) else None for k, v in bs.iloc[:, 0].to_dict().items()}
+            latest = {str(k): self._to_decimal(v) for k, v in bs.iloc[:, 0].to_dict().items()}
             return latest
         except Exception as e:
             raise self._wrap_error(ticker, "get_balance_sheet", e) from e
@@ -174,7 +184,7 @@ class YFinanceProvider(MarketDataProvider):
             self._total_requests += 1
             if cf is None or cf.empty:
                 raw = {}
-            latest = {str(k): Decimal(str(v)) if isinstance(v, (int, float)) and not math.isnan(v) else None for k, v in cf.iloc[:, 0].to_dict().items()}
+            latest = {str(k): self._to_decimal(v) for k, v in cf.iloc[:, 0].to_dict().items()}
             return latest
         except Exception as e:
             raise self._wrap_error(ticker, "get_cash_flow", e) from e

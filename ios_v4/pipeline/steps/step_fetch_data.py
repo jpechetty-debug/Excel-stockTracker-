@@ -167,7 +167,8 @@ class StepFetchData:
             return ticker, merged, None
 
         except Exception as e:
-            return ticker, None, str(e)
+            import traceback
+            return ticker, None, traceback.format_exc()
 
     def execute(self, context: ExecutionContext) -> bool:
         try:

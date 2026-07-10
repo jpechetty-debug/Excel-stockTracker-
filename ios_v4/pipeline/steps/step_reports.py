@@ -1,5 +1,12 @@
 import json
 from pathlib import Path
+from decimal import Decimal
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Decimal):
+            return float(obj)
+        return super().default(obj)
 from datetime import datetime
 from pipeline.context import ExecutionContext, Severity
 from pipeline.runner import PipelineStep
@@ -66,7 +73,7 @@ class StepReports:
                 summary["company_details"][ticker] = details
             
             with open(run_file, "w", encoding="utf-8") as f:
-                json.dump(summary, f, indent=4)
+                json.dump(summary, f, indent=4, cls=DecimalEncoder)
                 
             context.log(f"Run summary generated at {run_file}", Severity.INFO)
             

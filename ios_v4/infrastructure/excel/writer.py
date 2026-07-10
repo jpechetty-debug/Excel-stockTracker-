@@ -101,11 +101,14 @@ class ExcelWriter:
                             
                         cell.value = val_to_write
                         
+                        old_v = float(action.old_value) if isinstance(action.old_value, __import__('decimal').Decimal) else action.old_value
+                        new_v = float(action.new_value) if isinstance(action.new_value, __import__('decimal').Decimal) else action.new_value
+                        
                         log_audit_trail(
                             ticker=action.ticker,
                             field=action.field,
-                            old_val=action.old_value,
-                            new_val=action.new_value,
+                            old_val=old_v,
+                            new_val=new_v,
                             source=action.provider,
                             confidence=action.confidence
                         )

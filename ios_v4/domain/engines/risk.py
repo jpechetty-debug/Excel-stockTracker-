@@ -64,6 +64,8 @@ class RiskEngine:
         # Financial Risk
         f_metrics = financial_result.breakdown
         dte = f_metrics.get("debt_to_equity")
+        if dte is not None:
+            dte = float(dte)
         
         is_bank = False
         # Broad string match across industry and sector

@@ -5,11 +5,18 @@ Handles segmented persistence of Domain Models instead of raw responses.
 
 import json
 from pathlib import Path
+from decimal import Decimal
 from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict, Any
 from domain.exceptions import CacheMissError
 from infrastructure.logging.logger import logger
 
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Decimal):
+            return float(obj)
+        return super().default(obj)
 
 class CacheManager:
     """Manages segregated JSON caches with type-specific TTLs."""
@@ -50,7 +57,7 @@ class CacheManager:
             
         try:
             with open(file_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
+                data = json.load(f, parse_float=Decimal)
                 return data
         except Exception as e:
             logger.error(f"Error reading cache {file_path}: {e}")
@@ -64,6 +71,6 @@ class CacheManager:
         file_path = self.base_dir / data_type / f"{key}.json"
         try:
             with open(file_path, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2)
+                json.dump(data, f, indent=2, cls=DecimalEncoder)
         except Exception as e:
             logger.error(f"Failed to write cache {file_path}: {e}")

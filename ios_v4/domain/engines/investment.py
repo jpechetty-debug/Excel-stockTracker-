@@ -17,7 +17,7 @@ class InvestmentEngine:
         warnings = []
         
         # 1. Quality (Business Score)
-        quality = business_result.value if (business_result and business_result.value is not None) else 0.0
+        quality = float(business_result.value) if (business_result and business_result.value is not None) else 0.0
         if business_result and business_result.value is None:
             warnings.append("Business Score was None (no scorable metrics); treating Quality as 0.0 for this synthesis.")
         breakdown["quality"] = quality
@@ -30,7 +30,7 @@ class InvestmentEngine:
         if valuation_result:
             mos = valuation_result.breakdown.get("margin_of_safety")
             if mos is not None:
-                valuation_mult = 1.0 + max(-0.5, mos)
+                valuation_mult = 1.0 + max(-0.5, float(mos))
                 
         breakdown["valuation_mult"] = valuation_mult
         
