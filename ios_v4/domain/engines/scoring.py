@@ -4,7 +4,7 @@ Decision Engine that interprets Financial Facts into Business Scores based on YA
 """
 
 from typing import Dict, Any
-from datetime import datetime
+from datetime import datetime, timezone
 from domain.models import EngineResult
 from domain.engines.rule_parser import RuleParser
 
@@ -194,6 +194,6 @@ class ScoringEngine:
             reasons=reasons,
             method="Configurable YAML Scoring",
             rule_version=version,
-            timestamp=datetime.now(),
+            timestamp=datetime.now(timezone.utc),
             warnings=warnings
         )

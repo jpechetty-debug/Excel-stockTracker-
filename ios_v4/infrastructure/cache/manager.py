@@ -5,7 +5,7 @@ Handles segmented persistence of Domain Models instead of raw responses.
 
 import json
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict, Any
 from domain.exceptions import CacheMissError
 from infrastructure.logging.logger import logger
@@ -42,10 +42,10 @@ class CacheManager:
             raise CacheMissError(f"No cache found for {data_type}/{key}")
             
         # Check freshness
-        mtime = datetime.fromtimestamp(file_path.stat().st_mtime)
+        mtime = datetime.fromtimestamp(file_path.stat().st_mtime, tz=timezone.utc)
         expiry = mtime + self.TTL_POLICIES[data_type]
         
-        if datetime.now() > expiry:
+        if datetime.now(timezone.utc) > expiry:
             raise CacheMissError(f"Cache expired for {data_type}/{key}")
             
         try:

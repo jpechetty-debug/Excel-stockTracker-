@@ -5,7 +5,8 @@ Strictly completely decoupled from Price and Scoring.
 """
 
 from typing import Dict, Any, Optional, List
-from datetime import datetime
+from decimal import Decimal
+from datetime import datetime, timezone
 from domain.models import EngineResult
 
 
@@ -13,20 +14,20 @@ class FinancialEngine:
     """Calculates objective financial quality metrics."""
     
     @staticmethod
-    def _safe_divide(num: float, den: float) -> Optional[float]:
-        if den is None or num is None or den == 0:
+    def _safe_divide(num: Decimal, den: Decimal) -> Optional[Decimal]:
+        if den is None or num is None or den == Decimal('0'):
             return None
         return num / den
 
     @staticmethod
-    def calculate_cagr(start_val: float, end_val: float, years: float) -> Optional[float]:
+    def calculate_cagr(start_val: Decimal, end_val: Decimal, years: Decimal) -> Optional[Decimal]:
         """Calculates Compound Annual Growth Rate."""
         if not start_val or not end_val or start_val <= 0 or end_val <= 0 or years <= 0:
             return None
-        return (end_val / start_val) ** (1 / years) - 1
+        return Decimal(str(float(end_val / start_val) ** float(Decimal('1') / Decimal(str(years))) - 1))
 
     @staticmethod
-    def _revenue_cagr_from_history(revenue_history: Optional[List[Dict[str, Any]]]) -> "tuple[Optional[float], Optional[str]]":
+    def _revenue_cagr_from_history(revenue_history: Optional[List[Dict[str, Any]]]) -> "tuple[Optional[Decimal], Optional[str]]":
         """
         Computes revenue CAGR from a list of {date, value} entries (oldest to newest).
         Returns (cagr, warning_message). warning_message is None on success.
@@ -172,6 +173,6 @@ class FinancialEngine:
             reasons=reasons,
             method="Standard Financial Calculation",
             rule_version="core_v1",
-            timestamp=datetime.now(),
+            timestamp=datetime.now(timezone.utc),
             warnings=warnings
         )

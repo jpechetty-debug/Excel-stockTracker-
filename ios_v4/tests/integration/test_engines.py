@@ -101,7 +101,7 @@ def test_end_to_end_engines(test_rules_dir):
     
     # 1.0 - 0.05 cash = 0.95 total allocable
     total_alloc = sum(r.value for r in alloc_res.values())
-    assert abs(total_alloc - 0.95) < 0.01
+    assert abs(float(total_alloc) - 0.95) < 0.01
     
     # TICKER_A or B should hit the 60% max_position_size constraint depending on scores
     for t, res in alloc_res.items():

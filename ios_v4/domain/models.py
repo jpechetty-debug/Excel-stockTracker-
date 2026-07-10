@@ -7,13 +7,14 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, Dict, Any, List
 
+from decimal import Decimal
 
 @dataclass(slots=True, frozen=True)
 class EngineResult:
     """Explainable AI (XAI) output from calculation and decision engines."""
-    value: float | None
+    value: Decimal | None
     confidence: float
-    breakdown: Dict[str, float]
+    breakdown: Dict[str, Decimal]
     reasons: List[str]
     method: str
     rule_version: str
@@ -34,7 +35,7 @@ class Provenance:
 @dataclass(slots=True, frozen=True)
 class Metric:
     """A financial metric wrapping its value and provenance."""
-    value: float | str | None
+    value: Decimal | str | None
     provenance: Provenance
 
 @dataclass(slots=True, frozen=True)
@@ -49,7 +50,7 @@ class CompanyData:
     # Manual fields (Strings that must not be blindly overwritten)
     manual_fields: Dict[str, str] = field(default_factory=dict)
 
-    def get_metric_value(self, name: str) -> float | str | None:
+    def get_metric_value(self, name: str) -> Decimal | str | None:
         """Helper to get a raw value if it exists."""
         if name in self.metrics:
             return self.metrics[name].value

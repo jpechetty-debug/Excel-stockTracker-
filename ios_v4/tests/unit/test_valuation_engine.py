@@ -16,8 +16,10 @@ History:
      relative to earnings power) as "overvalued" almost by construction.
      Averaged 50/50 with DCF, it was driving Margin of Safety to figures like
      -2100% for businesses with excellent Business Scores. Confidence is now
-     len(models)/4 to match.
+     len(models)/4
 """
+from typing import Dict, Any
+from decimal import Decimal
 import pytest
 from domain.engines.valuation import ValuationEngine
 
@@ -78,7 +80,7 @@ def test_zero_dcf_value_is_not_dropped(monkeypatch):
     """A DCF value of exactly 0.0 is a legitimate (if unusual) result and must
     not be treated as 'missing' by a truthiness check."""
     engine = ValuationEngine()
-    monkeypatch.setattr(engine, "calculate_dcf", lambda *a, **k: 0.0)
+    monkeypatch.setattr(engine, "calculate_dcf", lambda *a, **k: Decimal('0'))
 
     result = engine.calculate_valuation(FULL_DATA, current_price=45.0)
 
@@ -89,7 +91,7 @@ def test_zero_dcf_value_is_not_dropped(monkeypatch):
 def test_zero_graham_value_is_not_dropped(monkeypatch):
     """Same guard, for the Graham Number."""
     engine = ValuationEngine()
-    monkeypatch.setattr(engine, "calculate_graham", lambda *a, **k: 0.0)
+    monkeypatch.setattr(engine, "calculate_graham", lambda *a, **k: Decimal('0'))
 
     result = engine.calculate_valuation(FULL_DATA, current_price=45.0)
 

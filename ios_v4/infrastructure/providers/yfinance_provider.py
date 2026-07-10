@@ -5,7 +5,8 @@ Integrates the yfinance library using network resilience wrappers (retries/rate 
 
 import math
 from typing import Dict, Any
-from datetime import datetime
+from decimal import Decimal
+from datetime import datetime, timezone
 import yfinance as yf
 from infrastructure.providers.base import MarketDataProvider, ProviderHealth
 from infrastructure.providers.registry import ProviderRegistry
@@ -45,7 +46,7 @@ class YFinanceProvider(MarketDataProvider):
             latency_ms=self._last_latency,
             cache_hit_rate=hit_rate,
             oldest_cached_data=None, # Inferred by cache layer
-            latest_refresh=datetime.now(),
+            latest_refresh=datetime.now(timezone.utc),
             last_error=self._last_error
         )
 
@@ -82,7 +83,7 @@ class YFinanceProvider(MarketDataProvider):
             try:
                 if isinstance(value, float) and math.isnan(value):
                     continue
-                numeric_value = float(value)
+                numeric_value = Decimal(str(float(value)))
             except (TypeError, ValueError):
                 continue
 
@@ -98,14 +99,14 @@ class YFinanceProvider(MarketDataProvider):
     def get_quote(self, ticker: str) -> Dict[str, Any]:
         """Fetches standard quote and profile fields."""
         self.rate_limiter.wait()
-        start = datetime.now()
+        start = datetime.now(timezone.utc)
         try:
             t = self._get_ticker_obj(ticker)
             info = t.info
             self._total_requests += 1
-            self._last_latency = int((datetime.now() - start).total_seconds() * 1000)
+            self._last_latency = int((datetime.now(timezone.utc) - start).total_seconds() * 1000)
             
-            return {
+            raw = {
                 "current_price": info.get("currentPrice"),
                 "previous_close": info.get("previousClose"),
                 "market_cap": info.get("marketCap"),
@@ -122,6 +123,7 @@ class YFinanceProvider(MarketDataProvider):
                 "beta": info.get("beta"),
                 "pb": info.get("priceToBook"),
             }
+            return {k: Decimal(str(v)) if isinstance(v, (int, float)) else v for k, v in raw.items()}
         except Exception as e:
             raise self._wrap_error(ticker, "get_quote", e) from e
 
@@ -138,9 +140,9 @@ class YFinanceProvider(MarketDataProvider):
             inc = t.income_stmt
             self._total_requests += 1
             if inc is None or inc.empty:
-                return {}
+                raw = {}
             # Returning the most recent year's column roughly as a dict
-            latest = inc.iloc[:, 0].to_dict()
+            latest = {str(k): Decimal(str(v)) if isinstance(v, (int, float)) and not math.isnan(v) else None for k, v in inc.iloc[:, 0].to_dict().items()}
 
             if "Total Revenue" in inc.index:
                 latest["revenue_history"] = self._series_to_history(inc.loc["Total Revenue"])
@@ -157,8 +159,8 @@ class YFinanceProvider(MarketDataProvider):
             bs = t.balance_sheet
             self._total_requests += 1
             if bs is None or bs.empty:
-                return {}
-            latest = bs.iloc[:, 0].to_dict()
+                raw = {}
+            latest = {str(k): Decimal(str(v)) if isinstance(v, (int, float)) and not math.isnan(v) else None for k, v in bs.iloc[:, 0].to_dict().items()}
             return latest
         except Exception as e:
             raise self._wrap_error(ticker, "get_balance_sheet", e) from e
@@ -171,8 +173,8 @@ class YFinanceProvider(MarketDataProvider):
             cf = t.cashflow
             self._total_requests += 1
             if cf is None or cf.empty:
-                return {}
-            latest = cf.iloc[:, 0].to_dict()
+                raw = {}
+            latest = {str(k): Decimal(str(v)) if isinstance(v, (int, float)) and not math.isnan(v) else None for k, v in cf.iloc[:, 0].to_dict().items()}
             return latest
         except Exception as e:
             raise self._wrap_error(ticker, "get_cash_flow", e) from e
@@ -185,7 +187,7 @@ class YFinanceProvider(MarketDataProvider):
             actions = t.actions
             self._total_requests += 1
             if actions is None or actions.empty:
-                return {}
+                raw = {}
             # Returning as standard json dicts
             return actions.reset_index().to_dict(orient="records")
         except Exception as e:

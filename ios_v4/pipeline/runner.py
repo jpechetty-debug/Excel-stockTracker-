@@ -4,7 +4,7 @@ Pipeline Runner and Step Protocol
 
 import time
 from typing import Protocol, List
-from datetime import datetime
+from datetime import datetime, timezone
 from pipeline.context import ExecutionContext, PipelineState, Severity
 from infrastructure.logging.logger import logger
 
@@ -42,7 +42,7 @@ class PipelineRunner:
     def run(self, context: ExecutionContext) -> ExecutionContext:
         """Executes all registered steps."""
         context.state = PipelineState.RUNNING
-        context.start_time = datetime.now()
+        context.start_time = datetime.now(timezone.utc)
         context.reporter.set_total_steps(len(self.steps))
         
         logger.info("Starting IOS v4.0 Pipeline...")
@@ -79,7 +79,7 @@ class PipelineRunner:
                 context.step_timings[step.name] = elapsed
                 logger.debug(f"{step.name} completed in {elapsed:.3f}s")
                 
-        context.end_time = datetime.now()
+        context.end_time = datetime.now(timezone.utc)
         
         if context.state != PipelineState.FAILED:
             context.state = PipelineState.COMPLETED

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "finance-expert": {
+      "source": "personamanagmentlayer/pcl",
+      "sourceType": "github",
+      "skillPath": "stdlib/domains/finance-expert/SKILL.md",
+      "computedHash": "83ff6d943fe47f1cec6c79b2d364303c2e058366c3fdfc6bc5938539cc914b33"
+    }
+  }
+}

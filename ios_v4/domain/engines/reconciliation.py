@@ -10,7 +10,7 @@ basis, or genuine data-quality issues on either side. A silent one-time copy-pas
 fix doesn't help: the automated engine will just re-pull and overwrite on the
 next run. This engine makes the conflict visible and durable instead.
 """
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 from domain.models import EngineResult
 
@@ -33,7 +33,7 @@ class ReconciliationEngine:
             return EngineResult(
                 value=None, confidence=0.0, breakdown=breakdown, reasons=reasons,
                 method="Reconciliation: Cross-Source Variance Check", rule_version=rule_version,
-                timestamp=datetime.now(),
+                timestamp=datetime.now(timezone.utc),
                 warnings=[f"Cannot reconcile {metric_name}: one or both sources missing."]
             )
 
@@ -64,6 +64,6 @@ class ReconciliationEngine:
             reasons=reasons,
             method="Reconciliation: Cross-Source Variance Check",
             rule_version=rule_version,
-            timestamp=datetime.now(),
+            timestamp=datetime.now(timezone.utc),
             warnings=warnings
         )

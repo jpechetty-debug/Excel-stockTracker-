@@ -37,7 +37,7 @@ def test_cagr_calculated_from_real_revenue_history():
     assert "revenue_cagr_3y" in result.breakdown
     # rel tolerance is loose because the engine computes elapsed years from actual
     # calendar days (365.25/year), which differs slightly from a naive integer "3".
-    assert result.breakdown["revenue_cagr_3y"] == pytest.approx(expected_cagr, rel=1e-3)
+    assert float(result.breakdown["revenue_cagr_3y"]) == pytest.approx(expected_cagr, rel=1e-3)
     # Must never silently fall back to the old hardcoded 0.15 mock.
     assert result.breakdown["revenue_cagr_3y"] != 0.15
 

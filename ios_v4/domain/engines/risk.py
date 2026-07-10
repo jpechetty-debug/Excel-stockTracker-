@@ -4,7 +4,7 @@ Decomposes risk into distinct testable dimensions.
 """
 
 from typing import Dict, Any, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 from domain.models import EngineResult
 from domain.engines.rule_parser import RuleParser
 
@@ -138,6 +138,6 @@ class RiskEngine:
             reasons=reasons,
             method="Dimensional Risk Decomposition",
             rule_version=version,
-            timestamp=datetime.now(),
+            timestamp=datetime.now(timezone.utc),
             warnings=warnings
         )
