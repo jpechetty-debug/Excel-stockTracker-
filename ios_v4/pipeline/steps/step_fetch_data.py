@@ -134,6 +134,18 @@ class StepFetchData:
             pe_raw = quote.get("trailing_pe") or quote.get("forward_pe")
             pe_validated, _ = DataValidator.validate_pe(pe_raw if _is_valid(pe_raw) else None)
             roe_validated, _ = DataValidator.validate_roe(quote.get("roe") if _is_valid(quote.get("roe")) else None)
+            # previous_close was being referenced below without ever being computed -
+            # a NameError on this line, on every single call, since Python evaluates
+            # dict values eagerly. That meant _fetch_one() threw on every ticker and
+            # was silently swallowed by the caller's try/except, logging "Failed to
+            # fetch <TICKER>" and returning 0 companies fetched, pipeline-wide - not
+            # a partial/edge-case failure, a total one. Mirrors the same
+            # raw-value -> DataValidator.validate_price -> _is_valid guard pattern
+            # used for current_price two lines up.
+            previous_close_raw = quote.get("previous_close")
+            previous_close_validated, _ = DataValidator.validate_price(
+                previous_close_raw if _is_valid(previous_close_raw) else None
+            )
 
             merged = {
                 "price": price_validated,

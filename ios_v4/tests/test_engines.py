@@ -166,12 +166,12 @@ def test_allocation():
     # Sum of allocations should be 1.0 - 0.05 (cash) = 0.95
     total = sum(res.value for res in allocs.values())
     # Max sum of allocations for 2 assets is 0.20
-    assert abs(total - 0.20) < 0.01
+    assert abs(float(total) - 0.20) < 0.01
     
     # Weight of A vs B: A = 100, B = 50.
     # Sum of scores = 150
     # A's raw = 100/150 = 66.6% -> capped at 10%
-    assert abs(allocs["A"].value - 0.10) < 0.01
+    assert abs(float(allocs["A"].value) - 0.10) < 0.01
 
 def test_risk_score_banking_model_good_metrics():
     engine = RiskEngine(rule_parser=DummyParser())

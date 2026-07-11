@@ -52,7 +52,13 @@ class AllocationEngine:
             
         # Apply constraints (Capping)
         capped_allocs = {}
-        excess = 0.0
+        # Was `excess = 0.0` (plain float) mixed with Decimal arithmetic below -
+        # raised "TypeError: unsupported operand type(s) for +=: 'float' and
+        # 'decimal.Decimal'" the moment any position actually exceeded the cap,
+        # i.e. exactly when this redistribution logic was needed. step_allocation.py
+        # catches that as a bare Exception and logs Severity.FATAL, aborting the
+        # entire allocation step for the whole run - not a partial/cosmetic bug.
+        excess = Decimal('0')
         
         for t, alloc in raw_allocs.items():
             if alloc > self.max_position_size:
